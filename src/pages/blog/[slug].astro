@@ -1,0 +1,99 @@
+---
+import { getCollection, render } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map(post => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{post.data.title} — OXYD Studio</title>
+  <meta name="description" content={post.data.description} />
+  <link rel="canonical" href={`https://oxyd.studio/blog/${post.id}/`} />
+  <meta property="og:title" content={`${post.data.title} — OXYD Studio`} />
+  <meta property="og:description" content={post.data.description} />
+  <meta property="og:url" content={`https://oxyd.studio/blog/${post.id}/`} />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://oxyd.studio/og-image.png" />
+  <meta property="article:published_time" content={post.data.pubDate.toISOString()} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={post.data.title} />
+  <meta name="twitter:description" content={post.data.description} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    .article-content { max-width: 700px; margin: 0 auto; line-height: 1.8; color: var(--text-secondary); }
+    .article-content h2 { font-size: 1.5rem; font-weight: 700; color: var(--text-primary); margin-top: 2.5rem; margin-bottom: 1rem; }
+    .article-content h3 { font-size: 1.2rem; font-weight: 600; color: var(--text-primary); margin-top: 2rem; margin-bottom: 0.75rem; }
+    .article-content p { margin-bottom: 1.25rem; font-size: 1.05rem; }
+    .article-content strong { color: var(--text-primary); }
+    .article-content a { color: #F4511E; text-decoration: underline; text-underline-offset: 3px; }
+    .article-content ul, .article-content ol { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+    .article-content li { margin-bottom: 0.5rem; }
+    .article-content hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
+    .article-content em { color: var(--text-muted); }
+  </style>
+</head>
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="/" class="navbar-logo">
+        <span class="logo-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="18" height="18">
+            <polygon points="12 2 2 7 12 12 22 7 12 2" />
+          </svg>
+        </span>
+        Oxyd Studio
+      </a>
+      <div class="navbar-links">
+        <a href="/#product">Produit</a>
+        <a href="/#pricing">Tarifs</a>
+        <a href="/blog" style="color: #F4511E;">Blog</a>
+        <a href="/#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main style="padding-top: 120px; padding-left: 20px; padding-right: 20px; padding-bottom: 80px;">
+    <article class="article-content">
+      <a href="/blog" style="color: var(--text-muted); font-size: 0.85rem; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; margin-bottom: 24px;">
+        ← Retour au blog
+      </a>
+      <h1 style="font-size: 2.2rem; font-weight: 800; color: var(--text-primary); line-height: 1.2; margin-bottom: 16px;">
+        {post.data.title}
+      </h1>
+      <div style="display: flex; align-items: center; gap: 16px; color: var(--text-muted); font-size: 0.85rem; margin-bottom: 40px;">
+        <time datetime={post.data.pubDate.toISOString()}>
+          {post.data.pubDate.toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })}
+        </time>
+        <span>·</span>
+        <span>{post.data.author}</span>
+        <span>·</span>
+        <div style="display: flex; gap: 6px;">
+          {post.data.tags.map(tag => (
+            <span style="padding: 2px 8px; border-radius: 12px; font-size: 11px; background: rgba(244,81,30,0.1); color: #F4511E;">{tag}</span>
+          ))}
+        </div>
+      </div>
+
+      <Content />
+
+    </article>
+  </main>
+
+  <footer style="text-align: center; padding: 48px 20px; color: var(--text-muted); font-size: 0.85rem;">
+    <p>&copy; 2026 OXYD Studio · <a href="/" style="color: #F4511E;">oxyd.studio</a></p>
+  </footer>
+</body>
+</html>

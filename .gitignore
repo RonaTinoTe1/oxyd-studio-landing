@@ -1,3 +1,4 @@
-.vercel
-.netlify
-
+node_modules/
+dist/
+.astro/
+.migration-backup/
