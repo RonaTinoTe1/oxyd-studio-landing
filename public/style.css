@@ -4841,3 +4841,9 @@ h1, h2, h3 {
 }
 
  
+
+/* Custom cursor — hide default on desktop */
+@media (pointer: fine) {
+  *, *::before, *::after { cursor: none !important; }
+}
+
