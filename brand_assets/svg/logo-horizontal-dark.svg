@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 72" width="380" height="72">
+  <defs>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@800&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap');</style>
+  </defs>
+  <!-- Icon element card -->
+  <rect width="72" height="72" fill="#0A0A0A"/>
+  <rect x="1.5" y="1.5" width="69" height="69" fill="none" stroke="#F4511E" stroke-width="2"/>
+  <text x="6" y="16" font-family="'JetBrains Mono', monospace" font-size="8" font-weight="500" fill="#F4511E">8</text>
+  <text x="66" y="16" font-family="'JetBrains Mono', monospace" font-size="7" fill="#F4511E" opacity="0.45" text-anchor="end">15.999</text>
+  <text x="28" y="50" font-family="'Space Grotesk', sans-serif" font-size="32" font-weight="800" fill="#F4511E" text-anchor="middle" letter-spacing="-1">O</text>
+  <text x="52" y="50" font-family="'Space Grotesk', sans-serif" font-size="32" font-weight="800" fill="#FAFAFA" text-anchor="middle" letter-spacing="-1">x</text>
+  <text x="36" y="65" font-family="'JetBrains Mono', monospace" font-size="5.5" font-weight="500" fill="#FAFAFA" text-anchor="middle" letter-spacing="1.5" opacity="0.7">OXYD</text>
+  <!-- Wordmark OXYD -->
+  <text x="92" y="52" font-family="'Space Grotesk', sans-serif" font-size="44" font-weight="800" fill="#FAFAFA" letter-spacing="-2">OX</text>
+  <text x="189" y="52" font-family="'Space Grotesk', sans-serif" font-size="44" font-weight="800" fill="#F4511E" letter-spacing="-2">Y</text>
+  <text x="214" y="52" font-family="'Space Grotesk', sans-serif" font-size="44" font-weight="800" fill="#FAFAFA" letter-spacing="-2">D</text>
+  <!-- Tagline -->
+  <text x="92" y="68" font-family="'JetBrains Mono', monospace" font-size="9" fill="#333333" letter-spacing="0.5">Votre business. Un cerveau. Des bras.</text>
+</svg>

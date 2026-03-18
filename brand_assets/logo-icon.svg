@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none">
+  <rect width="48" height="48" rx="12" fill="#0a0a0a"/>
+  <!-- Isometric cube -->
+  <polygon points="24,6 8,14 24,22 40,14" stroke="#F4511E" stroke-width="2.5" stroke-linejoin="round"/>
+  <polygon points="8,14 8,32 24,40 24,22" stroke="#F4511E" stroke-width="2.5" stroke-linejoin="round" fill="rgba(244,81,30,0.07)"/>
+  <polygon points="40,14 40,32 24,40 24,22" stroke="#F4511E" stroke-width="2.5" stroke-linejoin="round" fill="rgba(244,81,30,0.12)"/>
+</svg>
