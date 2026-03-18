@@ -16,10 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // =============================================
   const loadTL = gsap.timeline({ defaults: { ease: 'power3.out' } });
 
-  // Start with everything hidden
-  gsap.set('.hero-badge, .hero-title, .hero-description, .hero-buttons, .hero-mockup, .navbar', {
+  // Start with everything hidden — add a CSS class so elements are visible if JS fails
+  document.documentElement.classList.add('gsap-ready');
+  gsap.set('.hero-badge, .hero-title, .hero-description, .hero-buttons, .hero-mockup', {
     opacity: 0, y: 30
   });
+  // Don't hide navbar — it should always be visible
+  gsap.set('.navbar', { opacity: 0, y: -20 });
 
   loadTL
     // Navbar slides down

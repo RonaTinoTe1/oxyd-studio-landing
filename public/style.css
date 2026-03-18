@@ -4842,8 +4842,22 @@ h1, h2, h3 {
 
  
 
-/* Custom cursor — hide default on desktop */
-@media (pointer: fine) {
-  *, *::before, *::after { cursor: none !important; }
+
+/* GSAP fallback — if animations JS fails, everything stays visible */
+html:not(.gsap-ready) .hero-badge,
+html:not(.gsap-ready) .hero-title,
+html:not(.gsap-ready) .hero-description,
+html:not(.gsap-ready) .hero-buttons,
+html:not(.gsap-ready) .hero-mockup,
+html:not(.gsap-ready) .navbar {
+  opacity: 1 !important;
+  transform: none !important;
 }
 
+/* Custom cursor — only hide default when GSAP cursor is active */
+html.gsap-ready { cursor: none; }
+html.gsap-ready a, html.gsap-ready button { cursor: none; }
+@media (pointer: coarse) {
+  html.gsap-ready { cursor: auto; }
+  html.gsap-ready a, html.gsap-ready button { cursor: pointer; }
+}

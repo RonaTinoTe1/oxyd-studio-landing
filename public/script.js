@@ -28,12 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const scrolled = window.scrollY;
     navbar.classList.toggle('scrolled', scrolled > 20);
 
-    // ---------- Mockup 3D Tilt ----------
-    if (mockup) {
-      const rotation = Math.max(0, 12 - (scrolled / 25));
-      const scale = Math.min(1, 0.96 + (scrolled / 5000));
-      mockup.style.transform = `perspective(1200px) rotateX(${rotation}deg) scale(${scale})`;
-    }
+    // Mockup 3D Tilt → handled by gsap-animations.js (hero mockup shrink)
   });
 
   // ---------- Resources dropdown ----------
@@ -78,24 +73,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ---------- Scroll fade-in animations ----------
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px 0px -60px 0px',
-    threshold: 0.1
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-
+  // Scroll fade-in → handled by gsap-animations.js (ScrollTrigger reveals)
+  // Just make all .fade-in elements visible immediately since GSAP handles the animation
   document.querySelectorAll('.fade-in').forEach(el => {
-    observer.observe(el);
+    el.classList.add('visible');
   });
 
   // World map is now SVG-based (see index.html)
@@ -154,42 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // =============================================
-  // CURSOR GLOW
-  // =============================================
-  const cursorGlow = document.getElementById('cursorGlow');
-  if (cursorGlow && window.matchMedia('(pointer: fine)').matches) {
-    let glowVisible = false;
-    document.addEventListener('mousemove', (e) => {
-      cursorGlow.style.left = e.clientX + 'px';
-      cursorGlow.style.top  = e.clientY + 'px';
-      if (!glowVisible) {
-        cursorGlow.style.opacity = '1';
-        glowVisible = true;
-      }
-    });
-    document.addEventListener('mouseleave', () => {
-      cursorGlow.style.opacity = '0';
-      glowVisible = false;
-    });
-  }
-
-  // =============================================
-  // CARD SPOTLIGHT — mouse-tracking inner glow
-  // =============================================
-  document.querySelectorAll('.bento-card, .sec-card, .process-step').forEach(card => {
-    card.addEventListener('mousemove', (e) => {
-      const rect = card.getBoundingClientRect();
-      const x = ((e.clientX - rect.left) / rect.width  * 100).toFixed(1) + '%';
-      const y = ((e.clientY - rect.top)  / rect.height * 100).toFixed(1) + '%';
-      card.style.setProperty('--spotlight-x', x);
-      card.style.setProperty('--spotlight-y', y);
-      card.style.setProperty('--spotlight-opacity', '1');
-    });
-    card.addEventListener('mouseleave', () => {
-      card.style.setProperty('--spotlight-opacity', '0');
-    });
-  });
+  // CURSOR GLOW + CARD SPOTLIGHT → handled by gsap-animations.js (custom cursor + 3D tilt)
 
   // =============================================
   // MAGNETIC BUTTONS
