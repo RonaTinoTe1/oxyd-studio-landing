@@ -30,10 +30,68 @@ const { Content } = await render(post);
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={post.data.title} />
   <meta name="twitter:description" content={post.data.description} />
+  <meta name="twitter:image" content="https://oxyd.studio/og-image.png" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.data.title,
+    "description": post.data.description,
+    "url": `https://oxyd.studio/blog/${post.id}/`,
+    "datePublished": post.data.pubDate.toISOString(),
+    "dateModified": post.data.pubDate.toISOString(),
+    "author": {
+      "@type": "Person",
+      "name": post.data.author,
+      "url": "https://oxyd.studio"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "OXYD Studio",
+      "url": "https://oxyd.studio",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://oxyd.studio/og-image.png"
+      }
+    },
+    "image": "https://oxyd.studio/og-image.png",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `https://oxyd.studio/blog/${post.id}/`
+    },
+    "keywords": post.data.tags.join(", "),
+    "inLanguage": "fr-FR",
+    "isPartOf": {
+      "@type": "Blog",
+      "name": "OXYD Studio Blog",
+      "url": "https://oxyd.studio/blog"
+    }
+  })} />
   <link rel="stylesheet" href="/style.css" />
   <style>
     .article-content { max-width: 700px; margin: 0 auto; line-height: 1.8; color: var(--text-secondary); }
+    .author-box {
+      max-width: 700px; margin: 56px auto 0;
+      border: 1px solid rgba(255,255,255,0.08); border-radius: 16px;
+      padding: 28px 32px; display: flex; gap: 24px; align-items: flex-start;
+      background: rgba(255,255,255,0.03);
+    }
+    .author-avatar {
+      width: 56px; height: 56px; border-radius: 50%; flex-shrink: 0;
+      background: linear-gradient(135deg, #F4511E, #D43F0D);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; font-weight: 800; color: #fff; font-family: 'Space Grotesk', sans-serif;
+    }
+    .author-info { flex: 1; }
+    .author-name { font-weight: 700; font-size: 1rem; color: var(--text-primary); margin-bottom: 4px; font-family: 'Space Grotesk', sans-serif; }
+    .author-title { font-size: 0.8rem; color: #F4511E; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.04em; margin-bottom: 10px; }
+    .author-bio { font-size: 0.92rem; line-height: 1.65; color: var(--text-muted, #9CA3AF); }
+    .author-cta {
+      display: inline-flex; align-items: center; gap: 6px; margin-top: 14px;
+      font-size: 0.82rem; font-weight: 600; color: #F4511E;
+      text-decoration: none; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.02em;
+    }
+    .author-cta:hover { text-decoration: underline; }
     .article-content h2 { font-size: 1.5rem; font-weight: 700; color: var(--text-primary); margin-top: 2.5rem; margin-bottom: 1rem; }
     .article-content h3 { font-size: 1.2rem; font-weight: 600; color: var(--text-primary); margin-top: 2rem; margin-bottom: 0.75rem; }
     .article-content p { margin-bottom: 1.25rem; font-size: 1.05rem; }
@@ -44,6 +102,12 @@ const { Content } = await render(post);
     .article-content hr { border: none; border-top: 1px solid var(--border); margin: 2rem 0; }
     .article-content em { color: var(--text-muted); }
   </style>
+  <!-- Privacy-friendly analytics by Plausible -->
+  <script async src="https://plausible.io/js/pa-eQmapsJCn9blo_-8Uw8Go.js"></script>
+  <script>
+    window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+    plausible.init()
+  </script>
 </head>
 <body>
   <nav class="navbar" id="navbar">
@@ -90,6 +154,22 @@ const { Content } = await render(post);
       <Content />
 
     </article>
+
+    <!-- Author box — E-E-A-T trust signal -->
+    <div class="author-box">
+      <div class="author-avatar">N</div>
+      <div class="author-info">
+        <div class="author-name">Nathan</div>
+        <div class="author-title">Fondateur · OXYD Studio</div>
+        <p class="author-bio">
+          Je construis des outils IA sur mesure pour aider les PME à automatiser leurs tâches répétitives.
+          Basé à Dijon, je diagnostique les process manuels qui coûtent du temps et de l'argent — et je les automatise.
+          Chaque article de ce blog est tiré de cas réels ou de recherches terrain.
+        </p>
+        <a href="/a-propos" class="author-cta">En savoir plus →</a>
+      </div>
+    </div>
+
   </main>
 
   <footer style="text-align: center; padding: 48px 20px; color: var(--text-muted); font-size: 0.85rem;">
