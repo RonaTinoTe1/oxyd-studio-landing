@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0a0a0a">
+  <title>Pourquoi 88% des agents IA n'arrivent jamais en production — OXYD Studio</title>
+  <meta name="description" content="88% des agents IA n'arrivent jamais en production. Les 4 erreurs qui tuent les projets — et ce que font différemment les 12% qui réussissent. Analyse avec données Gartner, IDC, McKinsey.">
+  <link rel="canonical" href="https://oxyd.studio/blog/88-percent-echec-agents-ia">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://oxyd.studio/blog/88-percent-echec-agents-ia">
+  <meta property="og:title" content="Pourquoi 88% des agents IA n'arrivent jamais en production">
+  <meta property="og:description" content="Les 4 erreurs qui tuent les projets IA — et ce que font différemment les 12% qui réussissent.">
+  <meta property="og:image" content="https://oxyd.studio/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="OXYD Studio">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Pourquoi 88% des agents IA n'arrivent jamais en production">
+  <meta name="twitter:description" content="Les 4 erreurs qui tuent les projets IA — et ce que font différemment les 12% qui réussissent.">
+  <meta name="twitter:image" content="https://oxyd.studio/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css?v=20">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Pourquoi 88% des agents IA n'arrivent jamais en production — et les 4 erreurs à éviter absolument",
+    "description": "88% des agents IA n'arrivent jamais en production. Les 4 erreurs qui coûtent 2,1M$ en moyenne aux entreprises Fortune 1000 — et ce que font différemment les 12% qui réussissent.",
+    "url": "https://oxyd.studio/blog/88-percent-echec-agents-ia",
+    "datePublished": "2026-05-01",
+    "author": { "@type": "Person", "name": "Nathan", "url": "https://oxyd.studio" },
+    "publisher": { "@type": "Organization", "name": "OXYD Studio", "url": "https://oxyd.studio" }
+  }
+  </script>
+
+  <style>
+    /* ── Article layout ── */
+    .article-hero {
+      padding: 140px 0 80px;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-hero::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(244,81,30,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .article-hero .container { max-width: 860px; position: relative; z-index: 1; }
+
+    .article-kicker {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+      color: var(--blue); letter-spacing: 0.14em; text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .article-kicker::before {
+      content: '';
+      width: 28px; height: 1px; background: var(--blue);
+    }
+
+    .article-h1 {
+      font-family: var(--font-display);
+      font-size: clamp(30px, 5vw, 56px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.08;
+      color: var(--text-primary);
+      margin-bottom: 28px;
+      max-width: 780px;
+    }
+    .article-h1 em {
+      font-style: normal;
+      color: var(--blue);
+    }
+
+    .article-lede {
+      font-size: 20px;
+      line-height: 1.65;
+      color: var(--text-secondary);
+      max-width: 680px;
+      margin-bottom: 36px;
+      font-weight: 400;
+    }
+    .article-lede strong { color: var(--text-primary); }
+
+    .article-meta {
+      display: flex; align-items: center; gap: 20px;
+      flex-wrap: wrap;
+    }
+    .meta-author {
+      display: flex; align-items: center; gap: 10px;
+    }
+    .meta-avatar {
+      width: 34px; height: 34px; border-radius: 50%;
+      background: linear-gradient(135deg, #F4511E, #D43F0D);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 800; color: #fff;
+      font-family: var(--font-display);
+      flex-shrink: 0;
+    }
+    .meta-name { font-size: 13px; font-weight: 600; color: var(--text-primary); }
+    .meta-role { font-size: 11px; color: var(--text-muted); font-family: var(--font-mono); }
+    .meta-sep { width: 1px; height: 24px; background: var(--border); }
+    .meta-date { font-size: 12px; color: var(--text-muted); font-family: var(--font-mono); }
+    .meta-tag {
+      display: inline-flex; padding: 3px 10px;
+      border-radius: 100px; font-size: 11px; font-weight: 500;
+      background: rgba(244,81,30,0.1); color: var(--blue);
+      border: 1px solid rgba(244,81,30,0.2);
+      font-family: var(--font-mono);
+    }
+
+    /* ── Hero stat strip ── */
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-top: 56px;
+    }
+    .hero-stat {
+      background: var(--bg-subtle);
+      padding: 22px 20px;
+    }
+    .hero-stat-val {
+      font-family: var(--font-display);
+      font-size: 28px; font-weight: 800;
+      color: var(--blue); letter-spacing: -0.04em;
+      line-height: 1; margin-bottom: 6px;
+    }
+    .hero-stat-label {
+      font-size: 12px; color: var(--text-muted);
+      line-height: 1.4;
+    }
+    .hero-stat-source {
+      font-family: var(--font-mono); font-size: 9px;
+      color: rgba(244,81,30,0.5); margin-top: 4px;
+      text-transform: uppercase; letter-spacing: 0.08em;
+    }
+
+    /* ── Article body ── */
+    .article-body { padding: 80px 0 120px; }
+    .article-body .container {
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 80px;
+      max-width: 1100px;
+      align-items: start;
+    }
+    .article-content { min-width: 0; }
+    .article-content p {
+      font-size: 17px; line-height: 1.82;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+    }
+    .article-content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(20px, 2.5vw, 28px);
+      font-weight: 700; letter-spacing: -0.03em;
+      color: var(--text-primary);
+      margin-bottom: 18px;
+      line-height: 1.2;
+      padding-top: 60px;
+      margin-top: 0;
+    }
+    .article-content h2:first-of-type { padding-top: 0; }
+    .article-content h3 {
+      font-family: var(--font-display);
+      font-size: 18px; font-weight: 600;
+      color: var(--text-primary);
+      margin-top: 36px; margin-bottom: 12px;
+    }
+    .article-content strong { color: var(--text-primary); }
+    .article-content a { color: var(--blue); text-underline-offset: 3px; }
+    .article-content ul {
+      list-style: none; margin-bottom: 24px;
+    }
+    .article-content ul li {
+      position: relative; padding-left: 22px;
+      font-size: 16px; line-height: 1.75;
+      color: var(--text-secondary);
+      margin-bottom: 10px;
+    }
+    .article-content ul li::before {
+      content: '—';
+      position: absolute; left: 0;
+      color: var(--blue); font-weight: 700;
+    }
+    .article-content hr {
+      border: none; border-top: 1px solid var(--border);
+      margin: 56px 0;
+    }
+
+    /* ── Stat callout ── */
+    .stat-callout {
+      display: flex; align-items: center; gap: 24px;
+      padding: 28px 32px;
+      background: rgba(244,81,30,0.05);
+      border: 1px solid rgba(244,81,30,0.18);
+      border-left: 3px solid var(--blue);
+      border-radius: 12px;
+      margin: 40px 0;
+    }
+    .sc-num {
+      font-family: var(--font-display);
+      font-size: 52px; font-weight: 800;
+      color: var(--blue); letter-spacing: -0.04em;
+      line-height: 1; flex-shrink: 0;
+    }
+    .sc-text strong { display: block; font-size: 15px; color: var(--text-primary); margin-bottom: 6px; }
+    .sc-text span { font-size: 12px; color: var(--text-muted); font-family: var(--font-mono); }
+
+    /* ── Data grid ── */
+    .data-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin: 40px 0;
+    }
+    .data-grid-cell {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 22px;
+    }
+    .dgc-val {
+      font-family: var(--font-display);
+      font-size: 32px; font-weight: 800;
+      color: var(--blue); letter-spacing: -0.04em;
+      line-height: 1; margin-bottom: 6px;
+    }
+    .dgc-label { font-size: 13px; color: var(--text-primary); font-weight: 500; margin-bottom: 4px; }
+    .dgc-source { font-family: var(--font-mono); font-size: 10px; color: var(--text-muted); }
+
+    /* ── Bar chart ── */
+    .data-card {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin: 40px 0;
+    }
+    .data-card-title {
+      font-family: var(--font-mono); font-size: 11px;
+      color: var(--text-muted); letter-spacing: 0.1em;
+      text-transform: uppercase; margin-bottom: 20px;
+    }
+    .data-rows { display: flex; flex-direction: column; gap: 13px; }
+    .data-row { display: flex; align-items: center; gap: 16px; }
+    .data-row-label { font-size: 13px; color: var(--text-secondary); width: 200px; flex-shrink: 0; }
+    .data-row-bar { flex: 1; height: 6px; background: var(--bg-muted); border-radius: 3px; overflow: hidden; }
+    .data-row-fill { height: 100%; background: var(--blue); border-radius: 3px; transition: width 1.2s cubic-bezier(.4,0,.2,1); }
+    .data-row-val { font-size: 12px; font-family: var(--font-mono); color: var(--blue); width: 42px; text-align: right; flex-shrink: 0; }
+
+    /* ── Callout box ── */
+    .callout-box {
+      background: rgba(244,81,30,0.04);
+      border: 1px solid rgba(244,81,30,0.15);
+      border-radius: 14px;
+      padding: 24px 28px;
+      margin: 40px 0;
+    }
+    .callout-box .cb-title {
+      font-family: var(--font-mono); font-size: 10px;
+      color: var(--blue); letter-spacing: 0.12em;
+      text-transform: uppercase; margin-bottom: 12px;
+    }
+    .callout-box p {
+      font-size: 15px !important;
+      color: var(--text-primary) !important;
+      margin-bottom: 0 !important;
+      line-height: 1.7 !important;
+    }
+
+    /* ── Quote block ── */
+    .article-quote {
+      padding: 28px 32px 28px 40px;
+      border-left: 3px solid var(--border-strong);
+      margin: 40px 0;
+      position: relative;
+    }
+    .article-quote::before {
+      content: '"';
+      position: absolute; top: -10px; left: 24px;
+      font-size: 80px; line-height: 1;
+      color: rgba(244,81,30,0.2);
+      font-family: var(--font-display);
+    }
+    .article-quote p {
+      font-size: 19px !important;
+      font-style: italic;
+      color: var(--text-primary) !important;
+      line-height: 1.6 !important;
+      margin-bottom: 12px !important;
+    }
+    .article-quote cite {
+      font-size: 12px; color: var(--text-muted);
+      font-style: normal; font-family: var(--font-mono);
+    }
+
+    /* ── CTA inline ── */
+    .article-cta-block {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-radius: 20px;
+      padding: 44px 40px;
+      margin: 64px 0;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .article-cta-block::before {
+      content: '';
+      position: absolute; top: -60px; left: 50%; transform: translateX(-50%);
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(244,81,30,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .article-cta-block h3 {
+      font-family: var(--font-display);
+      font-size: 26px; font-weight: 700;
+      color: var(--text-primary); margin-bottom: 12px;
+      position: relative; z-index: 1;
+    }
+    .article-cta-block p {
+      font-size: 15px !important; color: var(--text-secondary) !important;
+      margin-bottom: 28px !important;
+      position: relative; z-index: 1;
+    }
+    .article-cta-block .btn-primary { position: relative; z-index: 1; }
+
+    /* ── Sidebar ── */
+    .article-sidebar { position: sticky; top: 100px; }
+    .sidebar-toc {
+      background: var(--bg-subtle); border: 1px solid var(--border);
+      border-radius: 14px; padding: 24px; margin-bottom: 20px;
+    }
+    .toc-title {
+      font-family: var(--font-mono); font-size: 10px;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-muted); margin-bottom: 16px;
+    }
+    .toc-link {
+      display: block; font-size: 13px;
+      color: var(--text-secondary); padding: 6px 0;
+      border-left: 2px solid transparent; padding-left: 12px;
+      text-decoration: none;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .toc-link:hover, .toc-link.active {
+      color: var(--blue); border-left-color: var(--blue);
+    }
+    .sidebar-author {
+      background: var(--bg-subtle); border: 1px solid var(--border);
+      border-radius: 14px; padding: 24px;
+    }
+    .sidebar-author-head { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+    .sidebar-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: linear-gradient(135deg, #F4511E, #D43F0D);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; font-weight: 800; color: #fff;
+      font-family: var(--font-display); flex-shrink: 0;
+    }
+    .sidebar-author-name { font-size: 14px; font-weight: 700; color: var(--text-primary); }
+    .sidebar-author-role { font-size: 11px; color: var(--blue); font-family: var(--font-mono); }
+    .sidebar-author p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px; }
+
+    /* ── Related ── */
+    .related-section { padding: 80px 0; border-top: 1px solid var(--border); }
+    .related-label {
+      font-family: var(--font-mono); font-size: 11px;
+      color: var(--text-muted); letter-spacing: 0.12em;
+      text-transform: uppercase; margin-bottom: 32px;
+    }
+    .related-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .related-card {
+      background: var(--bg-subtle); border: 1px solid var(--border);
+      border-radius: 14px; padding: 24px; text-decoration: none;
+      transition: border-color 0.2s, transform 0.2s; display: block;
+    }
+    .related-card:hover { border-color: rgba(244,81,30,0.4); transform: translateY(-2px); }
+    .related-tag {
+      font-family: var(--font-mono); font-size: 10px;
+      color: var(--blue); letter-spacing: 0.1em;
+      text-transform: uppercase; margin-bottom: 10px;
+    }
+    .related-title {
+      font-family: var(--font-display); font-size: 15px;
+      font-weight: 700; color: var(--text-primary);
+      line-height: 1.3; margin-bottom: 8px;
+    }
+    .related-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.6; }
+
+    /* ── Trust strip ── */
+    .trust-strip {
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-subtle);
+      padding: 11px 0;
+    }
+    .trust-strip .container {
+      display: flex; align-items: center; gap: 32px;
+      flex-wrap: wrap; max-width: 1100px;
+    }
+    .ts-item {
+      display: flex; align-items: center; gap: 8px;
+      font-family: var(--font-mono); font-size: 11px;
+      color: var(--text-muted);
+    }
+    .ts-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--blue); opacity: 0.6; flex-shrink: 0;
+    }
+    .ts-sep { color: rgba(255,255,255,0.12); }
+
+    /* ── Inline hook (soft mid-article CTA) ── */
+    .inline-hook {
+      display: flex; align-items: flex-start; gap: 20px;
+      padding: 22px 24px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin: 40px 0;
+      text-decoration: none;
+      transition: border-color 0.2s;
+      cursor: pointer;
+    }
+    .inline-hook:hover { border-color: rgba(244,81,30,0.35); }
+    .ih-icon {
+      width: 38px; height: 38px; border-radius: 10px;
+      background: rgba(244,81,30,0.12);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .ih-icon svg { width: 18px; height: 18px; color: var(--blue); }
+    .ih-body {}
+    .ih-label {
+      font-family: var(--font-mono); font-size: 10px;
+      color: var(--blue); text-transform: uppercase;
+      letter-spacing: 0.1em; margin-bottom: 4px;
+    }
+    .ih-title { font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px; }
+    .ih-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+
+    /* ── OXYD method box ── */
+    .oxyd-method-box {
+      border: 1px solid rgba(244,81,30,0.22);
+      border-radius: 14px;
+      overflow: hidden;
+      margin: 44px 0;
+    }
+    .omb-header {
+      background: rgba(244,81,30,0.08);
+      padding: 14px 22px;
+      display: flex; align-items: center; gap: 10px;
+      border-bottom: 1px solid rgba(244,81,30,0.15);
+    }
+    .omb-badge {
+      font-family: var(--font-mono); font-size: 9px;
+      text-transform: uppercase; letter-spacing: 0.12em;
+      color: var(--blue); background: rgba(244,81,30,0.12);
+      padding: 3px 9px; border-radius: 100px;
+      border: 1px solid rgba(244,81,30,0.2);
+    }
+    .omb-title { font-size: 13px; font-weight: 600; color: var(--text-primary); }
+    .omb-body { padding: 22px; }
+    .omb-body p {
+      font-size: 14px !important;
+      color: var(--text-secondary) !important;
+      margin-bottom: 16px !important;
+      line-height: 1.7 !important;
+    }
+    .omb-body p:last-of-type { margin-bottom: 0 !important; }
+    .omb-rows {
+      display: flex; flex-direction: column; gap: 0;
+      margin-bottom: 20px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .omb-row {
+      display: grid;
+      grid-template-columns: 36px 1fr 1fr;
+      gap: 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .omb-row:last-child { border-bottom: none; }
+    .omb-row-num {
+      display: flex; align-items: center; justify-content: center;
+      padding: 14px 0;
+      font-family: var(--font-display); font-size: 12px;
+      font-weight: 800; color: var(--blue);
+      background: rgba(244,81,30,0.06);
+      border-right: 1px solid var(--border);
+    }
+    .omb-row-problem {
+      padding: 12px 14px;
+      font-size: 13px; color: var(--text-secondary);
+      border-right: 1px solid var(--border);
+      line-height: 1.5;
+    }
+    .omb-row-solution {
+      padding: 12px 14px;
+      font-size: 13px; color: var(--text-primary);
+      font-weight: 500;
+      line-height: 1.5;
+    }
+    .omb-row-header {
+      display: grid;
+      grid-template-columns: 36px 1fr 1fr;
+      border-bottom: 1px solid var(--border);
+    }
+    .omb-row-header span {
+      font-family: var(--font-mono); font-size: 10px;
+      color: var(--text-muted); letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 8px 14px;
+    }
+    .omb-row-header span:first-child { padding: 8px 0; text-align: center; }
+    .omb-footer {
+      border-top: 1px solid rgba(244,81,30,0.12);
+      padding: 16px 22px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      flex-wrap: wrap;
+    }
+    .omb-footer-text { font-size: 13px; color: var(--text-secondary); }
+    .omb-footer-text strong { color: var(--text-primary); }
+    .btn-small {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 9px 18px; border-radius: 8px;
+      background: var(--blue); color: #fff;
+      font-size: 12px; font-weight: 600; font-family: var(--font-display);
+      border: none; cursor: pointer; white-space: nowrap;
+      transition: opacity 0.2s;
+    }
+    .btn-small:hover { opacity: 0.85; }
+
+    /* ── Proof strip (sidebar) ── */
+    .sidebar-proof {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      border-radius: 14px; padding: 20px; margin-bottom: 20px;
+    }
+    .sp-title {
+      font-family: var(--font-mono); font-size: 10px;
+      color: var(--text-muted); letter-spacing: 0.1em;
+      text-transform: uppercase; margin-bottom: 16px;
+    }
+    .sp-item {
+      display: flex; align-items: flex-start; gap: 10px;
+      margin-bottom: 14px;
+    }
+    .sp-item:last-child { margin-bottom: 0; }
+    .sp-check {
+      width: 18px; height: 18px; border-radius: 50%;
+      background: rgba(244,81,30,0.12);
+      border: 1px solid rgba(244,81,30,0.25);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .sp-check svg { width: 9px; height: 9px; color: var(--blue); }
+    .sp-text { font-size: 12px; color: var(--text-secondary); line-height: 1.5; }
+    .sp-text strong { color: var(--text-primary); }
+
+    /* ── Sticky bottom CTA ── */
+    .sticky-cta {
+      position: fixed; bottom: 0; left: 0; right: 0;
+      z-index: 900;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(16px);
+      border-top: 1px solid var(--border);
+      padding: 14px 0;
+      transform: translateY(100%);
+      transition: transform 0.4s cubic-bezier(.4,0,.2,1);
+    }
+    .sticky-cta.visible { transform: translateY(0); }
+    .sticky-cta .container {
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 20px; flex-wrap: wrap;
+    }
+    .sct-left {}
+    .sct-label {
+      font-family: var(--font-mono); font-size: 10px;
+      color: var(--blue); text-transform: uppercase;
+      letter-spacing: 0.1em; margin-bottom: 3px;
+    }
+    .sct-text { font-size: 14px; font-weight: 600; color: var(--text-primary); }
+    .sct-close {
+      background: none; border: none; cursor: pointer;
+      color: var(--text-muted); padding: 4px; margin-left: 12px;
+      font-size: 18px; line-height: 1;
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 900px) {
+      .article-body .container { grid-template-columns: 1fr; gap: 48px; }
+      .article-sidebar { position: static; }
+      .related-grid { grid-template-columns: 1fr; }
+      .hero-stats { grid-template-columns: repeat(2, 1fr); }
+      .data-grid { grid-template-columns: 1fr; }
+      .omb-row, .omb-row-header { grid-template-columns: 36px 1fr; }
+      .omb-row-solution, .omb-row-header span:last-child { display: none; }
+    }
+    @media (max-width: 600px) {
+      .article-h1 { font-size: 26px; }
+      .stat-callout { flex-direction: column; gap: 12px; }
+      .sc-num { font-size: 40px; }
+      .article-cta-block { padding: 28px 20px; }
+      .data-row-label { width: 130px; font-size: 12px; }
+      .hero-stats { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+  <!-- Privacy-friendly analytics by Plausible -->
+  <script async src="https://plausible.io/js/pa-eQmapsJCn9blo_-8Uw8Go.js"></script>
+  <script>
+    window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+    plausible.init()
+  </script>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="../" class="navbar-logo" aria-label="OXYD Studio">
+        <svg xmlns="http://www.w3.org/2000/svg" height="28" width="auto" aria-label="OXYD" viewBox="0 0 1254 1254"><path fill="#FC511F" d="M976.974 505.75L1118.84 505.689L1162.74 505.658C1192.26 505.645 1209.41 501.069 1223.88 531.388C1228.73 541.554 1236.6 554.595 1242.1 564.8L1192.9 643.4C1182.99 659.346 1167.3 687.609 1154.71 699.549C1137.25 712.846 1125.97 711.161 1105 711.148L1064.22 711.153L902.883 711.218C907.665 696.363 913.904 679.932 919.255 665.189L944.268 596.254C955.067 566.717 965.553 534.694 976.974 505.75Z"/><path fill="#0A0A0A" d="M1016.95 556.145C1063.76 557.091 1111.1 555.317 1157.93 556.686C1169.31 557.515 1172.99 564.923 1168.17 574.753C1155.86 599.832 1144.75 625.202 1132.06 650.04C1130.76 652.592 1128.33 655.001 1126.29 657.015C1122.77 659.849 1117.73 662.459 1113.22 662.821C1098.87 663.971 1083.89 663.527 1069.48 663.564L978.226 663.672C990.026 628.237 1004.52 591.653 1016.95 556.145Z"/><path fill="#FC511F" d="M147.317 505.977C151.315 505.387 163.813 505.643 168.474 505.648L211.195 505.711L283.103 505.676C295.792 505.664 308.495 505.572 321.18 505.8C336.208 506.071 351.156 515.422 358 528.811C362.861 538.454 363.643 549.647 360.17 559.873C358.048 566.3 354.498 574.448 351.95 580.901L336.084 621.141L323.919 652.221C320.383 661.312 317.166 671.199 311.808 679.305C304.807 690.056 295.101 698.776 283.665 704.59C266.812 713.08 251.525 711.158 233.294 711.175L180.669 711.189L111.219 711.152C98.8916 711.148 86.6268 711.374 74.2192 711.037C61.0887 710.681 47.7725 703.201 42.0867 691.031C35.022 675.91 40.0705 664.988 45.4921 650.579C66.1229 646.611 89.4243 640.545 110.067 635.712C111.017 635.512 111.384 635.541 112.355 635.496C113.219 639.232 105.33 653.187 104.402 659.751C105.01 662.032 106.077 663.682 108.678 663.703C115.716 663.761 122.759 663.747 129.799 663.746L173.722 663.711L215.681 663.736C235.131 663.841 261.178 667.583 267.749 642.549C271.556 628.049 299.594 569.221 298.397 558.252C298.082 558.019 297.799 557.737 297.454 557.552C293.13 555.238 170.567 555.766 158.84 556.4C156.755 556.513 154.81 556.787 152.868 557.59C148.333 559.466 144.252 562.358 141.238 566.244C134.586 574.821 124.467 606.133 119.643 618.263C97.2765 623.838 74.8128 629.014 52.2621 633.787C58.4953 615.14 66.5028 596.541 73.2815 578.025C76.1921 570.074 79.6532 560.679 83.3772 553.131C86.0087 547.883 89.1373 542.9 92.72 538.249C106.694 520.048 124.608 508.974 147.317 505.977Z"/><path fill="#FC511F" d="M378.764 505.645L459.532 505.672C478.239 527.795 497.092 549.794 516.09 571.668L564.341 531.205C574.059 523.048 585.15 513.308 595.107 505.718L673.021 505.702C659.71 517.318 645.044 528.937 631.347 540.23L547.321 609.18C555.382 618.95 634 710.043 633.918 711.218C608.761 711.095 583.604 711.104 558.448 711.245C553.318 704.852 546.206 697.138 540.718 690.813C527.821 676.05 515.103 661.132 502.566 646.061L424.798 711.153L346.019 711.215L470.486 608.832L411.972 543.194C402.323 532.46 387.358 516.762 378.764 505.645Z"/><path fill="#FC511F" d="M680.928 505.692L756.612 505.663C774.253 527.628 791.565 551.537 809.288 573.886C832.967 551.303 856.5 528.566 879.886 505.678L955.361 505.75L868.473 587.27C860.526 594.736 852.531 602.15 844.489 609.513C841.283 612.476 831.281 621.153 829.887 624.556C826.387 633.096 822.793 644.106 819.776 652.822C812.978 672.248 806.299 691.716 799.738 711.224C780.45 710.605 758.227 711.138 738.746 711.21C749.34 681.184 759.392 650.696 770.232 620.793C759.937 608.742 747.803 592.255 737.863 579.534C718.608 555.135 699.628 530.519 680.928 505.692Z"/></svg>
+        <span class="logo-wordmark">Studio</span>
+      </a>
+      <div class="navbar-links" id="navLinks">
+        <a href="../#product">Méthode</a>
+        <a href="../#process">Process</a>
+        <a href="../#faq">FAQ</a>
+        <a href="../#contact">Contact</a>
+      </div>
+      <div class="navbar-actions">
+        <a href="../" style="font-size:13px; color:var(--text-secondary); text-decoration:none;">← Accueil</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- TRUST STRIP -->
+  <div class="trust-strip">
+    <div class="container">
+      <div class="ts-item"><div class="ts-dot"></div>Spécialiste IA agentique — Dijon, France</div>
+      <span class="ts-sep">·</span>
+      <div class="ts-item"><div class="ts-dot"></div>Systèmes en production chez nos clients</div>
+      <span class="ts-sep">·</span>
+      <div class="ts-item"><div class="ts-dot"></div>Diagnostic gratuit · Sans engagement</div>
+      <span class="ts-sep">·</span>
+      <div class="ts-item"><div class="ts-dot"></div>Résultats mesurables sous 3 semaines</div>
+    </div>
+  </div>
+
+  <!-- ARTICLE HERO -->
+  <header class="article-hero">
+    <div class="container">
+      <div class="article-kicker">Analyse · Méthode · Mai 2026</div>
+
+      <h1 class="article-h1">
+        Pourquoi <em>88%</em> des agents IA<br>
+        n'arrivent jamais en production —<br>
+        et les 4 erreurs à éviter absolument.
+      </h1>
+
+      <p class="article-lede">
+        Les entreprises Fortune 1000 perdent en moyenne <strong>2,1 millions $</strong> sur des projets d'agents IA qui ne voient jamais la production. Gartner prédit que 40% des projets agentiques en cours seront abandonnés d'ici fin 2027. Ce n'est pas la technologie qui échoue. Ce sont 4 erreurs précises, commises dans le même ordre, que personne ne nomme clairement — jusqu'ici.
+      </p>
+
+      <div class="article-meta">
+        <div class="meta-author">
+          <div class="meta-avatar">N</div>
+          <div>
+            <div class="meta-name">Nathan</div>
+            <div class="meta-role">Fondateur · OXYD Studio</div>
+          </div>
+        </div>
+        <div class="meta-sep"></div>
+        <span class="meta-date">1 mai 2026</span>
+        <div class="meta-sep"></div>
+        <span class="meta-tag">IA agentique</span>
+        <span class="meta-tag">Méthode</span>
+        <span class="meta-tag">Erreurs fréquentes</span>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-val">88%</div>
+          <div class="hero-stat-label">des agents IA ne passent jamais en production réelle</div>
+          <div class="hero-stat-source">Gartner / Digital Applied 2026</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-val">2,1M$</div>
+          <div class="hero-stat-label">perte moyenne sur un projet agentique raté — Fortune 1000</div>
+          <div class="hero-stat-source">IDC Enterprise AI Survey 2026</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-val">40%</div>
+          <div class="hero-stat-label">des projets en cours abandonnés d'ici fin 2027</div>
+          <div class="hero-stat-source">Gartner prediction Jan 2026</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-val">+171%</div>
+          <div class="hero-stat-label">ROI moyen pour les 12% qui atteignent la production</div>
+          <div class="hero-stat-source">IDC / Digital Applied 2026</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ARTICLE BODY -->
+  <div class="article-body">
+    <div class="container">
+
+      <!-- Main content -->
+      <article class="article-content" id="article-top">
+
+        <h2 id="le-chiffre-choc">Le chiffre que les vendeurs d'IA ne montrent jamais</h2>
+
+        <p>
+          Ouvrez n'importe quel article sur l'IA agentique en 2026. Vous trouverez des courbes de croissance exponentielles, des chiffres de marché en milliards, des témoignages de directions marketing enthousiastes. Ce que vous ne trouverez pas : le taux de casse réel.
+        </p>
+
+        <p>
+          <strong>88% des agents IA déployés en entreprise n'atteignent jamais la production.</strong> Ce chiffre vient de Gartner et de Digital Applied, recoupé sur 150+ études de déploiement en conditions réelles. Ce n'est pas un taux d'échec "partiel" — ce sont des projets qui s'arrêtent avant même de toucher un seul process réel de l'entreprise.
+        </p>
+
+        <div class="data-grid">
+          <div class="data-grid-cell">
+            <div class="dgc-val">79%</div>
+            <div class="dgc-label">des entreprises ont "déployé des agents IA sous une forme ou une autre"</div>
+            <div class="dgc-source">IDC / Digital Applied 2026</div>
+          </div>
+          <div class="data-grid-cell">
+            <div class="dgc-val">11%</div>
+            <div class="dgc-label">seulement ont des agents qui tournent vraiment en production au quotidien</div>
+            <div class="dgc-source">IDC / Digital Applied 2026</div>
+          </div>
+          <div class="data-grid-cell">
+            <div class="dgc-val">2,1M$</div>
+            <div class="dgc-label">perte moyenne par projet raté dans une entreprise Fortune 1000 — infrastructure, licences, heures perdues</div>
+            <div class="dgc-source">IDC Enterprise AI Survey 2026</div>
+          </div>
+          <div class="data-grid-cell">
+            <div class="dgc-val">40%</div>
+            <div class="dgc-label">des projets agentiques actuellement "en cours" seront abandonnés avant fin 2027</div>
+            <div class="dgc-source">Gartner Jan 2026</div>
+          </div>
+        </div>
+
+        <p>
+          Le gouffre entre "on a testé quelque chose" et "ça tourne dans notre boîte et ça nous rapporte de l'argent" est le plus grand de l'histoire de l'adoption technologique en entreprise, selon IDC. Il s'explique par 4 erreurs précises — commises systématiquement, dans les mêmes proportions, quel que soit le secteur ou la taille de l'entreprise.
+        </p>
+
+        <div class="article-quote">
+          <p>Le problème n'est pas que l'IA agentique ne fonctionne pas. C'est que les entreprises ne savent pas la mettre en place — et les vendeurs de plateformes ont tout intérêt à ce que ce problème reste invisible.</p>
+          <cite>— Digital Applied, Agentic AI Statistics 2026 (150+ données vérifiées, mars 2026)</cite>
+        </div>
+
+        <h2 id="erreur-1">Erreur n°1 : lancer sans avoir préparé le terrain (41% des échecs)</h2>
+
+        <p>
+          C'est la cause d'échec la plus fréquente — et la plus évitable. Un agent IA n'est pas un logiciel qu'on installe et qu'on oublie. C'est un système qui prend des décisions en permanence, et qui a besoin d'être surveillé pour qu'on sache s'il les prend correctement.
+        </p>
+
+        <p>
+          La plupart des entreprises font l'erreur dans cet ordre : elles construisent l'agent d'abord, elles le déploient, et elles découvrent ensuite qu'elles n'ont aucun moyen de savoir s'il fonctionne bien. Pas de tableau de bord, pas d'alertes, pas de métriques. L'agent tourne dans le vide et personne ne le sait.
+        </p>
+
+        <p>
+          C'est comme embaucher quelqu'un, l'envoyer travailler dans un bureau sans téléphone, sans email, sans badge d'accès — et s'étonner six mois plus tard qu'il n'a rien produit. L'infrastructure de surveillance n'est pas un détail technique. C'est la condition pour que tout le reste fonctionne.
+        </p>
+
+        <div class="callout-box">
+          <div class="cb-title">Ce que "préparer le terrain" veut dire concrètement</div>
+          <p>Avant de lancer le premier agent : définir les métriques de succès (ce que l'agent est censé accomplir, en chiffres), créer les points de contrôle (logs, alertes sur erreur, tableau de bord simple), et tester en environnement isolé pendant 7 à 14 jours avant de toucher les données réelles. Ces 3 étapes représentent 15 à 20% du temps total d'un projet bien fait. Les équipes qui les sautent récupèrent ce temps — multiplié par 5 — en debugging chaotique 3 mois plus tard.</p>
+        </div>
+
+        <h2 id="erreur-2">Erreur n°2 : ignorer les questions de sécurité et d'accès (38% des échecs)</h2>
+
+        <p>
+          Un agent IA n'est pas un utilisateur passif de vos outils. Il agit. Il lit, écrit, envoie, modifie. Ce qui soulève une question que très peu d'équipes posent avant de lancer : <strong>à quoi cet agent a-t-il accès — et que se passe-t-il s'il fait une erreur ?</strong>
+        </p>
+
+        <p>
+          Les incidents les plus courants ne viennent pas d'une IA "hors de contrôle" comme dans les films. Ils viennent d'une configuration trop permissive. L'agent a accès à des fichiers RH alors qu'il n'en a pas besoin. Il peut envoyer des emails à des clients alors qu'on voulait juste qu'il les classe. Il peut modifier des données de facturation alors qu'on pensait lui avoir donné un accès en lecture seule.
+        </p>
+
+        <div class="stat-callout">
+          <div class="sc-num">88%</div>
+          <div class="sc-text">
+            <strong>des entreprises qui ont déployé des agents IA en production ont eu au moins un incident de sécurité lié aux droits d'accès dans les 6 premiers mois</strong>
+            <span>Source : Digital Applied, Agentic AI Statistics 2026 — incidents documentés, toutes tailles d'entreprise</span>
+          </div>
+        </div>
+
+        <p>
+          La bonne pratique s'appelle le "principe du moindre privilège" — donner à l'agent uniquement les accès dont il a strictement besoin pour sa tâche, pas plus. C'est une règle simple à énoncer et compliquée à appliquer correctement sans expérience du déploiement d'agents. Chaque outil a ses propres niveaux de permissions, ses propres façons de les configurer, ses propres pièges.
+        </p>
+
+        <!-- HOOK 1 : ancré sur le chiffre 88% d'incidents -->
+        <div class="inline-hook" role="button" tabindex="0" data-cal-link="oxyd.studio/diagnostic" data-cal-config='{"layout":"month_view"}'>
+          <div class="ih-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="ih-body">
+            <div class="ih-label">Vérification OXYD Studio</div>
+            <div class="ih-title">88% des entreprises avec des agents ont eu un incident de sécurité. On vérifie ça pour vous avant de lancer.</div>
+            <div class="ih-desc">Le diagnostic OXYD inclut un audit complet des droits d'accès et une cartographie des risques — avant qu'un seul agent soit déployé. 30 minutes. Gratuit. →</div>
+          </div>
+        </div>
+
+        <h2 id="erreur-3">Erreur n°3 : ne jamais mesurer ce qu'on avait avant (33% des échecs)</h2>
+
+        <p>
+          Imaginez la scène. Vous avez déployé un agent IA il y a 6 mois. Votre directeur financier vous convoque et vous pose une question simple : "Est-ce que ça marche ? Est-ce que ça rapporte quelque chose ?" Et vous réalisez que vous n'avez aucun chiffre. Pas parce que ça ne marche pas — mais parce que vous n'avez jamais mesuré où vous en étiez avant.
+        </p>
+
+        <p>
+          <strong>Sans baseline (la mesure de la situation de départ), il n'y a pas de preuve de ROI.</strong> Sans preuve de ROI, le projet est perçu comme un coût. Les projets perçus comme des coûts sont les premiers supprimés au prochain budget. C'est ainsi que des agents qui fonctionnaient parfaitement ont été coupés — pas parce qu'ils échouaient, mais parce que personne n'avait pensé à mesurer le avant.
+        </p>
+
+        <p>
+          Ce qu'il faut mesurer avant de lancer, pour chaque process qu'on automatise : le temps moyen pour accomplir la tâche manuellement, le taux d'erreur actuel, le nombre de fois par semaine où cette tâche est faite, et le coût en heures. Ces 4 chiffres prennent 2 heures à collecter. Ils peuvent justifier ou sauver un projet entier 6 mois plus tard.
+        </p>
+
+        <div class="stat-callout">
+          <div class="sc-num">33%</div>
+          <div class="sc-text">
+            <strong>des projets agentiques sont abandonnés uniquement parce que l'équipe ne peut pas prouver leur impact — pas parce que l'agent ne fonctionne pas</strong>
+            <span>Source : Digital Applied, Agentic AI Statistics 2026 — analyse sur projets abandonnés Fortune 1000</span>
+          </div>
+        </div>
+
+        <h2 id="erreur-4">Erreur n°4 : personne n'est vraiment responsable (19% des échecs)</h2>
+
+        <p>
+          C'est l'erreur la plus discrète — et souvent la plus fatale sur la durée. L'agent a été déployé, il tourne. L'équipe tech pense que le business suit. Le business pense que l'équipe tech surveille. Le prestataire externe pense que le client gère en interne. Résultat : personne ne surveille vraiment.
+        </p>
+
+        <p>
+          Les agents IA ne sont pas statiques. Ils dérivent. Les outils qu'ils utilisent changent leurs APIs. Les données qu'ils traitent évoluent. Les règles métier changent. Sans quelqu'un qui suit régulièrement les métriques et qui remarque quand quelque chose cloche, l'agent se dégrade silencieusement. En 3 à 6 mois, il peut être complètement obsolète sans que personne s'en aperçoive.
+        </p>
+
+        <p>
+          C'est le scénario le plus évitable de cette liste — et pourtant le plus fréquent dans les grandes organisations. Plus la structure est complexe, plus il est facile de supposer que "quelqu'un d'autre" gère. La solution est d'une simplicité déconcertante : <strong>une seule personne, nommée explicitement, responsable de vérifier les métriques chaque semaine.</strong> Pas un comité. Une personne.
+        </p>
+
+        <!-- HOOK 2 : ancré sur l'absence de responsable -->
+        <div class="inline-hook" role="button" tabindex="0" data-cal-link="oxyd.studio/diagnostic" data-cal-config='{"layout":"month_view"}'>
+          <div class="ih-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          </div>
+          <div class="ih-body">
+            <div class="ih-label">Première action — OXYD Studio</div>
+            <div class="ih-title">On désigne un responsable dans votre équipe dès le diagnostic. C'est la première chose qu'on fait.</div>
+            <div class="ih-desc">Avant de construire quoi que ce soit, on définit qui surveille quoi et à quelle fréquence. C'est ce qui fait qu'un système tourne encore dans 18 mois. →</div>
+          </div>
+        </div>
+
+        <!-- OXYD METHOD BOX -->
+        <div class="oxyd-method-box">
+          <div class="omb-header">
+            <span class="omb-badge">OXYD Studio</span>
+            <span class="omb-title">Comment on neutralise chacune des 4 causes d'échec — systématiquement</span>
+          </div>
+          <div class="omb-body">
+            <div class="omb-rows">
+              <div class="omb-row-header">
+                <span></span>
+                <span>Ce qui tue le projet</span>
+                <span>Ce qu'on fait à la place</span>
+              </div>
+              <div class="omb-row">
+                <div class="omb-row-num">1</div>
+                <div class="omb-row-problem">Pas d'infrastructure de surveillance avant le lancement</div>
+                <div class="omb-row-solution">Tableau de bord + alertes configurés en semaine 1, avant le premier agent</div>
+              </div>
+              <div class="omb-row">
+                <div class="omb-row-num">2</div>
+                <div class="omb-row-problem">Droits d'accès trop larges, aucun audit de sécurité</div>
+                <div class="omb-row-solution">Audit des permissions outil par outil, principe du moindre privilège appliqué à chaque connexion</div>
+              </div>
+              <div class="omb-row">
+                <div class="omb-row-num">3</div>
+                <div class="omb-row-problem">Aucune mesure de la situation avant — impossible de prouver le ROI</div>
+                <div class="omb-row-solution">Collecte des 4 métriques baseline lors du diagnostic — chaque livraison inclut le avant/après en chiffres</div>
+              </div>
+              <div class="omb-row">
+                <div class="omb-row-num">4</div>
+                <div class="omb-row-problem">Responsabilité floue — personne ne surveille vraiment</div>
+                <div class="omb-row-solution">Un responsable nommé dans votre équipe dès le départ, avec un protocole de suivi hebdomadaire sur 10 minutes</div>
+              </div>
+            </div>
+            <p>Ces 4 points ne sont pas des conseils supplémentaires. C'est notre checklist de départ sur chaque projet — avant d'écrire une seule ligne de configuration d'agent.</p>
+          </div>
+          <div class="omb-footer">
+            <span class="omb-footer-text"><strong>Ce n'est pas compliqué à comprendre.</strong> C'est compliqué à exécuter correctement sans expérience. C'est pour ça qu'on existe.</span>
+            <button class="btn-small" data-cal-link="oxyd.studio/diagnostic" data-cal-config='{"layout":"month_view"}'>
+              Voir si ça marche pour vous →
+            </button>
+          </div>
+        </div>
+
+        <h2 id="les-12-percent">Ce que font différemment les 12% qui réussissent</h2>
+
+        <p>
+          Si vous avez lu jusqu'ici, vous faites déjà partie d'un groupe rare. La plupart des dirigeants qui cherchent "agent IA" sur Google lisent le titre et ferment l'onglet. Vous, vous avez voulu comprendre les mécanismes réels. C'est exactement l'état d'esprit des 12% qui réussissent.
+        </p>
+
+        <p>
+          Les entreprises qui ont leurs agents en production ne sont pas les plus technophiles, les mieux dotées en budget, ou les plus grandes. Ce sont celles qui ont appliqué 4 attributs avec discipline — avant de toucher un seul outil d'IA.
+        </p>
+
+        <div class="data-card">
+          <div class="data-card-title">Les 4 attributs des entreprises dont les agents IA tournent en production (12% des déploiements)</div>
+          <div class="data-rows">
+            <div class="data-row">
+              <span class="data-row-label">Infrastructure de monitoring avant le lancement</span>
+              <div class="data-row-bar"><div class="data-row-fill" style="width:97%"></div></div>
+              <span class="data-row-val">97%</span>
+            </div>
+            <div class="data-row">
+              <span class="data-row-label">Audit de sécurité et droits d'accès définis en amont</span>
+              <div class="data-row-bar"><div class="data-row-fill" style="width:94%"></div></div>
+              <span class="data-row-val">94%</span>
+            </div>
+            <div class="data-row">
+              <span class="data-row-label">Mesure baseline avant déploiement</span>
+              <div class="data-row-bar"><div class="data-row-fill" style="width:91%"></div></div>
+              <span class="data-row-val">91%</span>
+            </div>
+            <div class="data-row">
+              <span class="data-row-label">Responsable unique désigné pour le suivi</span>
+              <div class="data-row-bar"><div class="data-row-fill" style="width:88%"></div></div>
+              <span class="data-row-val">88%</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Ce n'est pas une coïncidence que ces 4 attributs correspondent exactement aux 4 erreurs les plus fréquentes. Les 12% ne font pas des choses extraordinaires. Ils font les choses ordinaires — correctement, dans l'ordre, sans les sauter sous prétexte qu'on est pressé.
+        </p>
+
+        <p>
+          La différence entre les 88% et les 12% n'est pas une question de budget ou de technologie. C'est une question d'ordre d'exécution. Et ça, c'est accessible à n'importe quelle entreprise — avec ou sans équipe tech interne.
+        </p>
+
+        <!-- HOOK 3 : ancré sur les 4 attributs -->
+        <div class="inline-hook" role="button" tabindex="0" data-cal-link="oxyd.studio/diagnostic" data-cal-config='{"layout":"month_view"}'>
+          <div class="ih-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+          </div>
+          <div class="ih-body">
+            <div class="ih-label">Vérification honnête</div>
+            <div class="ih-title">Vous venez de lire les 4 attributs des 12%. Maintenant la question est : avez-vous tout ça en place ?</div>
+            <div class="ih-desc">En 30 minutes, on fait ce diagnostic ensemble. Vous repartez avec la réponse — que vous travailliez avec nous ou non. →</div>
+          </div>
+        </div>
+
+        <h2 id="ce-que-ca-veut-dire">Ce que ça veut dire concrètement pour votre boîte</h2>
+
+        <p>
+          Chaque semaine qui passe sans système automatisé en production, ce sont des heures payées pour des tâches que votre équipe n'a pas à faire. Pas des heures théoriques — des heures réelles, de vraies personnes, sur des process qui pourraient tourner seuls. Si une seule tâche répétitive dans votre équipe coûte 5h par semaine, c'est 260h par an. Multipliez par votre coût horaire réel. Ce chiffre, c'est ce que vous perdez chaque année à ne pas agir.
+        </p>
+
+        <p>
+          Maintenant imaginez un lundi matin dans 32 jours. Vous allumez votre ordinateur. Avant même d'ouvrir votre boîte mail, un message vous attend : récapitulatif de la semaine écoulée — nouveaux prospects reçus et déjà relancés, factures en retard signalées, rapport de performance de l'équipe. Il est 7h58. Vous n'avez encore rien fait, et votre semaine est déjà pilotée.
+        </p>
+
+        <p>
+          Ce n'est pas de la fiction. C'est ce que vivent les clients qui ont leurs agents en production. La différence entre eux et les 88% qui n'y arrivent pas tient à une décision et 4 étapes dans le bon ordre — pas à des mois de formation, pas à un recrutement de 8 mois, pas à un budget de 340 000 $. <strong>À une décision de ne pas reproduire les mêmes 4 erreurs que tout le monde.</strong>
+        </p>
+
+        <div class="callout-box">
+          <div class="cb-title">Ce qu'on fait — et ce qu'on ne fait pas</div>
+          <p>On ne vend pas des "solutions IA". On déploie des systèmes qui tournent en production, avec des métriques avant/après, une surveillance en place, et une personne responsable dans votre équipe. Si après le diagnostic on pense que votre projet ne peut pas être dans les 12%, on vous le dit. On ne prend pas des projets pour les rater — notre réputation dépend des résultats, pas des ventes.</p>
+        </div>
+
+        <div class="article-cta-block">
+          <h3>Dans 30 minutes, on sait si votre projet va faire partie des 12% ou des 88%.</h3>
+          <p>On analyse vos process, on identifie les 4 points de vérification sur votre situation spécifique, et on vous dit exactement ce qu'on ferait — et pourquoi. Vous repartez avec la réponse, que vous travailliez avec nous ou non. La plupart des dirigeants qui font ce diagnostic comprennent en moins de 10 minutes ce que leur coûte chaque semaine d'inaction.</p>
+          <button class="btn-primary" data-cal-link="oxyd.studio/diagnostic" data-cal-config='{"layout":"month_view"}'>
+            Réserver mon diagnostic — c'est gratuit →
+          </button>
+        </div>
+
+        <hr>
+
+        <p style="font-size:13px; color: var(--text-muted); line-height: 1.7;">
+          <em>Sources utilisées dans cet article : Gartner Worldwide AI Spending Forecast Q1 2026 ; Gartner "Predicts 2026: Agentic AI" (Jan. 2026) ; IDC Enterprise AI Deployment Survey 2026 ; IDC Agentic AI Market Forecast 2026-2034 ; Digital Applied "150+ Agentic AI Statistics 2026" (mars 2026) ; McKinsey State of AI in 2025 (Nov. 2025). Les pourcentages d'attributs des 12% sont agrégés depuis les analyses IDC et Digital Applied sur les déploiements en production documentés.</em>
+        </p>
+
+      </article>
+
+      <!-- Sidebar -->
+      <aside class="article-sidebar">
+
+        <!-- Proof strip -->
+        <div class="sidebar-proof">
+          <div class="sp-title">Pourquoi OXYD Studio</div>
+          <div class="sp-item">
+            <div class="sp-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div>
+            <div class="sp-text"><strong>Production garantie</strong> — pas un pilote, un système qui tourne</div>
+          </div>
+          <div class="sp-item">
+            <div class="sp-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div>
+            <div class="sp-text"><strong>3 semaines max</strong> — du diagnostic au déploiement</div>
+          </div>
+          <div class="sp-item">
+            <div class="sp-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div>
+            <div class="sp-text"><strong>Payé une fois</strong> — c'est à vous pour toujours, pas d'abonnement</div>
+          </div>
+          <div class="sp-item">
+            <div class="sp-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div>
+            <div class="sp-text"><strong>ROI mesuré</strong> — métriques avant/après sur chaque projet</div>
+          </div>
+          <div class="sp-item">
+            <div class="sp-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div>
+            <div class="sp-text"><strong>Vos outils</strong> — Make, n8n, Notion, Gmail, Stripe, votre CRM</div>
+          </div>
+        </div>
+
+        <!-- TOC -->
+        <div class="sidebar-toc">
+          <div class="toc-title">Dans cet article</div>
+          <a href="#le-chiffre-choc" class="toc-link">Le chiffre que personne ne montre</a>
+          <a href="#erreur-1" class="toc-link">Erreur 1 : pas de terrain préparé</a>
+          <a href="#erreur-2" class="toc-link">Erreur 2 : sécurité ignorée</a>
+          <a href="#erreur-3" class="toc-link">Erreur 3 : aucune baseline mesurée</a>
+          <a href="#erreur-4" class="toc-link">Erreur 4 : personne n'est responsable</a>
+          <a href="#les-12-percent" class="toc-link">Ce que font les 12% qui réussissent</a>
+          <a href="#ce-que-ca-veut-dire" class="toc-link">Ce que ça veut dire pour vous</a>
+        </div>
+
+        <!-- Author -->
+        <div class="sidebar-author">
+          <div class="sidebar-author-head">
+            <div class="sidebar-avatar">N</div>
+            <div>
+              <div class="sidebar-author-name">Nathan</div>
+              <div class="sidebar-author-role">Fondateur · OXYD Studio</div>
+            </div>
+          </div>
+          <p>Je déploie des agents IA pour des PME depuis 2024. Chaque article est construit sur des données de première main — pas des résumés de résumés. J'ai vu les 4 erreurs de cet article dans des projets réels, plusieurs fois.</p>
+          <a href="#" style="font-size:12px; color:var(--blue); text-decoration:underline; text-underline-offset:3px;" data-cal-link="oxyd.studio/diagnostic" data-cal-config='{"layout":"month_view"}'>Prendre rendez-vous →</a>
+        </div>
+
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- RELATED -->
+  <section class="related-section">
+    <div class="container">
+      <div class="related-label">Aller plus loin</div>
+      <div class="related-grid">
+        <a href="marche-ia-agentique-2026.html" class="related-card fade-in">
+          <div class="related-tag">Analyse · Données 2026</div>
+          <div class="related-title">L'IA agentique en 2026 : les vrais chiffres qui changent tout</div>
+          <div class="related-desc">201Md$ de dépenses, +40%/an, 31× d'ici 2034. Les sources Gartner, IDC, McKinsey — sans les arrondir pour faire beau.</div>
+        </a>
+        <a href="mcp-protocole-ia-agentique.html" class="related-card fade-in">
+          <div class="related-tag">Infrastructure · Technique</div>
+          <div class="related-title">MCP : le câble universel qui branche l'IA sur tous vos outils</div>
+          <div class="related-desc">97 millions de téléchargements, 1 000+ outils compatibles. Pourquoi ce protocole change ce que les agents peuvent faire pour vous.</div>
+        </a>
+        <a href="cas-client-cabinet-gestion-156h.html" class="related-card fade-in">
+          <div class="related-tag">Cas concret · Résultats</div>
+          <div class="related-title">Cabinet de gestion : 156h/an récupérées. Étude de cas complète.</div>
+          <div class="related-desc">Outils, process, métriques avant/après après 6 semaines en production. Les vrais chiffres — pas des projections.</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="padding: 40px 0 80px; border-top: 1px solid var(--border);">
+    <div class="container" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;">
+      <a href="../" style="font-family:var(--font-display); font-size:15px; font-weight:700; color:var(--text-primary);">OXYD Studio</a>
+      <span style="font-size:12px; color:var(--text-muted); font-family:var(--font-mono);">© 2026 · Dijon, France</span>
+      <a href="../#contact" style="font-size:13px; color:var(--blue);">Diagnostic gratuit →</a>
+    </div>
+  </footer>
+
+  <!-- STICKY CTA -->
+  <div class="sticky-cta" id="stickyCta">
+    <div class="container">
+      <div class="sct-left">
+        <div class="sct-label">OXYD Studio · Diagnostic gratuit</div>
+        <div class="sct-text">88% échouent pour 4 raisons précises. Vérifiez en 30 min si votre projet évite les 4.</div>
+      </div>
+      <div style="display:flex; align-items:center; gap:8px;">
+        <button class="btn-primary" data-cal-link="oxyd.studio/diagnostic" data-cal-config='{"layout":"month_view"}' style="font-size:13px; padding: 10px 20px;">
+          Réserver — c'est gratuit →
+        </button>
+        <button class="sct-close" id="sctClose" aria-label="Fermer">×</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cal.com -->
+  <script>
+    (function(C,A,L){let p=function(a,ar){a.q.push(ar)};let d=C.document;C.Cal=C.Cal||function(){let cal=C.Cal;let ar=arguments;if(!cal.loaded){cal.ns={};cal.q=cal.q||[];d.head.appendChild(d.createElement("script")).src=A;cal.loaded=true}if(ar[0]===L){const api=function(){p(api,arguments)};const ns=ar[1];api.q=api.q||[];if(typeof ns==="string"){cal.ns[ns]=cal.ns[ns]||api;p(cal.ns[ns],ar);p(cal,[L,ns,ar[2]])}else p(cal,ar);return}p(cal,ar)};})(window,"https://app.cal.com/embed/embed.js","init");
+    Cal("init", {origin:"https://cal.com"});
+    Cal("ui", {"styles":{"branding":{"brandColor":"#F4511E"}},"hideEventTypeDetails":false,"layout":"month_view"});
+  </script>
+
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <script src="../script.js"></script>
+
+  <script>
+    // Active TOC on scroll
+    const tocLinks = document.querySelectorAll('.toc-link');
+    const sections = document.querySelectorAll('h2[id]');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 140) current = s.id;
+      });
+      tocLinks.forEach(l => {
+        l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+      });
+    });
+
+    // Sticky CTA: show after 40% scroll, hide on dismiss
+    const stickyCta = document.getElementById('stickyCta');
+    const sctClose = document.getElementById('sctClose');
+    let sctDismissed = false;
+    window.addEventListener('scroll', () => {
+      if (sctDismissed) return;
+      const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+      stickyCta.classList.toggle('visible', pct > 0.4);
+    });
+    sctClose.addEventListener('click', () => {
+      sctDismissed = true;
+      stickyCta.classList.remove('visible');
+    });
+
+    // Inline hooks: trigger Cal on click
+    document.querySelectorAll('.inline-hook').forEach(el => {
+      const link = el.dataset.calLink;
+      const cfg = el.dataset.calConfig;
+      if (link) {
+        el.addEventListener('click', () => Cal('modal', link, JSON.parse(cfg || '{}')));
+        el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') Cal('modal', link, JSON.parse(cfg || '{}')); });
+      }
+    });
+
+    // Animate bar fills on scroll into view
+    const fills = document.querySelectorAll('.data-row-fill');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.width = e.target.getAttribute('data-width') || e.target.style.width;
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    fills.forEach(f => {
+      f.setAttribute('data-width', f.style.width);
+      f.style.width = '0';
+      io.observe(f);
+    });
+  </script>
+
+</body>
+</html>

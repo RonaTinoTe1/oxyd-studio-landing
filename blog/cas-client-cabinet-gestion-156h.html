@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0a0a0a">
+  <title>Cabinet de gestion à Dijon : 156h/an récupérées. Ce qu'on a fait, exactement. — OXYD Studio</title>
+  <meta name="description" content="Étude de cas complète : un cabinet de gestion de 12 personnes à Dijon récupère 156h/an. 3 systèmes IA déployés en 3 semaines. Délai de paiement : 28j → 19j. Résultats réels après 6 semaines de production.">
+  <link rel="canonical" href="https://oxyd.studio/blog/cas-client-cabinet-gestion-156h">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://oxyd.studio/blog/cas-client-cabinet-gestion-156h">
+  <meta property="og:title" content="Cabinet à Dijon : 156h/an récupérées — ce qu'on a fait, exactement">
+  <meta property="og:description" content="3 systèmes IA déployés en 3 semaines. Délai de paiement : 28j → 19j. Étude de cas réelle avec résultats après 6 semaines.">
+  <meta property="og:image" content="https://oxyd.studio/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="OXYD Studio">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cabinet à Dijon : 156h/an récupérées — ce qu'on a fait, exactement">
+  <meta name="twitter:description" content="3 systèmes IA, 3 semaines, 156h/an récupérées. Chiffres réels, zéro bullshit.">
+  <meta name="twitter:image" content="https://oxyd.studio/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css?v=20">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Cabinet de gestion à Dijon : 156h/an récupérées. Ce qu'on a fait, exactement.",
+    "description": "Étude de cas complète : 3 systèmes IA déployés en 3 semaines pour un cabinet de gestion dijonnais de 12 personnes. 156h/an récupérées, délai de paiement réduit de 28 à 19 jours.",
+    "url": "https://oxyd.studio/blog/cas-client-cabinet-gestion-156h",
+    "datePublished": "2026-05-01",
+    "author": { "@type": "Person", "name": "Nathan", "url": "https://oxyd.studio" },
+    "publisher": { "@type": "Organization", "name": "OXYD Studio", "url": "https://oxyd.studio" }
+  }
+  </script>
+
+  <style>
+    /* ── Article layout ── */
+    .article-hero {
+      padding: 140px 0 80px;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-hero::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(244,81,30,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .article-hero .container { max-width: 860px; position: relative; z-index: 1; }
+
+    .article-kicker {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+      color: var(--blue); letter-spacing: 0.14em; text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .article-kicker::before {
+      content: '';
+      width: 28px; height: 1px; background: var(--blue);
+    }
+
+    .article-h1 {
+      font-family: var(--font-display);
+      font-size: clamp(30px, 5vw, 56px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.08;
+      color: var(--text-primary);
+      margin-bottom: 28px;
+      max-width: 780px;
+    }
+    .article-h1 em {
+      font-style: normal;
+      color: var(--blue);
+    }
+
+    .article-lede {
+      font-size: 20px;
+      line-height: 1.65;
+      color: var(--text-secondary);
+      max-width: 680px;
+      margin-bottom: 36px;
+      font-weight: 400;
+    }
+    .article-lede strong { color: var(--text-primary); }
+
+    .article-meta {
+      display: flex; align-items: center; gap: 20px;
+      flex-wrap: wrap;
+    }
+    .meta-author {
+      display: flex; align-items: center; gap: 10px;
+    }
+    .meta-avatar {
+      width: 34px; height: 34px; border-radius: 50%;
+      background: linear-gradient(135deg, #F4511E, #D43F0D);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 800; color: #fff;
+      font-family: var(--font-display);
+      flex-shrink: 0;
+    }
+    .meta-name { font-size: 13px; font-weight: 600; color: var(--text-primary); }
+    .meta-role { font-size: 11px; color: var(--text-muted); font-family: var(--font-mono); }
+    .meta-sep { width: 1px; height: 24px; background: var(--border); }
+    .meta-date { font-size: 12px; color: var(--text-muted); font-family: var(--font-mono); }
+    .meta-tag {
+      display: inline-flex; padding: 3px 10px;
+      border-radius: 100px; font-size: 11px; font-weight: 500;
+      background: rgba(244,81,30,0.1); color: var(--blue);
+      border: 1px solid rgba(244,81,30,0.2);
+      font-family: var(--font-mono);
+    }
+
+    /* ── Hero stat strip ── */
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-top: 56px;
+    }
+    .hero-stat {
+      background: var(--bg-subtle);
+      padding: 22px 20px;
+    }
+    .hero-stat-val {
+      font-family: var(--font-display);
+      font-size: 28px; font-weight: 800;
+      color: var(--blue); letter-spacing: -0.04em;
+      line-height: 1; margin-bottom: 6px;
+    }
+    .hero-stat-label {
+      font-size: 12px; color: var(--text-muted);
+      line-height: 1.4;
+    }
+    .hero-stat-source {
+      font-family: var(--font-mono); font-size: 9px;
+      color: rgba(244,81,30,0.5); margin-top: 4px;
+      text-transform: uppercase; letter-spacing: 0.08em;
+    }
+
+    /* ── Article body ── */
+    .article-body { padding: 80px 0 120px; }
+    .article-body .container {
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 80px;
+      max-width: 1100px;
+      align-items: start;
+    }
+    .article-content { min-width: 0; }
+    .article-content p {
+      font-size: 17px; line-height: 1.82;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+    }
+    .article-content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(20px, 2.5vw, 28px);
+      font-weight: 700; letter-spacing: -0.03em;
+      color: var(--text-primary);
+      margin-bottom: 18px;
+      line-height: 1.2;
+      padding-top: 60px;
+      margin-top: 0;
+    }
+    .article-content h2:first-of-type { padding-top: 0; }
+    .article-content h3 {
+      font-family: var(--font-display);
+      font-size: 18px; font-weight: 600;
+      color: var(--text-primary);
+      margin-top: 36px; margin-bottom: 12px;
+    }
+    .article-content strong { color: var(--text-primary); }
+    .article-content a { color: var(--blue); text-underline-offset: 3px; }
+    .article-content ul {
+      list-style: none; margin-bottom: 24px;
+    }
+    .article-content ul li {
+      position: relative; padding-left: 22px;
+      font-size: 16px; line-height: 1.75;
+      color: var(--text-secondary);
+      margin-bottom: 10px;
+    }
+    .article-content ul li::before {
+      content: '—';
+      position: absolute; left: 0;
+      color: var(--blue); font-weight: 700;
+    }
+    .article-content hr {
+      border: none; border-top: 1px solid var(--border);
+      margin: 56px 0;
+    }
+
+    /* ── Stat callout ── */
+    .stat-callout {
+      display: flex; align-items: center; gap: 24px;
+      padding: 28px 32px;
+      background: rgba(244,81,30,0.05);
+      border: 1px solid rgba(244,81,30,0.18);
+      border-left: 3px solid var(--blue);
+      border-radius: 12px;
+      margin: 40px 0;
+    }
+    .sc-num {
+      font-family: var(--font-display);
+      font-size: 52px; font-weight: 800;
+      color: var(--blue); letter-spacing: -0.04em;
+      line-height: 1; flex-shrink: 0;
+    }
+    .sc-text strong { display: block; font-size: 15px; color: var(--text-primary); margin-bottom: 6px; }
+    .sc-text span { font-size: 12px; color: var(--text-muted); font-family: var(--font-mono); }
+
+    /* ── Data grid ── */
+    .data-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin: 40px 0;
+    }
+    .data-grid-cell {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 22px;
+    }
+    .dgc-val {
+      font-family: var(--font-display);
+      font-size: 32px; font-weight: 800;
+      color: var(--blue); letter-spacing: -0.04em;
+      line-height: 1; margin-bottom: 6px;
+    }
+    .dgc-label { font-size: 13px; color: var(--text-primary); font-weight: 500; margin-bottom: 4px; }
+    .dgc-source { font-family: var(--font-mono); font-size: 10px; color: var(--text-muted); }
+
+    /* ── Bar chart ── */
+    .data-card {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin: 40px 0;
+    }
+    .data-card-title {
+      font-family: var(--font-mono); font-size: 11px;
+      color: var(--text-muted); letter-spacing: 0.1em;
+      text-transform: uppercase; margin-bottom: 20px;
+    }
+    .data-rows { display: flex; flex-direction: column; gap: 13px; }
+    .data-row { display: flex; align-items: center; gap: 16px; }
+    .data-row-label { font-size: 13px; color: var(--text-secondary); width: 200px; flex-shrink: 0; }
+    .data-row-bar { flex: 1; height: 6px; background: var(--bg-muted); border-radius: 3px; overflow: hidden; }
+    .data-row-fill { height: 100%; background: var(--blue); border-radius: 3px; transition: width 1.2s cubic-bezier(.4,0,.2,1); }
+    .data-row-fill.before { background: rgba(244,81,30,0.3); }
+    .data-row-val { font-size: 12px; font-family: var(--font-mono); color: var(--blue); width: 52px; text-align: right; flex-shrink: 0; }
+    .data-row-val.before { color: rgba(244,81,30,0.5); }
+
+    /* ── Before/after table ── */
+    .proj-table {
+      width: 100%; border-collapse: collapse;
+      margin: 40px 0; font-size: 14px;
+    }
+    .proj-table th {
+      font-family: var(--font-mono); font-size: 10px;
+      color: var(--text-muted); text-transform: uppercase;
+      letter-spacing: 0.1em; padding: 10px 14px;
+      text-align: left; border-bottom: 1px solid var(--border);
+    }
+    .proj-table td {
+      padding: 14px; border-bottom: 1px solid rgba(255,255,255,0.04);
+      color: var(--text-secondary);
+    }
+    .proj-table td:first-child { font-weight: 600; color: var(--text-primary); }
+    .proj-table .td-before { font-family: var(--font-mono); color: rgba(244,81,30,0.5); }
+    .proj-table .td-after { font-family: var(--font-mono); color: var(--blue); font-weight: 700; }
+    .proj-table tr:last-child td { border-bottom: none; }
+    .proj-table .highlight-row td { background: rgba(244,81,30,0.04); }
+
+    /* ── Callout box ── */
+    .callout-box {
+      background: rgba(244,81,30,0.04);
+      border: 1px solid rgba(244,81,30,0.15);
+      border-radius: 14px;
+      padding: 24px 28px;
+      margin: 40px 0;
+    }
+    .callout-box .cb-title {
+      font-family: var(--font-mono); font-size: 10px;
+      color: var(--blue); letter-spacing: 0.12em;
+      text-transform: uppercase; margin-bottom: 12px;
+    }
+    .callout-box p {
+      font-size: 15px !important;
+      color: var(--text-primary) !important;
+      margin-bottom: 0 !important;
+      line-height: 1.7 !important;
+    }
+
+    /* ── Quote block ── */
+    .article-quote {
+      padding: 28px 32px 28px 40px;
+      border-left: 3px solid var(--border-strong);
+      margin: 40px 0;
+      position: relative;
+    }
+    .article-quote::before {
+      content: '"';
+      position: absolute; top: -10px; left: 24px;
+      font-size: 80px; line-height: 1;
+      color: rgba(244,81,30,0.2);
+      font-family: var(--font-display);
+    }
+    .article-quote p {
+      font-size: 19px !important;
+      font-style: italic;
+      color: var(--text-primary) !important;
+      line-height: 1.6 !important;
+      margin-bottom: 12px !important;
+    }
+    .article-quote cite {
+      font-size: 12px; color: var(--text-muted);
+      font-style: normal; font-family: var(--font-mono);
+    }
+
+    /* ── CTA inline ── */
+    .article-cta-block {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-radius: 20px;
+      padding: 44px 40px;
+      margin: 64px 0;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .article-cta-block::before {
+      content: '';
+      position: absolute; top: -60px; left: 50%; transform: translateX(-50%);
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(244,81,30,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .article-cta-block h3 {
+      font-family: var(--font-display);
+      font-size: 26px; font-weight: 700;
+      color: var(--text-primary); margin-bottom: 12px;
+      position: relative; z-index: 1;
+    }
+    .article-cta-block p {
+      font-size: 15px !important; color: var(--text-secondary) !important;
+      margin-bottom: 28px !important;
+      position: relative; z-index: 1;
+    }
+    .article-cta-block .btn-primary { position: relative; z-index: 1; }
+
+    /* ── Sidebar ── */
+    .article-sidebar { position: sticky; top: 100px; }
+    .sidebar-toc {
+      background: var(--bg-subtle); border: 1px solid var(--border);
+      border-radius: 14px; padding: 24px; margin-bottom: 20px;
+    }
+    .toc-title {
+      font-family: var(--font-mono); font-size: 10px;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-muted); margin-bottom: 16px;
+    }
+    .toc-link {
+      display: block; font-size: 13px;
+      color: var(--text-secondary); padding: 6px 0;
+      border-left: 2px solid transparent; padding-left: 12px;
+      text-decoration: none;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .toc-link:hover, .toc-link.active {
+      color: var(--blue); border-left-color: var(--blue);
+    }
+    .sidebar-author {
+      background: var(--bg-subtle); border: 1px solid var(--border);
+      border-radius: 14px; padding: 24px;
+    }
+    .sidebar-author-head { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+    .sidebar-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: linear-gradient(135deg, #F4511E, #D43F0D);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; font-weight: 800; color: #fff;
+      font-family: var(--font-display); flex-shrink: 0;
+    }
+    .sidebar-author-name { font-size: 14px; font-weight: 700; color: var(--text-primary); }
+    .sidebar-author-role { font-size: 11px; color: var(--blue); font-family: var(--font-mono); }
+    .sidebar-author p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px; }
+
+    /* ── Related ── */
+    .related-section { padding: 80px 0; border-top: 1px solid var(--border); }
+    .related-label {
+      font-family: var(--font-mono); font-size: 11px;
+      color: var(--text-muted); letter-spacing: 0.12em;
+      text-transform: uppercase; margin-bottom: 32px;
+    }
+    .related-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .related-card {
+      background: var(--bg-subtle); border: 1px solid var(--border);
+      border-radius: 14px; padding: 24px; text-decoration: none;
+      transition: border-color 0.2s, transform 0.2s; display: block;
+    }
+    .related-card:hover { border-color: rgba(244,81,30,0.4); transform: translateY(-2px); }
+    .related-tag {
+      font-family: var(--font-mono); font-size: 10px;
+      color: var(--blue); letter-spacing: 0.1em;
+      text-transform: uppercase; margin-bottom: 10px;
+    }
+    .related-title {
+      font-family: var(--font-display); font-size: 15px;
+      font-weight: 700; color: var(--text-primary);
+      line-height: 1.3; margin-bottom: 8px;
+    }
+    .related-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.6; }
+
+    /* ── Trust strip ── */
+    .trust-strip {
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-subtle);
+      padding: 11px 0;
+    }
+    .trust-strip .container {
+      display: flex; align-items: center; gap: 32px;
+      flex-wrap: wrap; max-width: 1100px;
+    }
+    .ts-item {
+      display: flex; align-items: center; gap: 8px;
+      font-family: var(--font-mono); font-size: 11px;
+      color: var(--text-muted);
+    }
+    .ts-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--blue); opacity: 0.6; flex-shrink: 0;
+    }
+    .ts-sep { color: rgba(255,255,255,0.12); }
+
+    /* ── Inline hook (soft mid-article CTA) ── */
+    .inline-hook {
+      display: flex; align-items: flex-start; gap: 20px;
+      padding: 22px 24px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin: 40px 0;
+      text-decoration: none;
+      transition: border-color 0.2s;
+      cursor: pointer;
+    }
+    .inline-hook:hover { border-color: rgba(244,81,30,0.35); }
+    .ih-icon {
+      width: 38px; height: 38px; border-radius: 10px;
+      background: rgba(244,81,30,0.12);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .ih-icon svg { width: 18px; height: 18px; color: var(--blue); }
+    .ih-body {}
+    .ih-label {
+      font-family: var(--font-mono); font-size: 10px;
+      color: var(--blue); text-transform: uppercase;
+      letter-spacing: 0.1em; margin-bottom: 4px;
+    }
+    .ih-title { font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px; }
+    .ih-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+
+    /* ── OXYD method box ── */
+    .oxyd-method-box {
+      border: 1px solid rgba(244,81,30,0.22);
+      border-radius: 14px;
+      overflow: hidden;
+      margin: 44px 0;
+    }
+    .omb-header {
+      background: rgba(244,81,30,0.08);
+      padding: 14px 22px;
+      display: flex; align-items: center; gap: 10px;
+      border-bottom: 1px solid rgba(244,81,30,0.15);
+    }
+    .omb-badge {
+      font-family: var(--font-mono); font-size: 9px;
+      text-transform: uppercase; letter-spacing: 0.12em;
+      color: var(--blue); background: rgba(244,81,30,0.12);
+      padding: 3px 9px; border-radius: 100px;
+      border: 1px solid rgba(244,81,30,0.2);
+    }
+    .omb-title { font-size: 13px; font-weight: 600; color: var(--text-primary); }
+    .omb-body { padding: 22px; }
+    .omb-body p {
+      font-size: 14px !important;
+      color: var(--text-secondary) !important;
+      margin-bottom: 16px !important;
+      line-height: 1.7 !important;
+    }
+    .omb-body p:last-of-type { margin-bottom: 0 !important; }
+    .omb-steps {
+      display: flex; gap: 0;
+      margin-bottom: 20px;
+    }
+    .omb-step {
+      flex: 1; text-align: center; padding: 14px 8px;
+      border-right: 1px solid var(--border);
+    }
+    .omb-step:last-child { border-right: none; }
+    .omb-step-num {
+      font-family: var(--font-display); font-size: 22px;
+      font-weight: 800; color: var(--blue); display: block; margin-bottom: 4px;
+    }
+    .omb-step-label { font-size: 11px; color: var(--text-muted); line-height: 1.4; }
+    .omb-footer {
+      border-top: 1px solid rgba(244,81,30,0.12);
+      padding: 16px 22px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      flex-wrap: wrap;
+    }
+    .omb-footer-text { font-size: 13px; color: var(--text-secondary); }
+    .omb-footer-text strong { color: var(--text-primary); }
+    .btn-small {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 9px 18px; border-radius: 8px;
+      background: var(--blue); color: #fff;
+      font-size: 12px; font-weight: 600; font-family: var(--font-display);
+      border: none; cursor: pointer; white-space: nowrap;
+      transition: opacity 0.2s;
+    }
+    .btn-small:hover { opacity: 0.85; }
+
+    /* ── Proof strip (sidebar) ── */
+    .sidebar-proof {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      border-radius: 14px; padding: 20px; margin-bottom: 20px;
+    }
+    .sp-title {
+      font-family: var(--font-mono); font-size: 10px;
+      color: var(--text-muted); letter-spacing: 0.1em;
+      text-transform: uppercase; margin-bottom: 16px;
+    }
+    .sp-item {
+      display: flex; align-items: flex-start; gap: 10px;
+      margin-bottom: 14px;
+    }
+    .sp-item:last-child { margin-bottom: 0; }
+    .sp-check {
+      width: 18px; height: 18px; border-radius: 50%;
+      background: rgba(244,81,30,0.12);
+      border: 1px solid rgba(244,81,30,0.25);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .sp-check svg { width: 9px; height: 9px; color: var(--blue); }
+    .sp-text { font-size: 12px; color: var(--text-secondary); line-height: 1.5; }
+    .sp-text strong { color: var(--text-primary); }
+
+    /* ── Sticky bottom CTA ── */
+    .sticky-cta {
+      position: fixed; bottom: 0; left: 0; right: 0;
+      z-index: 900;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(16px);
+      border-top: 1px solid var(--border);
+      padding: 14px 0;
+      transform: translateY(100%);
+      transition: transform 0.4s cubic-bezier(.4,0,.2,1);
+    }
+    .sticky-cta.visible { transform: translateY(0); }
+    .sticky-cta .container {
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 20px; flex-wrap: wrap;
+    }
+    .sct-left {}
+    .sct-label {
+      font-family: var(--font-mono); font-size: 10px;
+      color: var(--blue); text-transform: uppercase;
+      letter-spacing: 0.1em; margin-bottom: 3px;
+    }
+    .sct-text { font-size: 14px; font-weight: 600; color: var(--text-primary); }
+    .sct-close {
+      background: none; border: none; cursor: pointer;
+      color: var(--text-muted); padding: 4px; margin-left: 12px;
+      font-size: 18px; line-height: 1;
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 900px) {
+      .article-body .container { grid-template-columns: 1fr; gap: 48px; }
+      .article-sidebar { position: static; }
+      .related-grid { grid-template-columns: 1fr; }
+      .hero-stats { grid-template-columns: repeat(2, 1fr); }
+      .data-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .article-h1 { font-size: 26px; }
+      .stat-callout { flex-direction: column; gap: 12px; }
+      .sc-num { font-size: 40px; }
+      .article-cta-block { padding: 28px 20px; }
+      .data-row-label { width: 130px; font-size: 12px; }
+      .hero-stats { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+  <!-- Privacy-friendly analytics by Plausible -->
+  <script async src="https://plausible.io/js/pa-eQmapsJCn9blo_-8Uw8Go.js"></script>
+  <script>
+    window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+    plausible.init()
+  </script>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="../" class="navbar-logo" aria-label="OXYD Studio">
+        <svg xmlns="http://www.w3.org/2000/svg" height="28" width="auto" aria-label="OXYD" viewBox="0 0 1254 1254"><path fill="#FC511F" d="M976.974 505.75L1118.84 505.689L1162.74 505.658C1192.26 505.645 1209.41 501.069 1223.88 531.388C1228.73 541.554 1236.6 554.595 1242.1 564.8L1192.9 643.4C1182.99 659.346 1167.3 687.609 1154.71 699.549C1137.25 712.846 1125.97 711.161 1105 711.148L1064.22 711.153L902.883 711.218C907.665 696.363 913.904 679.932 919.255 665.189L944.268 596.254C955.067 566.717 965.553 534.694 976.974 505.75Z"/><path fill="#0A0A0A" d="M1016.95 556.145C1063.76 557.091 1111.1 555.317 1157.93 556.686C1169.31 557.515 1172.99 564.923 1168.17 574.753C1155.86 599.832 1144.75 625.202 1132.06 650.04C1130.76 652.592 1128.33 655.001 1126.29 657.015C1122.77 659.849 1117.73 662.459 1113.22 662.821C1098.87 663.971 1083.89 663.527 1069.48 663.564L978.226 663.672C990.026 628.237 1004.52 591.653 1016.95 556.145Z"/><path fill="#FC511F" d="M147.317 505.977C151.315 505.387 163.813 505.643 168.474 505.648L211.195 505.711L283.103 505.676C295.792 505.664 308.495 505.572 321.18 505.8C336.208 506.071 351.156 515.422 358 528.811C362.861 538.454 363.643 549.647 360.17 559.873C358.048 566.3 354.498 574.448 351.95 580.901L336.084 621.141L323.919 652.221C320.383 661.312 317.166 671.199 311.808 679.305C304.807 690.056 295.101 698.776 283.665 704.59C266.812 713.08 251.525 711.158 233.294 711.175L180.669 711.189L111.219 711.152C98.8916 711.148 86.6268 711.374 74.2192 711.037C61.0887 710.681 47.7725 703.201 42.0867 691.031C35.022 675.91 40.0705 664.988 45.4921 650.579C66.1229 646.611 89.4243 640.545 110.067 635.712C111.017 635.512 111.384 635.541 112.355 635.496C113.219 639.232 105.33 653.187 104.402 659.751C105.01 662.032 106.077 663.682 108.678 663.703C115.716 663.761 122.759 663.747 129.799 663.746L173.722 663.711L215.681 663.736C235.131 663.841 261.178 667.583 267.749 642.549C271.556 628.049 299.594 569.221 298.397 558.252C298.082 558.019 297.799 557.737 297.454 557.552C293.13 555.238 170.567 555.766 158.84 556.4C156.755 556.513 154.81 556.787 152.868 557.59C148.333 559.466 144.252 562.358 141.238 566.244C134.586 574.821 124.467 606.133 119.643 618.263C97.2765 623.838 74.8128 629.014 52.2621 633.787C58.4953 615.14 66.5028 596.541 73.2815 578.025C76.1921 570.074 79.6532 560.679 83.3772 553.131C86.0087 547.883 89.1373 542.9 92.72 538.249C106.694 520.048 124.608 508.974 147.317 505.977Z"/><path fill="#FC511F" d="M378.764 505.645L459.532 505.672C478.239 527.795 497.092 549.794 516.09 571.668L564.341 531.205C574.059 523.048 585.15 513.308 595.107 505.718L673.021 505.702C659.71 517.318 645.044 528.937 631.347 540.23L547.321 609.18C555.382 618.95 634 710.043 633.918 711.218C608.761 711.095 583.604 711.104 558.448 711.245C553.318 704.852 546.206 697.138 540.718 690.813C527.821 676.05 515.103 661.132 502.566 646.061L424.798 711.153L346.019 711.215L470.486 608.832L411.972 543.194C402.323 532.46 387.358 516.762 378.764 505.645Z"/><path fill="#FC511F" d="M680.928 505.692L756.612 505.663C774.253 527.628 791.565 551.537 809.288 573.886C832.967 551.303 856.5 528.566 879.886 505.678L955.361 505.75L868.473 587.27C860.526 594.736 852.531 602.15 844.489 609.513C841.283 612.476 831.281 621.153 829.887 624.556C826.387 633.096 822.793 644.106 819.776 652.822C812.978 672.248 806.299 691.716 799.738 711.224C780.45 710.605 758.227 711.138 738.746 711.21C749.34 681.184 759.392 650.696 770.232 620.793C759.937 608.742 747.803 592.255 737.863 579.534C718.608 555.135 699.628 530.519 680.928 505.692Z"/></svg>
+        <span class="logo-wordmark">Studio</span>
+      </a>
+      <div class="navbar-links" id="navLinks">
+        <a href="../#product">Méthode</a>
+        <a href="../#process">Process</a>
+        <a href="../#faq">FAQ</a>
+        <a href="../#contact">Contact</a>
+      </div>
+      <div class="navbar-actions">
+        <a href="../" style="font-size:13px; color:var(--text-secondary); text-decoration:none;">← Accueil</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- TRUST STRIP -->
+  <div class="trust-strip">
+    <div class="container">
+      <div class="ts-item"><div class="ts-dot"></div>Spécialiste IA agentique — Dijon, France</div>
+      <span class="ts-sep">·</span>
+      <div class="ts-item"><div class="ts-dot"></div>Systèmes en production chez nos clients</div>
+      <span class="ts-sep">·</span>
+      <div class="ts-item"><div class="ts-dot"></div>Diagnostic gratuit · Sans engagement</div>
+      <span class="ts-sep">·</span>
+      <div class="ts-item"><div class="ts-dot"></div>Résultats mesurables sous 3 semaines</div>
+    </div>
+  </div>
+
+  <!-- ARTICLE HERO -->
+  <header class="article-hero">
+    <div class="container">
+      <div class="article-kicker">Cas client · Résultats réels · Étude de cas 2026</div>
+
+      <h1 class="article-h1">
+        Cabinet de gestion à Dijon :<br>
+        <em>156h/an récupérées.</em><br>
+        Ce qu'on a fait, exactement.
+      </h1>
+
+      <p class="article-lede">
+        Quatre conseillers. Huit clients chacun. Et <strong>832 heures par an perdues sur des tâches que personne n'avait jamais chronométrées.</strong> Voici l'étude de cas complète — les systèmes construits, les chiffres avant/après, et ce qui a failli rater en semaine 1.
+      </p>
+
+      <div class="article-meta">
+        <div class="meta-author">
+          <div class="meta-avatar">N</div>
+          <div>
+            <div class="meta-name">Nathan</div>
+            <div class="meta-role">Fondateur · OXYD Studio</div>
+          </div>
+        </div>
+        <div class="meta-sep"></div>
+        <span class="meta-date">1 mai 2026</span>
+        <div class="meta-sep"></div>
+        <span class="meta-tag">Cas client</span>
+        <span class="meta-tag">Étude de cas</span>
+        <span class="meta-tag">Cabinet de gestion</span>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-val">156h/an</div>
+          <div class="hero-stat-label">récupérées sur des tâches répétitives — soit 3h chaque semaine</div>
+          <div class="hero-stat-source">Mesuré après 6 semaines de production</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-val">19 jours</div>
+          <div class="hero-stat-label">délai de paiement moyen — était 28 jours avant les systèmes</div>
+          <div class="hero-stat-source">Factures émises — 6 semaines de données</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-val">3 semaines</div>
+          <div class="hero-stat-label">du diagnostic au déploiement complet en production</div>
+          <div class="hero-stat-source">Déploiement OXYD Studio</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-val">0 rapport</div>
+          <div class="hero-stat-label">manuel compilé depuis 6 semaines — le lundi s'écrit tout seul</div>
+          <div class="hero-stat-source">Briefing automatisé · tous les lundis à 7h52</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ARTICLE BODY -->
+  <div class="article-body">
+    <div class="container">
+
+      <!-- Main content -->
+      <article class="article-content" id="article-top">
+
+        <h2 id="le-client">Le client : un cabinet de gestion de 12 personnes à Dijon</h2>
+
+        <p>
+          Cabinet de gestion patrimoniale. Douze personnes, dont quatre conseillers actifs qui suivent chacun en moyenne huit clients. Un associé principal, une responsable administrative, deux assistantes et quelques profils support. Structure classique, bien rodée, qui tourne depuis plus de dix ans.
+        </p>
+
+        <p>
+          Ils ne cherchaient pas à "faire de l'IA". Ils cherchaient à respirer un peu. L'associé principal nous a contactés avec une formulation simple : <em>"On passe trop de temps sur des choses qui ne devraient pas nous prendre de temps."</em> Pas de problème technique. Pas de crise. Juste cette sensation sourde que le cabinet tournait à 70% de sa capacité réelle à cause de frottements répétés.
+        </p>
+
+        <div class="stat-callout">
+          <div class="sc-num">832h</div>
+          <div class="sc-text">
+            <strong>par an perdues sur des tâches répétitives — le chiffre qu'ils ne connaissaient pas avant le diagnostic</strong>
+            <span>4h20/semaine × 4 conseillers × 48 semaines ouvrées = 832h/an de travail mécanique</span>
+          </div>
+        </div>
+
+        <p>
+          Le vrai chiffre, celui qui fait mal quand on le voit pour la première fois, c'est 832 heures par an. Quatre conseillers, chacun passant 4h20 par semaine sur des tâches entièrement répétitives — relances de documents, suivi de factures, compilation de rapports. Sur 48 semaines ouvrées, ça fait 832 heures. <strong>L'équivalent de presque 21 semaines de travail à temps plein.</strong> Partis en fumée sur des tâches que personne n'avait jamais mises bout à bout.
+        </p>
+
+        <p>
+          Mais ce n'est pas ce chiffre qu'on a automatisé. Certaines de ces tâches nécessitaient du jugement, de la relation client, un contexte qu'une machine ne peut pas remplacer. Ce qu'on a automatisé, c'est la part mécanique — les 156 heures qui ne demandaient aucune réflexion, juste de l'exécution.
+        </p>
+
+        <h2 id="ce-quon-a-trouve">Ce qu'on a trouvé au diagnostic — et ce qu'ils ne voyaient pas</h2>
+
+        <p>
+          La première session dure trente minutes. On ne demande pas de présenter l'entreprise. On demande à chaque conseiller de décrire sa semaine type, heure par heure, en particulier les moments où il regarde l'écran en sachant exactement ce qu'il va faire avant de commencer.
+        </p>
+
+        <p>
+          Ces moments-là, ce sont les tâches automatisables. Pas parce qu'elles sont simples — parce qu'elles sont prévisibles.
+        </p>
+
+        <p>
+          Trois patterns sont apparus immédiatement, nets, mesurables :
+        </p>
+
+        <ul>
+          <li><strong>Relances de collecte de documents : 47 min/semaine par conseiller.</strong> Le client reçoit une demande, ne répond pas pendant 3 jours. Le conseiller relance manuellement. Quatre à cinq allers-retours par client et par mois. Multiplié par 8 clients, multiplié par 4 conseillers — chaque semaine.</li>
+          <li><strong>Suivi des factures impayées : 38 min/semaine par conseiller.</strong> Ils savaient que ça prenait du temps. Ils avaient accepté que c'était ainsi. La résignation est l'ennemie silencieuse de l'optimisation.</li>
+          <li><strong>Compilation du rapport hebdomadaire : 22 min chaque lundi matin.</strong> Ouvrir quatre outils différents, copier des données dans Excel, formater, envoyer à l'associé principal. Répété depuis des années. Jamais remis en question parce que c'est la première chose de la semaine — ça "ne compte pas".</li>
+        </ul>
+
+        <p>
+          Ces trois tâches représentent 107 minutes par semaine et par conseiller. Sur 4 conseillers et 48 semaines : <strong>342 heures par an</strong>. C'était le potentiel total. Après analyse des contraintes réelles — ce qui peut être automatisé sans changer les habitudes de l'équipe, sans risque sur les données clients, sans refonte de leur stack d'outils — on a isolé <strong>156 heures entièrement automatisables</strong>.
+        </p>
+
+        <!-- HOOK 1 : après le diagnostic -->
+        <div class="inline-hook" role="button" tabindex="0" data-cal-link="oxyd.studio/diagnostic" data-cal-config='{"layout":"month_view"}'>
+          <div class="ih-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+          </div>
+          <div class="ih-body">
+            <div class="ih-label">Votre chiffre caché</div>
+            <div class="ih-title">Vous aussi, vous avez probablement un chiffre que vous ne connaissez pas encore. Le diagnostic le trouve.</div>
+            <div class="ih-desc">30 minutes. On cartographie, on chronomètre, on vous sort le nombre d'heures. Gratuit. →</div>
+          </div>
+        </div>
+
+        <h2 id="ce-quon-a-fait">Ce qu'on a construit — les 3 systèmes</h2>
+
+        <p>
+          Trois systèmes, déployés en 3 semaines. Chacun ciblait exactement l'une des trois tâches identifiées au diagnostic. Aucun ne demandait à l'équipe d'apprendre un nouvel outil. Tout s'est greffé sur ce qu'ils utilisaient déjà.
+        </p>
+
+        <h3>Système 1 — Collecte automatique de documents</h3>
+
+        <p>
+          Le trigger est simple : le client envoie un email avec pour objet "docs [nom du dossier]" et joint ses fichiers. L'agent capture la pièce jointe, identifie sa nature (relevé bancaire, justificatif, contrat, autre), marque l'item correspondant comme reçu dans Notion, et envoie une confirmation automatique au client — avec le bon ton, la bonne formulation, sans que personne ne touche au clavier.
+        </p>
+
+        <p>
+          Si 3 jours s'écoulent sans réponse après une demande de document : relance automatique, ton amical, exactement comme un conseiller l'écrirait lui-même. Si 7 jours passent sans réponse : escalade vers le conseiller avec un résumé de la situation. Le conseiller n'intervient que quand c'est vraiment nécessaire.
+        </p>
+
+        <p>
+          Résultat mesuré : <strong>47 min/semaine → 4 min/semaine</strong> (vérification de la boîte Notion, lecture des anomalies signalées). Le taux de réponse aux demandes de documents est passé de 67% à 94%.
+        </p>
+
+        <h3>Système 2 — Surveillance des factures impayées</h3>
+
+        <p>
+          Quand une facture est marquée "envoyée" dans leur outil de facturation, l'agent commence à compter. À J+14 sans paiement : rappel automatique, ton neutre et professionnel. À J+28 : relance plus ferme, avec mention des conditions contractuelles. À J+42 : alerte au conseiller avec un récapitulatif complet — montant, historique des relances, date d'échéance.
+        </p>
+
+        <p>
+          Le conseiller n'ouvre plus son outil de facturation chaque matin pour vérifier qui est en retard. Il reçoit une notification uniquement quand c'est à lui d'agir.
+        </p>
+
+        <p>
+          Résultat mesuré : <strong>38 min/semaine → 6 min/semaine.</strong> Et un chiffre qu'on n'avait pas prévu dans les projections : le délai de paiement moyen est passé de 28 jours à 19 jours. La régularité des relances fait ce que la relance manuelle occasionnelle ne faisait pas.
+        </p>
+
+        <h3>Système 3 — Le briefing du lundi matin</h3>
+
+        <p>
+          Chaque lundi à 7h52 — avant que l'associé principal arrive au bureau — un email arrive dans sa boîte. Il contient : le nombre de dossiers actifs, les documents en attente par client, les factures en retard avec leur ancienneté, et les rendez-vous de la semaine tirés directement du calendrier partagé.
+        </p>
+
+        <p>
+          Ces données sont collectées depuis quatre sources différentes — Notion, l'outil de facturation, la messagerie, le calendrier — et assemblées automatiquement. L'email se lit en 2 minutes. Il remplace 22 minutes de compilation manuelle, et surtout, il est là avant même que la journée commence.
+        </p>
+
+        <!-- OXYD METHOD BOX : après les 3 systèmes -->
+        <div class="oxyd-method-box">
+          <div class="omb-header">
+            <span class="omb-badge">OXYD Studio</span>
+            <span class="omb-title">Le process qui a produit ces résultats — les 4 étapes</span>
+          </div>
+          <div class="omb-body">
+            <div class="omb-steps">
+              <div class="omb-step">
+                <span class="omb-step-num">01</span>
+                <span class="omb-step-label">Diagnostic<br>30 min — cartographie & chrono</span>
+              </div>
+              <div class="omb-step">
+                <span class="omb-step-num">02</span>
+                <span class="omb-step-label">Sélection<br>3 tâches à ROI max</span>
+              </div>
+              <div class="omb-step">
+                <span class="omb-step-num">03</span>
+                <span class="omb-step-label">Déploiement<br>sur vos outils, 3 semaines</span>
+              </div>
+              <div class="omb-step">
+                <span class="omb-step-num">04</span>
+                <span class="omb-step-label">Mesure<br>avant/après — chiffres réels</span>
+              </div>
+            </div>
+            <p>La sélection des tâches est l'étape la plus importante. On ne choisit pas ce qui est facile à automatiser — on choisit ce qui coûte le plus à ne pas automatiser. Ce sont rarement les mêmes. Le diagnostic le détermine avec des chiffres, pas des intuitions.</p>
+            <p>Le déploiement se fait sur vos outils existants. Pas de migration, pas de nouvelle licence, pas de formation. Le système s'adapte à votre équipe — pas l'inverse.</p>
+          </div>
+          <div class="omb-footer">
+            <span class="omb-footer-text"><strong>Ce cabinet avait les bons outils depuis des années.</strong> Ce qui manquait, c'était la logique entre eux.</span>
+            <button class="btn-small" data-cal-link="oxyd.studio/diagnostic" data-cal-config='{"layout":"month_view"}'>
+              Voir ce qu'on ferait pour vous →
+            </button>
+          </div>
+        </div>
+
+        <h2 id="les-resultats">Les résultats après 6 semaines de production</h2>
+
+        <p>
+          Six semaines après le déploiement complet, on a fait un point avec l'associé principal. Voici les métriques mesurées — pas projetées, pas estimées.
+        </p>
+
+        <div class="data-grid">
+          <div class="data-grid-cell">
+            <div class="dgc-val">156h/an</div>
+            <div class="dgc-label">récupérées sur les 3 systèmes — 3h par semaine, 4 conseillers</div>
+            <div class="dgc-source">Mesuré sur 6 semaines · extrapolé sur 48 semaines</div>
+          </div>
+          <div class="data-grid-cell">
+            <div class="dgc-val">19 jours</div>
+            <div class="dgc-label">délai moyen de paiement — était 28 jours avant le système de relance</div>
+            <div class="dgc-source">Factures émises depuis déploiement · 6 semaines de données</div>
+          </div>
+          <div class="data-grid-cell">
+            <div class="dgc-val">94%</div>
+            <div class="dgc-label">taux de réponse aux demandes de documents — était 67% avant automatisation</div>
+            <div class="dgc-source">Notion · taux de fermeture des items de collecte</div>
+          </div>
+          <div class="data-grid-cell">
+            <div class="dgc-val">0 rapport</div>
+            <div class="dgc-label">compilé manuellement depuis le déploiement — 0 exception en 6 semaines</div>
+            <div class="dgc-source">Briefing lundi 7h52 · 6 envois consécutifs réussis</div>
+          </div>
+        </div>
+
+        <p>
+          Les chiffres quantitatifs sont importants. Mais ce que l'associé principal a dit lors du point de bilan mérite d'être cité exactement :
+        </p>
+
+        <div class="article-quote">
+          <p>Ce qui a le plus changé, ce n'est pas le temps. C'est le bruit de fond. Avant, il y avait toujours cette pensée derrière la tête — "est-ce qu'il y a une facture que j'ai oubliée, est-ce que j'ai relancé ce client". Maintenant ce n'est plus là. Ça paraît petit, mais c'est constant.</p>
+          <cite>— L'associé principal, cabinet de gestion, Dijon · point de bilan 6 semaines</cite>
+        </div>
+
+        <p>
+          Ce "bruit de fond" est une charge cognitive réelle. Elle consomme de l'attention même quand on ne fait pas la tâche elle-même — on y pense, on y revient, on reporte. L'automatisation ne fait pas que récupérer du temps : elle retire des tâches de la mémoire de travail.
+        </p>
+
+        <div class="stat-callout">
+          <div class="sc-num">−9j</div>
+          <div class="sc-text">
+            <strong>de délai de paiement en moins — de 28 à 19 jours — sans que les conseillers aient eu à relancer un seul client manuellement depuis 6 semaines</strong>
+            <span>Résultat non prévu dans les projections initiales · données de facturation réelles</span>
+          </div>
+        </div>
+
+        <p>
+          La réduction du délai de paiement de 9 jours n'était pas dans nos projections initiales. C'est un effet de la régularité : le système relance au bon moment, sans oublier, sans décaler parce qu'il avait autre chose à faire. Les clients paient plus vite parce que les relances arrivent à J+14 sans exception, pas à J+21 quand quelqu'un y pense.
+        </p>
+
+        <h2 id="ce-qui-a-failli-rater">Ce qui a failli rater — et comment on l'a évité</h2>
+
+        <p>
+          En semaine 1 de production, le système de collecte de documents a commencé à mal classer les pièces jointes d'un client spécifique. Ses fichiers étaient nommés avec une convention différente de tous les autres — date en premier, puis nature du document, puis son propre code interne. L'agent classait ça systématiquement en "autre", au lieu de reconnaître les catégories.
+        </p>
+
+        <p>
+          On l'a vu parce qu'on surveille. Chaque déploiement inclut une semaine de monitoring actif où on vérifie chaque classification, chaque déclencheur, chaque email envoyé. Ce n'est pas la partie visible du travail. C'est la partie qui fait la différence entre un système qui tient et un système qui silencieusement accumule des erreurs.
+        </p>
+
+        <p>
+          La règle de classification a été corrigée en 20 minutes. Sans monitoring, on l'aurait découvert 3 mois plus tard quand ce client se serait plaint de ne jamais avoir ses confirmations — ou pire, personne ne l'aurait jamais remarqué.
+        </p>
+
+        <!-- HOOK 2 : après la section surveillance -->
+        <div class="inline-hook" role="button" tabindex="0" data-cal-link="oxyd.studio/diagnostic" data-cal-config='{"layout":"month_view"}'>
+          <div class="ih-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <div class="ih-body">
+            <div class="ih-label">Ce qui sépare les projets qui tiennent</div>
+            <div class="ih-title">La surveillance des systèmes après déploiement, c'est ce qui sépare les projets qui tiennent des projets qui silencieusement tombent en panne.</div>
+            <div class="ih-desc">C'est pourquoi 88% des agents IA n'atteignent jamais la production — ou n'y restent pas. On construit pour durer. →</div>
+          </div>
+        </div>
+
+        <h2 id="ce-que-ca-veut-dire-pour-vous">Ce que ça veut dire pour votre boîte</h2>
+
+        <p>
+          Ces trois systèmes ne sont pas spécifiques à un cabinet de gestion. Ils sont spécifiques à un pattern — et ce pattern, il est partout.
+        </p>
+
+        <p>
+          Vous envoyez des documents à des clients ou à des fournisseurs. Vous émettez des factures. Vous suivez des clients. Si ces trois phrases décrivent votre activité, vous avez les mêmes tâches répétitives qu'eux — avec vos propres noms dessus.
+        </p>
+
+        <p>
+          La question n'est pas "est-ce que ça s'applique à moi ?" La question est : <strong>quelles sont mes 3 tâches qui coûtent le plus de temps chaque semaine ?</strong>
+        </p>
+
+        <p>
+          Imaginez votre lundi matin. Il est 7h52. Avant d'ouvrir votre ordinateur, votre semaine est déjà là — dans un email qui vous attend. Fichiers en attente par client. Factures en retard avec leur ancienneté. Rendez-vous de la semaine. Dossiers actifs, ceux qui avancent et ceux qui bloquent. Vous lisez ça en 2 minutes. Et votre semaine commence avec une tête claire, pas avec 20 minutes de compilation.
+        </p>
+
+        <p>
+          Ce n'est pas de la science-fiction. C'est ce que ce cabinet a maintenant. Depuis 6 semaines, chaque lundi à 7h52, sans exception.
+        </p>
+
+        <!-- HOOK 3 : après future pacing -->
+        <div class="inline-hook" role="button" tabindex="0" data-cal-link="oxyd.studio/diagnostic" data-cal-config='{"layout":"month_view"}'>
+          <div class="ih-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          </div>
+          <div class="ih-body">
+            <div class="ih-label">Votre version existe déjà</div>
+            <div class="ih-title">Votre version de ces 3 systèmes existe. On la trouve en 30 minutes.</div>
+            <div class="ih-desc">Pas de projection, pas de théorie. On regarde votre semaine type et on vous dit exactement ce qu'on ferait. Gratuit. →</div>
+          </div>
+        </div>
+
+        <h2 id="avant-apres">Avant / après : les métriques complètes</h2>
+
+        <table class="proj-table">
+          <thead>
+            <tr>
+              <th>Tâche</th>
+              <th>Avant</th>
+              <th>Après</th>
+              <th>Gain/semaine</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="highlight-row">
+              <td>Collecte de documents</td>
+              <td class="td-before">47 min/semaine/conseiller</td>
+              <td class="td-after">4 min (vérification)</td>
+              <td>43 min × 4 conseillers</td>
+            </tr>
+            <tr>
+              <td>Suivi factures impayées</td>
+              <td class="td-before">38 min/semaine/conseiller</td>
+              <td class="td-after">6 min (alertes)</td>
+              <td>32 min × 4 conseillers</td>
+            </tr>
+            <tr>
+              <td>Rapport hebdo lundi</td>
+              <td class="td-before">22 min/lundi/associé</td>
+              <td class="td-after">2 min (lecture)</td>
+              <td>20 min</td>
+            </tr>
+            <tr>
+              <td>Délai paiement moyen</td>
+              <td class="td-before">28 jours</td>
+              <td class="td-after">19 jours</td>
+              <td>−9 jours</td>
+            </tr>
+            <tr>
+              <td>Taux réponse documents</td>
+              <td class="td-before">67%</td>
+              <td class="td-after">94%</td>
+              <td>+27 points</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h2 id="le-diagnostic">Comment on fait le diagnostic — les 30 minutes</h2>
+
+        <p>
+          La session dure 30 minutes. Elle est gratuite. Elle produit un résultat concret que vous emportez, que vous travailliez avec nous ou pas.
+        </p>
+
+        <p>
+          Voici exactement ce qui se passe :
+        </p>
+
+        <ul>
+          <li><strong>Cartographie des tâches répétitives.</strong> On vous demande de décrire votre semaine type. On note chaque tâche qui revient de façon prévisible — celles dont vous savez à l'avance ce que vous allez faire avant de commencer.</li>
+          <li><strong>Chronométrage réel.</strong> La plupart des gens sous-estiment le temps réel de leurs tâches répétitives de 40%. On le quantifie — pas d'approximation, le vrai nombre.</li>
+          <li><strong>Tri : automatisable maintenant vs plus tard.</strong> Toutes les tâches répétitives ne sont pas automatisables au même stade. On identifie ce qui peut être fait immédiatement avec votre stack actuel.</li>
+          <li><strong>Projection des heures et du coût.</strong> On vous sort un chiffre : combien d'heures vous perdez par an sur les tâches automatisables. Ce chiffre, la plupart des gens ne l'ont jamais vu. Il est généralement surprenant.</li>
+        </ul>
+
+        <div class="callout-box">
+          <div class="cb-title">Ce que vous repartez avec — qu'on travaille ensemble ou pas</div>
+          <p>Une carte complète de vos tâches répétitives chronométrées. Un chiffre d'heures perdues par an. Une liste des 3 tâches à ROI maximum. Une estimation du gain potentiel si elles étaient automatisées. Ce document est à vous. Certaines équipes l'utilisent pour prioriser elles-mêmes. D'autres décident de travailler avec nous. Les deux sont valides.</p>
+        </div>
+
+        <p>
+          Ce cabinet n'avait jamais posé les bonnes questions avant ce diagnostic. Non pas parce qu'ils manquaient d'intelligence — mais parce que quand on est dans le flux, on ne voit pas les patterns. Le diagnostic les rend visibles.
+        </p>
+
+        <div class="article-cta-block">
+          <h3>Votre boîte a des tâches comme celles-là. On les trouve en 30 minutes.</h3>
+          <p>On vous dit combien d'heures elles vous coûtent, et on vous montre ce qu'on ferait exactement. Vous repartez avec un plan complet — que vous travailliez avec nous ou pas. Gratuit.</p>
+          <button class="btn-primary" data-cal-link="oxyd.studio/diagnostic" data-cal-config='{"layout":"month_view"}'>
+            Réserver mon diagnostic →
+          </button>
+        </div>
+
+        <hr>
+
+        <p style="font-size:13px; color: var(--text-muted); line-height: 1.7;">
+          <em>Les données présentées dans cet article sont issues d'un déploiement réel réalisé par OXYD Studio en 2026. Les noms du client et de ses équipes sont anonymisés conformément à nos engagements de confidentialité. Les métriques (délais, taux de réponse, heures récupérées) ont été mesurées sur 6 semaines de production réelle et sont extrapolées sur 48 semaines ouvrées pour les projections annuelles.</em>
+        </p>
+
+      </article>
+
+      <!-- Sidebar -->
+      <aside class="article-sidebar">
+        <!-- Proof elements -->
+        <div class="sidebar-proof">
+          <div class="sp-title">Ce cas en chiffres</div>
+          <div class="sp-item">
+            <div class="sp-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div>
+            <div class="sp-text"><strong>156h/an récupérées</strong> — 3h chaque semaine pour 4 conseillers</div>
+          </div>
+          <div class="sp-item">
+            <div class="sp-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div>
+            <div class="sp-text"><strong>Délai paiement −9j</strong> — de 28 à 19 jours, sans relance manuelle</div>
+          </div>
+          <div class="sp-item">
+            <div class="sp-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div>
+            <div class="sp-text"><strong>3 systèmes en 3 semaines</strong> — sur les outils existants</div>
+          </div>
+          <div class="sp-item">
+            <div class="sp-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div>
+            <div class="sp-text"><strong>94% taux réponse docs</strong> — était 67% avant déploiement</div>
+          </div>
+          <div class="sp-item">
+            <div class="sp-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div>
+            <div class="sp-text"><strong>0 rapport manuel</strong> — le lundi matin s'écrit tout seul à 7h52</div>
+          </div>
+        </div>
+
+        <div class="sidebar-toc">
+          <div class="toc-title">Dans cet article</div>
+          <a href="#le-client" class="toc-link">Le client : 12 personnes, Dijon</a>
+          <a href="#ce-quon-a-trouve" class="toc-link">Ce qu'on a trouvé au diagnostic</a>
+          <a href="#ce-quon-a-fait" class="toc-link">Les 3 systèmes construits</a>
+          <a href="#les-resultats" class="toc-link">Résultats après 6 semaines</a>
+          <a href="#ce-qui-a-failli-rater" class="toc-link">Ce qui a failli rater</a>
+          <a href="#ce-que-ca-veut-dire-pour-vous" class="toc-link">Ce que ça veut dire pour vous</a>
+          <a href="#avant-apres" class="toc-link">Avant / après complet</a>
+          <a href="#le-diagnostic" class="toc-link">Comment on fait le diagnostic</a>
+        </div>
+
+        <div class="sidebar-author">
+          <div class="sidebar-author-head">
+            <div class="sidebar-avatar">N</div>
+            <div>
+              <div class="sidebar-author-name">Nathan</div>
+              <div class="sidebar-author-role">Fondateur · OXYD Studio</div>
+            </div>
+          </div>
+          <p>Je déploie des agents IA pour les PME et cabinets depuis 2024. Chaque étude de cas est construite sur des données de production réelles — pas des projections.</p>
+          <a href="#" style="font-size:12px; color:var(--blue); text-decoration:underline; text-underline-offset:3px;" data-cal-link="oxyd.studio/diagnostic" data-cal-config='{"layout":"month_view"}'>Prendre rendez-vous →</a>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- RELATED -->
+  <section class="related-section">
+    <div class="container">
+      <div class="related-label">Aller plus loin</div>
+      <div class="related-grid">
+        <a href="marche-ia-agentique-2026.html" class="related-card fade-in">
+          <div class="related-tag">Marché · Données 2026</div>
+          <div class="related-title">L'IA agentique en 2026 : les vrais chiffres</div>
+          <div class="related-desc">40% de croissance par an, 88% d'échec en production, 171% de ROI pour les 12% qui réussissent. Les données brutes de Gartner, IDC et McKinsey.</div>
+        </a>
+        <a href="88-percent-echec-agents-ia.html" class="related-card fade-in">
+          <div class="related-tag">Méthode · Déploiement</div>
+          <div class="related-title">Pourquoi 88% des agents IA n'arrivent jamais en production</div>
+          <div class="related-desc">Les 4 causes d'échec que personne ne mentionne. Et ce que font systématiquement les 12% qui réussissent — applicable à n'importe quelle PME.</div>
+        </a>
+        <a href="mcp-protocole-ia-agentique.html" class="related-card fade-in">
+          <div class="related-tag">Infrastructure · Technique</div>
+          <div class="related-title">MCP : le câble universel de l'IA agentique</div>
+          <div class="related-desc">97 millions de téléchargements en quelques mois. Le protocole qui connecte vos outils existants à n'importe quel agent IA — sans tout recoder.</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="padding: 40px 0 80px; border-top: 1px solid var(--border);">
+    <div class="container" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;">
+      <a href="../" style="font-family:var(--font-display); font-size:15px; font-weight:700; color:var(--text-primary);">OXYD Studio</a>
+      <span style="font-size:12px; color:var(--text-muted); font-family:var(--font-mono);">© 2026 · Dijon, France</span>
+      <a href="../#contact" style="font-size:13px; color:var(--blue);">Diagnostic gratuit →</a>
+    </div>
+  </footer>
+
+  <!-- STICKY CTA -->
+  <div class="sticky-cta" id="stickyCta">
+    <div class="container">
+      <div class="sct-left">
+        <div class="sct-label">OXYD Studio · Diagnostic gratuit</div>
+        <div class="sct-text">156h/an récupérées pour ce cabinet. Combien pour vous ? On le calcule en 30 min.</div>
+      </div>
+      <div style="display:flex; align-items:center; gap:8px;">
+        <button class="btn-primary" data-cal-link="oxyd.studio/diagnostic" data-cal-config='{"layout":"month_view"}' style="font-size:13px; padding: 10px 20px;">
+          Réserver — c'est gratuit →
+        </button>
+        <button class="sct-close" id="sctClose" aria-label="Fermer">×</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cal.com -->
+  <script>
+    (function(C,A,L){let p=function(a,ar){a.q.push(ar)};let d=C.document;C.Cal=C.Cal||function(){let cal=C.Cal;let ar=arguments;if(!cal.loaded){cal.ns={};cal.q=cal.q||[];d.head.appendChild(d.createElement("script")).src=A;cal.loaded=true}if(ar[0]===L){const api=function(){p(api,arguments)};const ns=ar[1];api.q=api.q||[];if(typeof ns==="string"){cal.ns[ns]=cal.ns[ns]||api;p(cal.ns[ns],ar);p(cal,[L,ns,ar[2]])}else p(cal,ar);return}p(cal,ar)};})(window,"https://app.cal.com/embed/embed.js","init");
+    Cal("init", {origin:"https://cal.com"});
+    Cal("ui", {"styles":{"branding":{"brandColor":"#F4511E"}},"hideEventTypeDetails":false,"layout":"month_view"});
+  </script>
+
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <script src="../script.js"></script>
+
+  <script>
+    // Active TOC on scroll
+    const tocLinks = document.querySelectorAll('.toc-link');
+    const sections = document.querySelectorAll('h2[id]');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 140) current = s.id;
+      });
+      tocLinks.forEach(l => {
+        l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+      });
+    });
+
+    // Sticky CTA: show after 40% scroll, hide on dismiss
+    const stickyCta = document.getElementById('stickyCta');
+    const sctClose = document.getElementById('sctClose');
+    let sctDismissed = false;
+    window.addEventListener('scroll', () => {
+      if (sctDismissed) return;
+      const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+      stickyCta.classList.toggle('visible', pct > 0.4);
+    });
+    sctClose.addEventListener('click', () => {
+      sctDismissed = true;
+      stickyCta.classList.remove('visible');
+    });
+
+    // Inline hooks: trigger Cal on click
+    document.querySelectorAll('.inline-hook').forEach(el => {
+      const link = el.dataset.calLink;
+      const cfg = el.dataset.calConfig;
+      if (link) {
+        el.addEventListener('click', () => Cal('modal', link, JSON.parse(cfg || '{}')));
+        el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') Cal('modal', link, JSON.parse(cfg || '{}')); });
+      }
+    });
+
+    // Animate bar fills on scroll into view
+    const fills = document.querySelectorAll('.data-row-fill');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.width = e.target.getAttribute('data-width') || e.target.style.width;
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    fills.forEach(f => {
+      f.setAttribute('data-width', f.style.width);
+      f.style.width = '0';
+      io.observe(f);
+    });
+  </script>
+
+</body>
+</html>

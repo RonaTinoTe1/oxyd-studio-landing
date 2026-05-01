@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0a0a0a">
+  <title>MCP : le "câble universel" qui branche l'IA sur tous vos outils — OXYD Studio</title>
+  <meta name="description" content="97 millions de téléchargements. 1000+ outils compatibles. MCP redéfinit comment les agents IA parlent à vos logiciels — et pourquoi la fenêtre d'opportunité se ferme en 2026.">
+  <link rel="canonical" href="https://oxyd.studio/blog/mcp-protocole-ia-agentique">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://oxyd.studio/blog/mcp-protocole-ia-agentique">
+  <meta property="og:title" content="MCP : le câble universel qui branche l'IA sur tous vos outils">
+  <meta property="og:description" content="97 millions de téléchargements. 1000+ outils compatibles. Pourquoi la fenêtre d'opportunité se ferme en 2026.">
+  <meta property="og:image" content="https://oxyd.studio/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="OXYD Studio">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MCP : le câble universel qui branche l'IA sur tous vos outils">
+  <meta name="twitter:description" content="97M de téléchargements. 1000+ outils. La fenêtre se ferme en 2026.">
+  <meta name="twitter:image" content="https://oxyd.studio/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../style.css?v=20">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "MCP : le \"câble universel\" qui branche l'IA sur tous vos outils — et pourquoi ça change tout en 2026",
+    "description": "97 millions de téléchargements. 1000+ outils compatibles. Le Model Context Protocol redéfinit comment les agents IA parlent à vos logiciels. Voici ce que ça signifie concrètement pour votre boîte.",
+    "url": "https://oxyd.studio/blog/mcp-protocole-ia-agentique",
+    "datePublished": "2026-05-01",
+    "author": { "@type": "Person", "name": "Nathan", "url": "https://oxyd.studio" },
+    "publisher": { "@type": "Organization", "name": "OXYD Studio", "url": "https://oxyd.studio" }
+  }
+  </script>
+
+  <style>
+    /* ── Article layout ── */
+    .article-hero {
+      padding: 140px 0 80px;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border);
+    }
+    .article-hero::before {
+      content: '';
+      position: absolute;
+      top: -80px; right: -80px;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(244,81,30,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .article-hero .container { max-width: 860px; position: relative; z-index: 1; }
+
+    .article-kicker {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+      color: var(--blue); letter-spacing: 0.14em; text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .article-kicker::before {
+      content: '';
+      width: 28px; height: 1px; background: var(--blue);
+    }
+
+    .article-h1 {
+      font-family: var(--font-display);
+      font-size: clamp(30px, 5vw, 56px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.08;
+      color: var(--text-primary);
+      margin-bottom: 28px;
+      max-width: 780px;
+    }
+    .article-h1 em {
+      font-style: normal;
+      color: var(--blue);
+    }
+
+    .article-lede {
+      font-size: 20px;
+      line-height: 1.65;
+      color: var(--text-secondary);
+      max-width: 680px;
+      margin-bottom: 36px;
+      font-weight: 400;
+    }
+    .article-lede strong { color: var(--text-primary); }
+
+    .article-meta {
+      display: flex; align-items: center; gap: 20px;
+      flex-wrap: wrap;
+    }
+    .meta-author {
+      display: flex; align-items: center; gap: 10px;
+    }
+    .meta-avatar {
+      width: 34px; height: 34px; border-radius: 50%;
+      background: linear-gradient(135deg, #F4511E, #D43F0D);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 800; color: #fff;
+      font-family: var(--font-display);
+      flex-shrink: 0;
+    }
+    .meta-name { font-size: 13px; font-weight: 600; color: var(--text-primary); }
+    .meta-role { font-size: 11px; color: var(--text-muted); font-family: var(--font-mono); }
+    .meta-sep { width: 1px; height: 24px; background: var(--border); }
+    .meta-date { font-size: 12px; color: var(--text-muted); font-family: var(--font-mono); }
+    .meta-tag {
+      display: inline-flex; padding: 3px 10px;
+      border-radius: 100px; font-size: 11px; font-weight: 500;
+      background: rgba(244,81,30,0.1); color: var(--blue);
+      border: 1px solid rgba(244,81,30,0.2);
+      font-family: var(--font-mono);
+    }
+
+    /* ── Hero stat strip ── */
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      margin-top: 56px;
+    }
+    .hero-stat {
+      background: var(--bg-subtle);
+      padding: 22px 20px;
+    }
+    .hero-stat-val {
+      font-family: var(--font-display);
+      font-size: 28px; font-weight: 800;
+      color: var(--blue); letter-spacing: -0.04em;
+      line-height: 1; margin-bottom: 6px;
+    }
+    .hero-stat-label {
+      font-size: 12px; color: var(--text-muted);
+      line-height: 1.4;
+    }
+    .hero-stat-source {
+      font-family: var(--font-mono); font-size: 9px;
+      color: rgba(244,81,30,0.5); margin-top: 4px;
+      text-transform: uppercase; letter-spacing: 0.08em;
+    }
+
+    /* ── Article body ── */
+    .article-body { padding: 80px 0 120px; }
+    .article-body .container {
+      display: grid;
+      grid-template-columns: 1fr 260px;
+      gap: 80px;
+      max-width: 1100px;
+      align-items: start;
+    }
+    .article-content { min-width: 0; }
+    .article-content p {
+      font-size: 17px; line-height: 1.82;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+    }
+    .article-content h2 {
+      font-family: var(--font-display);
+      font-size: clamp(20px, 2.5vw, 28px);
+      font-weight: 700; letter-spacing: -0.03em;
+      color: var(--text-primary);
+      margin-bottom: 18px;
+      line-height: 1.2;
+      padding-top: 60px;
+      margin-top: 0;
+    }
+    .article-content h2:first-of-type { padding-top: 0; }
+    .article-content h3 {
+      font-family: var(--font-display);
+      font-size: 18px; font-weight: 600;
+      color: var(--text-primary);
+      margin-top: 36px; margin-bottom: 12px;
+    }
+    .article-content strong { color: var(--text-primary); }
+    .article-content a { color: var(--blue); text-underline-offset: 3px; }
+    .article-content ul {
+      list-style: none; margin-bottom: 24px;
+    }
+    .article-content ul li {
+      position: relative; padding-left: 22px;
+      font-size: 16px; line-height: 1.75;
+      color: var(--text-secondary);
+      margin-bottom: 10px;
+    }
+    .article-content ul li::before {
+      content: '—';
+      position: absolute; left: 0;
+      color: var(--blue); font-weight: 700;
+    }
+    .article-content hr {
+      border: none; border-top: 1px solid var(--border);
+      margin: 56px 0;
+    }
+
+    /* ── Stat callout ── */
+    .stat-callout {
+      display: flex; align-items: center; gap: 24px;
+      padding: 28px 32px;
+      background: rgba(244,81,30,0.05);
+      border: 1px solid rgba(244,81,30,0.18);
+      border-left: 3px solid var(--blue);
+      border-radius: 12px;
+      margin: 40px 0;
+    }
+    .sc-num {
+      font-family: var(--font-display);
+      font-size: 52px; font-weight: 800;
+      color: var(--blue); letter-spacing: -0.04em;
+      line-height: 1; flex-shrink: 0;
+    }
+    .sc-text strong { display: block; font-size: 15px; color: var(--text-primary); margin-bottom: 6px; }
+    .sc-text span { font-size: 12px; color: var(--text-muted); font-family: var(--font-mono); }
+
+    /* ── Data grid ── */
+    .data-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin: 40px 0;
+    }
+    .data-grid-cell {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 22px;
+    }
+    .dgc-val {
+      font-family: var(--font-display);
+      font-size: 32px; font-weight: 800;
+      color: var(--blue); letter-spacing: -0.04em;
+      line-height: 1; margin-bottom: 6px;
+    }
+    .dgc-label { font-size: 13px; color: var(--text-primary); font-weight: 500; margin-bottom: 4px; }
+    .dgc-source { font-family: var(--font-mono); font-size: 10px; color: var(--text-muted); }
+
+    /* ── Bar chart ── */
+    .data-card {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin: 40px 0;
+    }
+    .data-card-title {
+      font-family: var(--font-mono); font-size: 11px;
+      color: var(--text-muted); letter-spacing: 0.1em;
+      text-transform: uppercase; margin-bottom: 20px;
+    }
+    .data-rows { display: flex; flex-direction: column; gap: 13px; }
+    .data-row { display: flex; align-items: center; gap: 16px; }
+    .data-row-label { font-size: 13px; color: var(--text-secondary); width: 200px; flex-shrink: 0; }
+    .data-row-bar { flex: 1; height: 6px; background: var(--bg-muted); border-radius: 3px; overflow: hidden; }
+    .data-row-fill { height: 100%; background: var(--blue); border-radius: 3px; transition: width 1.2s cubic-bezier(.4,0,.2,1); }
+    .data-row-val { font-size: 12px; font-family: var(--font-mono); color: var(--blue); width: 42px; text-align: right; flex-shrink: 0; }
+
+    /* ── Comparison table ── */
+    .compare-table {
+      width: 100%; border-collapse: collapse;
+      margin: 40px 0; font-size: 14px;
+    }
+    .compare-table th {
+      font-family: var(--font-mono); font-size: 10px;
+      color: var(--text-muted); text-transform: uppercase;
+      letter-spacing: 0.1em; padding: 10px 14px;
+      text-align: left; border-bottom: 1px solid var(--border);
+    }
+    .compare-table th:nth-child(2) { color: rgba(244,81,30,0.5); }
+    .compare-table th:nth-child(3) { color: var(--blue); }
+    .compare-table td {
+      padding: 14px; border-bottom: 1px solid rgba(255,255,255,0.04);
+      color: var(--text-secondary); vertical-align: top;
+    }
+    .compare-table td:first-child { font-weight: 600; color: var(--text-primary); width: 160px; }
+    .compare-table td:nth-child(2) { font-family: var(--font-mono); font-size: 13px; }
+    .compare-table td:nth-child(3) { font-family: var(--font-mono); font-size: 13px; color: var(--blue); }
+    .compare-table tr:last-child td { border-bottom: none; }
+
+    /* ── Callout box ── */
+    .callout-box {
+      background: rgba(244,81,30,0.04);
+      border: 1px solid rgba(244,81,30,0.15);
+      border-radius: 14px;
+      padding: 24px 28px;
+      margin: 40px 0;
+    }
+    .callout-box .cb-title {
+      font-family: var(--font-mono); font-size: 10px;
+      color: var(--blue); letter-spacing: 0.12em;
+      text-transform: uppercase; margin-bottom: 12px;
+    }
+    .callout-box p {
+      font-size: 15px !important;
+      color: var(--text-primary) !important;
+      margin-bottom: 0 !important;
+      line-height: 1.7 !important;
+    }
+
+    /* ── Quote block ── */
+    .article-quote {
+      padding: 28px 32px 28px 40px;
+      border-left: 3px solid var(--border-strong);
+      margin: 40px 0;
+      position: relative;
+    }
+    .article-quote::before {
+      content: '"';
+      position: absolute; top: -10px; left: 24px;
+      font-size: 80px; line-height: 1;
+      color: rgba(244,81,30,0.2);
+      font-family: var(--font-display);
+    }
+    .article-quote p {
+      font-size: 19px !important;
+      font-style: italic;
+      color: var(--text-primary) !important;
+      line-height: 1.6 !important;
+      margin-bottom: 12px !important;
+    }
+    .article-quote cite {
+      font-size: 12px; color: var(--text-muted);
+      font-style: normal; font-family: var(--font-mono);
+    }
+
+    /* ── CTA inline ── */
+    .article-cta-block {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border-strong);
+      border-radius: 20px;
+      padding: 44px 40px;
+      margin: 64px 0;
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .article-cta-block::before {
+      content: '';
+      position: absolute; top: -60px; left: 50%; transform: translateX(-50%);
+      width: 300px; height: 300px;
+      background: radial-gradient(circle, rgba(244,81,30,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .article-cta-block h3 {
+      font-family: var(--font-display);
+      font-size: 26px; font-weight: 700;
+      color: var(--text-primary); margin-bottom: 12px;
+      position: relative; z-index: 1;
+    }
+    .article-cta-block p {
+      font-size: 15px !important; color: var(--text-secondary) !important;
+      margin-bottom: 28px !important;
+      position: relative; z-index: 1;
+    }
+    .article-cta-block .btn-primary { position: relative; z-index: 1; }
+
+    /* ── Sidebar ── */
+    .article-sidebar { position: sticky; top: 100px; }
+    .sidebar-toc {
+      background: var(--bg-subtle); border: 1px solid var(--border);
+      border-radius: 14px; padding: 24px; margin-bottom: 20px;
+    }
+    .toc-title {
+      font-family: var(--font-mono); font-size: 10px;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--text-muted); margin-bottom: 16px;
+    }
+    .toc-link {
+      display: block; font-size: 13px;
+      color: var(--text-secondary); padding: 6px 0;
+      border-left: 2px solid transparent; padding-left: 12px;
+      text-decoration: none;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .toc-link:hover, .toc-link.active {
+      color: var(--blue); border-left-color: var(--blue);
+    }
+    .sidebar-author {
+      background: var(--bg-subtle); border: 1px solid var(--border);
+      border-radius: 14px; padding: 24px;
+    }
+    .sidebar-author-head { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+    .sidebar-avatar {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: linear-gradient(135deg, #F4511E, #D43F0D);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 18px; font-weight: 800; color: #fff;
+      font-family: var(--font-display); flex-shrink: 0;
+    }
+    .sidebar-author-name { font-size: 14px; font-weight: 700; color: var(--text-primary); }
+    .sidebar-author-role { font-size: 11px; color: var(--blue); font-family: var(--font-mono); }
+    .sidebar-author p { font-size: 13px; color: var(--text-secondary); line-height: 1.6; margin-bottom: 16px; }
+
+    /* ── Related ── */
+    .related-section { padding: 80px 0; border-top: 1px solid var(--border); }
+    .related-label {
+      font-family: var(--font-mono); font-size: 11px;
+      color: var(--text-muted); letter-spacing: 0.12em;
+      text-transform: uppercase; margin-bottom: 32px;
+    }
+    .related-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .related-card {
+      background: var(--bg-subtle); border: 1px solid var(--border);
+      border-radius: 14px; padding: 24px; text-decoration: none;
+      transition: border-color 0.2s, transform 0.2s; display: block;
+    }
+    .related-card:hover { border-color: rgba(244,81,30,0.4); transform: translateY(-2px); }
+    .related-tag {
+      font-family: var(--font-mono); font-size: 10px;
+      color: var(--blue); letter-spacing: 0.1em;
+      text-transform: uppercase; margin-bottom: 10px;
+    }
+    .related-title {
+      font-family: var(--font-display); font-size: 15px;
+      font-weight: 700; color: var(--text-primary);
+      line-height: 1.3; margin-bottom: 8px;
+    }
+    .related-desc { font-size: 12px; color: var(--text-secondary); line-height: 1.6; }
+
+    /* ── Trust strip ── */
+    .trust-strip {
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-subtle);
+      padding: 11px 0;
+    }
+    .trust-strip .container {
+      display: flex; align-items: center; gap: 32px;
+      flex-wrap: wrap; max-width: 1100px;
+    }
+    .ts-item {
+      display: flex; align-items: center; gap: 8px;
+      font-family: var(--font-mono); font-size: 11px;
+      color: var(--text-muted);
+    }
+    .ts-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--blue); opacity: 0.6; flex-shrink: 0;
+    }
+    .ts-sep { color: rgba(255,255,255,0.12); }
+
+    /* ── Inline hook (soft mid-article CTA) ── */
+    .inline-hook {
+      display: flex; align-items: flex-start; gap: 20px;
+      padding: 22px 24px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin: 40px 0;
+      text-decoration: none;
+      transition: border-color 0.2s;
+      cursor: pointer;
+    }
+    .inline-hook:hover { border-color: rgba(244,81,30,0.35); }
+    .ih-icon {
+      width: 38px; height: 38px; border-radius: 10px;
+      background: rgba(244,81,30,0.12);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .ih-icon svg { width: 18px; height: 18px; color: var(--blue); }
+    .ih-body {}
+    .ih-label {
+      font-family: var(--font-mono); font-size: 10px;
+      color: var(--blue); text-transform: uppercase;
+      letter-spacing: 0.1em; margin-bottom: 4px;
+    }
+    .ih-title { font-size: 14px; font-weight: 600; color: var(--text-primary); margin-bottom: 4px; }
+    .ih-desc { font-size: 13px; color: var(--text-secondary); line-height: 1.5; }
+
+    /* ── OXYD method box ── */
+    .oxyd-method-box {
+      border: 1px solid rgba(244,81,30,0.22);
+      border-radius: 14px;
+      overflow: hidden;
+      margin: 44px 0;
+    }
+    .omb-header {
+      background: rgba(244,81,30,0.08);
+      padding: 14px 22px;
+      display: flex; align-items: center; gap: 10px;
+      border-bottom: 1px solid rgba(244,81,30,0.15);
+    }
+    .omb-badge {
+      font-family: var(--font-mono); font-size: 9px;
+      text-transform: uppercase; letter-spacing: 0.12em;
+      color: var(--blue); background: rgba(244,81,30,0.12);
+      padding: 3px 9px; border-radius: 100px;
+      border: 1px solid rgba(244,81,30,0.2);
+    }
+    .omb-title { font-size: 13px; font-weight: 600; color: var(--text-primary); }
+    .omb-body { padding: 22px; }
+    .omb-body p {
+      font-size: 14px !important;
+      color: var(--text-secondary) !important;
+      margin-bottom: 16px !important;
+      line-height: 1.7 !important;
+    }
+    .omb-body p:last-of-type { margin-bottom: 0 !important; }
+    .omb-steps {
+      display: flex; gap: 0;
+      margin-bottom: 20px;
+    }
+    .omb-step {
+      flex: 1; text-align: center; padding: 14px 8px;
+      border-right: 1px solid var(--border);
+    }
+    .omb-step:last-child { border-right: none; }
+    .omb-step-num {
+      font-family: var(--font-display); font-size: 22px;
+      font-weight: 800; color: var(--blue); display: block; margin-bottom: 4px;
+    }
+    .omb-step-label { font-size: 11px; color: var(--text-muted); line-height: 1.4; }
+    .omb-footer {
+      border-top: 1px solid rgba(244,81,30,0.12);
+      padding: 16px 22px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      flex-wrap: wrap;
+    }
+    .omb-footer-text { font-size: 13px; color: var(--text-secondary); }
+    .omb-footer-text strong { color: var(--text-primary); }
+    .btn-small {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 9px 18px; border-radius: 8px;
+      background: var(--blue); color: #fff;
+      font-size: 12px; font-weight: 600; font-family: var(--font-display);
+      border: none; cursor: pointer; white-space: nowrap;
+      transition: opacity 0.2s;
+    }
+    .btn-small:hover { opacity: 0.85; }
+
+    /* ── Proof strip (sidebar) ── */
+    .sidebar-proof {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      border-radius: 14px; padding: 20px; margin-bottom: 20px;
+    }
+    .sp-title {
+      font-family: var(--font-mono); font-size: 10px;
+      color: var(--text-muted); letter-spacing: 0.1em;
+      text-transform: uppercase; margin-bottom: 16px;
+    }
+    .sp-item {
+      display: flex; align-items: flex-start; gap: 10px;
+      margin-bottom: 14px;
+    }
+    .sp-item:last-child { margin-bottom: 0; }
+    .sp-check {
+      width: 18px; height: 18px; border-radius: 50%;
+      background: rgba(244,81,30,0.12);
+      border: 1px solid rgba(244,81,30,0.25);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .sp-check svg { width: 9px; height: 9px; color: var(--blue); }
+    .sp-text { font-size: 12px; color: var(--text-secondary); line-height: 1.5; }
+    .sp-text strong { color: var(--text-primary); }
+
+    /* ── Sticky bottom CTA ── */
+    .sticky-cta {
+      position: fixed; bottom: 0; left: 0; right: 0;
+      z-index: 900;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(16px);
+      border-top: 1px solid var(--border);
+      padding: 14px 0;
+      transform: translateY(100%);
+      transition: transform 0.4s cubic-bezier(.4,0,.2,1);
+    }
+    .sticky-cta.visible { transform: translateY(0); }
+    .sticky-cta .container {
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 20px; flex-wrap: wrap;
+    }
+    .sct-left {}
+    .sct-label {
+      font-family: var(--font-mono); font-size: 10px;
+      color: var(--blue); text-transform: uppercase;
+      letter-spacing: 0.1em; margin-bottom: 3px;
+    }
+    .sct-text { font-size: 14px; font-weight: 600; color: var(--text-primary); }
+    .sct-close {
+      background: none; border: none; cursor: pointer;
+      color: var(--text-muted); padding: 4px; margin-left: 12px;
+      font-size: 18px; line-height: 1;
+    }
+
+    /* ── Mobile ── */
+    @media (max-width: 900px) {
+      .article-body .container { grid-template-columns: 1fr; gap: 48px; }
+      .article-sidebar { position: static; }
+      .related-grid { grid-template-columns: 1fr; }
+      .hero-stats { grid-template-columns: repeat(2, 1fr); }
+      .data-grid { grid-template-columns: 1fr; }
+      .compare-table { font-size: 12px; }
+    }
+    @media (max-width: 600px) {
+      .article-h1 { font-size: 26px; }
+      .stat-callout { flex-direction: column; gap: 12px; }
+      .sc-num { font-size: 40px; }
+      .article-cta-block { padding: 28px 20px; }
+      .data-row-label { width: 130px; font-size: 12px; }
+      .hero-stats { grid-template-columns: 1fr 1fr; }
+      .compare-table td:first-child { width: 100px; }
+    }
+  </style>
+  <!-- Privacy-friendly analytics by Plausible -->
+  <script async src="https://plausible.io/js/pa-eQmapsJCn9blo_-8Uw8Go.js"></script>
+  <script>
+    window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+    plausible.init()
+  </script>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="../" class="navbar-logo" aria-label="OXYD Studio">
+        <svg xmlns="http://www.w3.org/2000/svg" height="28" width="auto" aria-label="OXYD" viewBox="0 0 1254 1254"><path fill="#FC511F" d="M976.974 505.75L1118.84 505.689L1162.74 505.658C1192.26 505.645 1209.41 501.069 1223.88 531.388C1228.73 541.554 1236.6 554.595 1242.1 564.8L1192.9 643.4C1182.99 659.346 1167.3 687.609 1154.71 699.549C1137.25 712.846 1125.97 711.161 1105 711.148L1064.22 711.153L902.883 711.218C907.665 696.363 913.904 679.932 919.255 665.189L944.268 596.254C955.067 566.717 965.553 534.694 976.974 505.75Z"/><path fill="#0A0A0A" d="M1016.95 556.145C1063.76 557.091 1111.1 555.317 1157.93 556.686C1169.31 557.515 1172.99 564.923 1168.17 574.753C1155.86 599.832 1144.75 625.202 1132.06 650.04C1130.76 652.592 1128.33 655.001 1126.29 657.015C1122.77 659.849 1117.73 662.459 1113.22 662.821C1098.87 663.971 1083.89 663.527 1069.48 663.564L978.226 663.672C990.026 628.237 1004.52 591.653 1016.95 556.145Z"/><path fill="#FC511F" d="M147.317 505.977C151.315 505.387 163.813 505.643 168.474 505.648L211.195 505.711L283.103 505.676C295.792 505.664 308.495 505.572 321.18 505.8C336.208 506.071 351.156 515.422 358 528.811C362.861 538.454 363.643 549.647 360.17 559.873C358.048 566.3 354.498 574.448 351.95 580.901L336.084 621.141L323.919 652.221C320.383 661.312 317.166 671.199 311.808 679.305C304.807 690.056 295.101 698.776 283.665 704.59C266.812 713.08 251.525 711.158 233.294 711.175L180.669 711.189L111.219 711.152C98.8916 711.148 86.6268 711.374 74.2192 711.037C61.0887 710.681 47.7725 703.201 42.0867 691.031C35.022 675.91 40.0705 664.988 45.4921 650.579C66.1229 646.611 89.4243 640.545 110.067 635.712C111.017 635.512 111.384 635.541 112.355 635.496C113.219 639.232 105.33 653.187 104.402 659.751C105.01 662.032 106.077 663.682 108.678 663.703C115.716 663.761 122.759 663.747 129.799 663.746L173.722 663.711L215.681 663.736C235.131 663.841 261.178 667.583 267.749 642.549C271.556 628.049 299.594 569.221 298.397 558.252C298.082 558.019 297.799 557.737 297.454 557.552C293.13 555.238 170.567 555.766 158.84 556.4C156.755 556.513 154.81 556.787 152.868 557.59C148.333 559.466 144.252 562.358 141.238 566.244C134.586 574.821 124.467 606.133 119.643 618.263C97.2765 623.838 74.8128 629.014 52.2621 633.787C58.4953 615.14 66.5028 596.541 73.2815 578.025C76.1921 570.074 79.6532 560.679 83.3772 553.131C86.0087 547.883 89.1373 542.9 92.72 538.249C106.694 520.048 124.608 508.974 147.317 505.977Z"/><path fill="#FC511F" d="M378.764 505.645L459.532 505.672C478.239 527.795 497.092 549.794 516.09 571.668L564.341 531.205C574.059 523.048 585.15 513.308 595.107 505.718L673.021 505.702C659.71 517.318 645.044 528.937 631.347 540.23L547.321 609.18C555.382 618.95 634 710.043 633.918 711.218C608.761 711.095 583.604 711.104 558.448 711.245C553.318 704.852 546.206 697.138 540.718 690.813C527.821 676.05 515.103 661.132 502.566 646.061L424.798 711.153L346.019 711.215L470.486 608.832L411.972 543.194C402.323 532.46 387.358 516.762 378.764 505.645Z"/><path fill="#FC511F" d="M680.928 505.692L756.612 505.663C774.253 527.628 791.565 551.537 809.288 573.886C832.967 551.303 856.5 528.566 879.886 505.678L955.361 505.75L868.473 587.27C860.526 594.736 852.531 602.15 844.489 609.513C841.283 612.476 831.281 621.153 829.887 624.556C826.387 633.096 822.793 644.106 819.776 652.822C812.978 672.248 806.299 691.716 799.738 711.224C780.45 710.605 758.227 711.138 738.746 711.21C749.34 681.184 759.392 650.696 770.232 620.793C759.937 608.742 747.803 592.255 737.863 579.534C718.608 555.135 699.628 530.519 680.928 505.692Z"/></svg>
+        <span class="logo-wordmark">Studio</span>
+      </a>
+      <div class="navbar-links" id="navLinks">
+        <a href="../#product">Méthode</a>
+        <a href="../#process">Process</a>
+        <a href="../#faq">FAQ</a>
+        <a href="../#contact">Contact</a>
+      </div>
+      <div class="navbar-actions">
+        <a href="../" style="font-size:13px; color:var(--text-secondary); text-decoration:none;">← Accueil</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- TRUST STRIP -->
+  <div class="trust-strip">
+    <div class="container">
+      <div class="ts-item"><div class="ts-dot"></div>Spécialiste IA agentique — Dijon, France</div>
+      <span class="ts-sep">·</span>
+      <div class="ts-item"><div class="ts-dot"></div>Systèmes en production chez nos clients</div>
+      <span class="ts-sep">·</span>
+      <div class="ts-item"><div class="ts-dot"></div>Diagnostic gratuit · Sans engagement</div>
+      <span class="ts-sep">·</span>
+      <div class="ts-item"><div class="ts-dot"></div>Résultats mesurables sous 3 semaines</div>
+    </div>
+  </div>
+
+  <!-- ARTICLE HERO -->
+  <header class="article-hero">
+    <div class="container">
+      <div class="article-kicker">Infrastructure · Opportunité 2026 · Expliqué simplement</div>
+
+      <h1 class="article-h1">
+        MCP : le <em>"câble universel"</em><br>
+        qui branche l'IA sur<br>
+        tous vos outils.
+      </h1>
+
+      <p class="article-lede">
+        En 2023, connecter une IA à votre CRM coûtait 3 mois de développement sur mesure. Aujourd'hui : 2 jours — <strong>si vous savez ce que vous faites</strong>. C'est ce que le Model Context Protocol a changé. 97 millions de téléchargements, 1 000+ outils compatibles, 89% des nouveaux déploiements d'agents IA en entreprise l'utilisent déjà. Voici ce que ça signifie concrètement pour vous.
+      </p>
+
+      <div class="article-meta">
+        <div class="meta-author">
+          <div class="meta-avatar">N</div>
+          <div>
+            <div class="meta-name">Nathan</div>
+            <div class="meta-role">Fondateur · OXYD Studio</div>
+          </div>
+        </div>
+        <div class="meta-sep"></div>
+        <span class="meta-date">1 mai 2026</span>
+        <div class="meta-sep"></div>
+        <span class="meta-tag">MCP</span>
+        <span class="meta-tag">Infrastructure IA</span>
+        <span class="meta-tag">Opportunité 2026</span>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-val">97M</div>
+          <div class="hero-stat-label">téléchargements du protocole MCP en quelques mois</div>
+          <div class="hero-stat-source">Anthropic · début 2026</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-val">1 000+</div>
+          <div class="hero-stat-label">outils compatibles : Gmail, Notion, Stripe, GitHub, votre CRM</div>
+          <div class="hero-stat-source">début 2026</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-val">89%</div>
+          <div class="hero-stat-label">des nouveaux déploiements d'agents IA en entreprise utilisent MCP</div>
+          <div class="hero-stat-source">Digital Applied 2026</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-val">+400%</div>
+          <div class="hero-stat-label">de nouveaux outils compatibles ajoutés chaque mois au pic</div>
+          <div class="hero-stat-source">Digital Applied 2026</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ARTICLE BODY -->
+  <div class="article-body">
+    <div class="container">
+
+      <!-- Main content -->
+      <article class="article-content" id="article-top">
+
+        <h2 id="avant-mcp">Avant MCP, chaque connexion coûtait des mois</h2>
+
+        <p>
+          2023. Vous voulez que votre IA lise vos emails, qualifie les nouveaux prospects, et les ajoute dans votre CRM. Ce que ça implique concrètement : un développeur doit écrire du code spécifique pour que l'IA comprenne l'API de Gmail, puis du code différent pour l'API de votre CRM, puis gérer les authentifications, les erreurs, les mises à jour de version de chaque service. C'est 3 mois de développement minimum pour 2 outils connectés. Pas parce que la tâche est complexe — parce que <strong>chaque connexion doit être construite de zéro, sur mesure, pour chaque couple outil-IA</strong>.
+        </p>
+
+        <p>
+          Fin 2024, Anthropic publie le Model Context Protocol. Standard ouvert, gratuit, adopté immédiatement par les principaux acteurs tech. Ce que ça change : il n'y a plus besoin de coder une connexion sur mesure pour chaque outil. Un outil compatible MCP parle à n'importe quel agent IA compatible MCP. Une fois. Pour tous.
+        </p>
+
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Dimension</th>
+              <th>Avant MCP (2023)</th>
+              <th>Après MCP (2026)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Connecter 1 outil à 1 IA</td>
+              <td>3 à 6 semaines de dev custom</td>
+              <td>2 jours (expert) — configuration</td>
+            </tr>
+            <tr>
+              <td>Connecter 5 outils à 1 IA</td>
+              <td>4 à 6 mois de développement</td>
+              <td>1 à 2 semaines</td>
+            </tr>
+            <tr>
+              <td>Changer d'IA (ex : GPT → Claude)</td>
+              <td>Réécrire toutes les connexions</td>
+              <td>Aucun changement nécessaire</td>
+            </tr>
+            <tr>
+              <td>Coût technique de base</td>
+              <td>15 000–40 000 € (dev senior)</td>
+              <td>Configuration + expertise métier</td>
+            </tr>
+            <tr>
+              <td>Maintenance</td>
+              <td>Chaque mise à jour d'API = travail manuel</td>
+              <td>Gérée côté serveur MCP</td>
+            </tr>
+            <tr>
+              <td>Outils disponibles "out of the box"</td>
+              <td>Ceux que vous avez payé à coder</td>
+              <td>1 000+ serveurs publics disponibles</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+          La nuance qui change tout : "2 jours" est le temps pour un expert qui a déjà fait ça. Qui connaît les pièges d'authentification, les erreurs silencieuses, les limites de taux d'appels API, les patterns de retry. Pour quelqu'un qui démarre, c'est encore 3 mois — parce que <strong>MCP simplifie la connexion, pas la compréhension de ce qu'on connecte et pourquoi</strong>.
+        </p>
+
+        <!-- HOOK 1 : après avant-mcp -->
+        <div class="inline-hook" role="button" tabindex="0" data-cal-link="oxyd.studio/diagnostic" data-cal-config='{"layout":"month_view"}'>
+          <div class="ih-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+          </div>
+          <div class="ih-body">
+            <div class="ih-label">OXYD Studio — Déploiement MCP</div>
+            <div class="ih-title">On configure MCP pour vos outils en 2 jours. Parce qu'on l'a déjà fait.</div>
+            <div class="ih-desc">La rapidité vient de l'expérience. On a déjà rencontré les erreurs que vous allez rencontrer — et on sait exactement comment les éviter. →</div>
+          </div>
+        </div>
+
+        <h2 id="comment-ca-marche">Comment ça marche, expliqué à votre père</h2>
+
+        <p>
+          Imaginez les prises électriques des années 1990. Vous partez aux États-Unis avec votre chargeur français : impossible de le brancher. Vous allez en Angleterre : encore un problème. Chaque pays avait sa propre norme de prise. Pour travailler partout, vous aviez besoin d'un adaptateur différent pour chaque destination — ou de racheter des appareils sur place. C'était le monde des connexions IA avant MCP.
+        </p>
+
+        <p>
+          MCP, c'est l'adaptateur universel de voyage. Une seule prise qui fonctionne partout dans le monde. Votre agent IA est l'appareil. Gmail, Notion, Stripe, votre CRM, votre logiciel de comptabilité — ce sont les prises murales dans chaque pays. Avant MCP, votre développeur fabriquait à la main un adaptateur différent pour chaque destination. Après MCP, il en existe un seul standard. Universel. Gratuit. Que tout le monde a adopté.
+        </p>
+
+        <div class="callout-box">
+          <div class="cb-title">Ce que MCP permet concrètement</div>
+          <p>Votre agent IA peut maintenant lire vos emails Gmail, créer des fiches dans votre CRM, déclencher une facture dans Stripe, mettre à jour une tâche Notion, et envoyer un message Slack — en utilisant un seul protocole standard. Sans code spécifique pour chaque outil. C'est Anthropic (la société derrière Claude) qui a créé ce standard et l'a ouvert gratuitement à tout l'écosystème fin 2024. Google, Microsoft, OpenAI, et des centaines d'éditeurs de logiciels l'ont adopté immédiatement.</p>
+        </div>
+
+        <div class="data-grid">
+          <div class="data-grid-cell">
+            <div class="dgc-val">97M</div>
+            <div class="dgc-label">téléchargements — adoption parmi les plus rapides de l'histoire de la tech</div>
+            <div class="dgc-source">Anthropic · début 2026</div>
+          </div>
+          <div class="data-grid-cell">
+            <div class="dgc-val">1 000+</div>
+            <div class="dgc-label">serveurs MCP publics — Gmail, Notion, Stripe, GitHub, Slack, et votre stack</div>
+            <div class="dgc-source">début 2026</div>
+          </div>
+          <div class="data-grid-cell">
+            <div class="dgc-val">89%</div>
+            <div class="dgc-label">des nouvelles installations d'agents IA en entreprise utilisent MCP</div>
+            <div class="dgc-source">Digital Applied 2026</div>
+          </div>
+          <div class="data-grid-cell">
+            <div class="dgc-val">400%</div>
+            <div class="dgc-label">croissance mensuelle du nombre d'outils compatibles au pic</div>
+            <div class="dgc-source">Digital Applied 2026</div>
+          </div>
+        </div>
+
+        <h2 id="97-millions">97 millions de téléchargements : pourquoi c'est un signal d'alarme</h2>
+
+        <p>
+          97 millions de téléchargements, ce n'est pas une statistique de produit. C'est un signal de marché. Et si vous savez lire les signaux de marché, celui-ci dit une chose précise : <strong>une fenêtre d'opportunité est ouverte, et elle va se fermer</strong>.
+        </p>
+
+        <div class="article-quote">
+          <p>Chaque fois qu'une infrastructure technique atteint une masse critique d'adoption, une fenêtre s'ouvre. Les premiers à construire dessus captent une valeur disproportionnée. Puis la fenêtre se ferme — pas parce que la technologie disparaît, mais parce que l'avantage concurrentiel disparaît.</p>
+          <cite>— Schéma observé avec TCP/IP (années 90), les smartphones (2008-2012), le cloud (2010-2015), les APIs REST (2012-2016)</cite>
+        </div>
+
+        <p>
+          TCP/IP est devenu le standard d'internet dans les années 1990. Les entreprises qui ont construit dessus en 1994 et 1995 — Amazon, eBay, les premières banques en ligne — ont capturé des positions de marché que leurs concurrents qui ont attendu 1999 ou 2001 n'ont jamais rattrapées. Pas parce que les retardataires étaient moins intelligents. Parce que <strong>les effets de réseau, l'expérience accumulée et la base client étaient déjà occupés</strong>.
+        </p>
+
+        <p>
+          MCP a atteint 97 millions de téléchargements en quelques mois. Pour comparaison : Docker (l'outil qui a standardisé les serveurs cloud) a mis 18 mois pour atteindre ce niveau d'adoption. Kubernetes (l'outil qui gère les serveurs à grande échelle) a mis 2 ans. MCP a fait ça en une fraction de ce temps. Le signal : le marché reconnaît que c'est le standard. La question n'est plus "est-ce que MCP va s'imposer ?" — elle est déjà répondue. La question est "quand est-ce que vous commencez à construire dessus ?"
+        </p>
+
+        <div class="stat-callout">
+          <div class="sc-num">2027</div>
+          <div class="sc-text">
+            <strong>D'ici 2027, les dépenses en logiciels non-agentiques commencent à décliner — Gartner. La fenêtre MCP est maintenant, pas dans 18 mois.</strong>
+            <span>Source : Gartner Worldwide AI Spending Forecast Q1 2026</span>
+          </div>
+        </div>
+
+        <h2 id="ce-que-ca-permet">Ce que ça permet concrètement pour votre boîte</h2>
+
+        <p>
+          Arrêtons la théorie. Voici 4 scénarios précis — ce que vit votre client, ce que fait l'agent, ce que vous ne faites plus.
+        </p>
+
+        <h3>Scénario 1 : email entrant un dimanche à 21h43</h3>
+        <p>
+          Un prospect vous envoie un email. Votre agent lit le message, détecte qu'il s'agit d'une demande de devis pour une prestation à 3 000 €. Il qualifie le prospect (secteur, taille, urgence apparente), crée une fiche contact dans votre CRM, ajoute une tâche "relancer lundi matin 9h" dans votre agenda, et envoie un email de confirmation au prospect indiquant que vous reprenez contact sous 24h. Lundi à 9h01, votre agenda vous rappelle que ce prospect existe et que ses informations sont déjà dans votre CRM. Vous appelez. Votre concurrent a répondu à 10h30 quand il a ouvert Gmail.
+        </p>
+
+        <h3>Scénario 2 : paiement reçu — la facturation se gère seule</h3>
+        <p>
+          Un virement arrive sur votre compte. L'agent détecte le paiement dans votre outil bancaire, identifie le client correspondant dans votre CRM, génère la facture avec les bonnes informations, l'envoie au client par email, met à jour le statut "payé" dans votre logiciel de comptabilité, et archive le tout dans le dossier client dans Notion. Temps passé par vous : zéro. Avant MCP, automatiser ça vous coûtait 2 mois de développement. Maintenant : c'est une configuration de 2 jours pour un expert.
+        </p>
+
+        <h3>Scénario 3 : le rapport du matin à 7h58</h3>
+        <p>
+          Chaque jour à 7h58 — avant que vous n'allumiez votre ordinateur — votre agent a lu vos analytics, votre CRM, votre boîte email et votre outil de gestion de projet. Il vous envoie 3 lignes sur Slack : chiffre d'affaires de la semaine vs semaine dernière, 2 clients en attente de réponse depuis plus de 48h, 1 alerte si une métrique sort de la norme. Pas un export brut — une synthèse lisible en 30 secondes, avec les seules informations qui nécessitent votre attention. C'est le genre de tableau de bord que les PDG des grandes entreprises ont depuis 10 ans. Vous pouvez l'avoir en 2026.
+        </p>
+
+        <h3>Scénario 4 : support client qui n'attend pas</h3>
+        <p>
+          Un client pose une question sur votre site à 23h. L'agent recherche dans votre base de connaissances (Notion, Google Drive, ou vos FAQs), compose une réponse personnalisée et précise, la transmet par email ou chat dans les 2 minutes. Si la question dépasse ses capacités ou si le ton est négatif, il crée un ticket prioritaire dans votre outil de gestion et vous notifie. Résultat observé : 60% des demandes résolues sans intervention humaine, temps de réponse moyen passé de 4h à 2 minutes.
+        </p>
+
+        <h2 id="le-piege">Le piège : avoir la prise mais ne pas savoir quoi brancher</h2>
+
+        <p>
+          MCP résout le problème technique de la connexion. Ce qu'il ne résout pas — et c'est là que 88% des entreprises bloquent encore — c'est la question stratégique : <strong>qu'est-ce que vous automatisez en premier ? Dans quel ordre ? Avec quelle logique ?</strong>
+        </p>
+
+        <p>
+          Imaginez qu'on vous donne accès à un atelier complet avec tous les outils possibles. Scie circulaire, tour à bois, fraiseuse CNC, laser. Si vous n'avez jamais construit de meuble, l'accès aux outils ne vous permet pas de construire une armoire en 2 jours. La barrière n'est plus technologique — elle est d'expertise.
+        </p>
+
+        <p>
+          C'est exactement la situation avec MCP en 2026. Les connexions sont disponibles. Le protocole est standardisé. Mais les questions qui restent sont des questions d'expert :
+        </p>
+
+        <ul>
+          <li><strong>Quel process automatiser en premier</strong> pour maximiser le ROI dans les 3 premières semaines ?</li>
+          <li><strong>Comment structurer les données</strong> pour que l'agent ne génère pas d'erreurs silencieuses sur vos factures ou vos contacts ?</li>
+          <li><strong>Quels garde-fous mettre en place</strong> pour que l'agent n'envoie jamais un email de relance à un client que vous êtes en train de négocier manuellement ?</li>
+          <li><strong>Comment monitorer</strong> que l'agent fait bien ce qu'on lui a demandé — 3 mois après le déploiement ?</li>
+          <li><strong>Quand escalader</strong> vers un humain, et avec quel niveau d'urgence ?</li>
+        </ul>
+
+        <p>
+          Ces questions n'ont pas de réponse dans la documentation MCP. Elles ont des réponses dans l'expérience de quelqu'un qui a déjà déployé ces systèmes et vu ce qui casse. Le problème n'est plus "comment connecter l'IA à mes outils". Il est "quoi connecter, dans quel ordre, pour gagner quoi — et comment être sûr que ça tient".
+        </p>
+
+        <!-- OXYD METHOD BOX : après le-piege -->
+        <div class="oxyd-method-box">
+          <div class="omb-header">
+            <span class="omb-badge">OXYD Studio</span>
+            <span class="omb-title">Ce qu'on fait quand la prise est là mais que vous ne savez pas quoi brancher</span>
+          </div>
+          <div class="omb-body">
+            <div class="omb-steps">
+              <div class="omb-step">
+                <span class="omb-step-num">01</span>
+                <span class="omb-step-label">Audit<br>outils & process</span>
+              </div>
+              <div class="omb-step">
+                <span class="omb-step-num">02</span>
+                <span class="omb-step-label">Sélection<br>priorité ROI</span>
+              </div>
+              <div class="omb-step">
+                <span class="omb-step-num">03</span>
+                <span class="omb-step-label">Configuration<br>MCP + agents</span>
+              </div>
+              <div class="omb-step">
+                <span class="omb-step-num">04</span>
+                <span class="omb-step-label">Production<br>stable + monitoring</span>
+              </div>
+            </div>
+            <p>L'audit révèle quels outils vous avez réellement (pas ceux dont vous pensez avoir besoin), quels process sont les plus coûteux en temps humain, et quel ROI vous pouvez attendre à 30, 60 et 90 jours. La sélection de priorité, c'est ce qui sépare les projets qui tournent encore dans 6 mois de ceux qu'on abandonne. Parce que commencer par le mauvais process, c'est perdre 6 semaines à automatiser quelque chose qui génère 30 minutes d'économie par mois.</p>
+            <p>Le déploiement MCP est rapide — c'est pour ça qu'on peut tenir des délais de 3 semaines. Le monitoring, lui, ne s'improvise pas : on configure les alertes, les seuils, les escalades dès le jour 1. Résultat : des systèmes qui tournent encore 12 mois après, pas des pilotes abandonnés.</p>
+          </div>
+          <div class="omb-footer">
+            <span class="omb-footer-text"><strong>La prise est là.</strong> La question, c'est ce que vous branchez dessus pour gagner le plus vite.</span>
+            <button class="btn-small" data-cal-link="oxyd.studio/diagnostic" data-cal-config='{"layout":"month_view"}'>
+              On fait le point en 30 min →
+            </button>
+          </div>
+        </div>
+
+        <!-- HOOK 2 : après le-piege -->
+        <div class="inline-hook" role="button" tabindex="0" data-cal-link="oxyd.studio/diagnostic" data-cal-config='{"layout":"month_view"}'>
+          <div class="ih-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </div>
+          <div class="ih-body">
+            <div class="ih-label">Question stratégique</div>
+            <div class="ih-title">La prise est là. La question c'est : qu'est-ce que vous branchez dessus pour gagner le plus vite ?</div>
+            <div class="ih-desc">En 30 minutes, on vous dit exactement quels outils vous avez, quoi y connecter en premier, et combien ça vous rapporte. Gratuit. →</div>
+          </div>
+        </div>
+
+        <h2 id="fenetre">La fenêtre se ferme — voici ce que montrent les données</h2>
+
+        <p>
+          L'urgence n'est pas une tactique de vente. C'est ce que les données de marché indiquent depuis 6 mois, de façon convergente et cohérente entre plusieurs sources indépendantes.
+        </p>
+
+        <div class="data-card">
+          <div class="data-card-title">Adoption IA agentique par secteur — entreprises avec au moins un déploiement actif (2026)</div>
+          <div class="data-rows">
+            <div class="data-row">
+              <span class="data-row-label">Services financiers</span>
+              <div class="data-row-bar"><div class="data-row-fill" style="width:91%"></div></div>
+              <span class="data-row-val">91%</span>
+            </div>
+            <div class="data-row">
+              <span class="data-row-label">Tech / Software</span>
+              <div class="data-row-bar"><div class="data-row-fill" style="width:88%"></div></div>
+              <span class="data-row-val">88%</span>
+            </div>
+            <div class="data-row">
+              <span class="data-row-label">Santé</span>
+              <div class="data-row-bar"><div class="data-row-fill" style="width:74%"></div></div>
+              <span class="data-row-val">74%</span>
+            </div>
+            <div class="data-row">
+              <span class="data-row-label">Retail / E-commerce</span>
+              <div class="data-row-bar"><div class="data-row-fill" style="width:72%"></div></div>
+              <span class="data-row-val">72%</span>
+            </div>
+            <div class="data-row">
+              <span class="data-row-label">Industrie / Manufacturing</span>
+              <div class="data-row-bar"><div class="data-row-fill" style="width:68%"></div></div>
+              <span class="data-row-val">68%</span>
+            </div>
+            <div class="data-row">
+              <span class="data-row-label">Services professionnels</span>
+              <div class="data-row-bar"><div class="data-row-fill" style="width:65%"></div></div>
+              <span class="data-row-val">65%</span>
+            </div>
+          </div>
+        </div>
+
+        <p>
+          Ces chiffres représentent des entreprises qui ont "déployé quelque chose". Pas toutes des systèmes en production réelle — mais elles ont commencé à accumuler de l'expérience, des données, de l'apprentissage organisationnel. C'est ça, l'avantage que vous cédez chaque mois.
+        </p>
+
+        <ul>
+          <li><strong>50%</strong> des logiciels d'entreprise incluront des capacités agentiques d'ici 2028 — contre 1 sur 50 en 2024 (Gartner)</li>
+          <li><strong>2027</strong> : les dépenses en logiciels non-agentiques commencent à décliner — Gartner appelle ça explicitement</li>
+          <li><strong>67%</strong> des entreprises Fortune 500 ont déjà des programmes agentiques actifs (Q1 2026)</li>
+          <li><strong>40%</strong> des projets agentiques actuels seront abandonnés d'ici fin 2027 — et remplacés par des projets mieux exécutés, pas abandonnés définitivement</li>
+          <li><strong>4,2 millions</strong> de postes d'experts en IA agentique non pourvus mondialement — chaque mois sans agir, c'est plus difficile de trouver de l'aide</li>
+        </ul>
+
+        <div class="stat-callout">
+          <div class="sc-num">67%</div>
+          <div class="sc-text">
+            <strong>des entreprises Fortune 500 ont déjà des programmes agentiques actifs. Ce n'est pas une tendance émergente — c'est le présent de votre secteur, maintenant.</strong>
+            <span>Source : Digital Applied, Agentic AI Statistics 2026 · Q1 2026</span>
+          </div>
+        </div>
+
+        <!-- HOOK 3 : après fenetre -->
+        <div class="inline-hook" role="button" tabindex="0" data-cal-link="oxyd.studio/diagnostic" data-cal-config='{"layout":"month_view"}'>
+          <div class="ih-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <div class="ih-body">
+            <div class="ih-label">Signal de marché</div>
+            <div class="ih-title">Votre secteur est déjà à 65-91% d'adoption. Ce n'est pas une tendance — c'est déjà le présent.</div>
+            <div class="ih-desc">Le diagnostic OXYD vous dit exactement où vous en êtes par rapport à votre secteur — et les 3 actions concrètes pour rattraper ou creuser l'écart. 30 minutes. Gratuit. →</div>
+          </div>
+        </div>
+
+        <h2 id="par-ou-commencer">Par où commencer, concrètement</h2>
+
+        <p>
+          Vous pouvez commencer seul. Les outils sont disponibles, la documentation MCP est publique, des tutoriels existent. Si vous avez un développeur dans votre équipe et du temps, c'est faisable — en comptant 3 à 6 mois avant d'avoir quelque chose de stable en production.
+        </p>
+
+        <p>
+          Ce que les données disent sur les projets en solo : 88% n'atteignent jamais la production. Pas parce que les gens ne sont pas intelligents — parce que <strong>la difficulté n'est pas dans la connexion MCP, elle est dans tout ce qui l'entoure</strong> : choix de ce qu'on automatise, logique de gestion des erreurs, monitoring, sécurité des données, maintenance dans la durée.
+        </p>
+
+        <h3>Les 3 automatisations MCP avec le ROI le plus élevé pour démarrer</h3>
+
+        <ul>
+          <li><strong>Qualification et suivi des prospects entrants</strong> — ROI immédiat, mesurable en jours. Email reçu → CRM mis à jour → tâche créée → réponse de confirmation envoyée. Récupère 5 à 8h par semaine selon le volume de leads. Taux de conversion en hausse de 15 à 23% (temps de réponse divisé par 10).</li>
+          <li><strong>Génération et suivi de facturation</strong> — ROI indirect mais massif. Paiement reçu → facture générée → envoyée → comptabilité mise à jour → relance automatique si impayé à J+30. Récupère 3 à 5h par semaine, réduit les impayés de 15 à 25%.</li>
+          <li><strong>Rapport de pilotage quotidien à 7h58</strong> — ROI indirect via de meilleures décisions. Synthèse automatique des métriques clés avant que la journée commence. Pas un dashboard à consulter — un message lu en 45 secondes avec les seuls points d'attention du jour.</li>
+        </ul>
+
+        <p>
+          Ces 3 automatisations ont en commun : données structurées disponibles, logique claire, erreurs faciles à détecter, ROI mesurable en moins de 30 jours. C'est par là qu'on commence chez OXYD — pas parce que c'est facile, mais parce que c'est prouvé et mesurable.
+        </p>
+
+        <p>
+          La différence entre un projet qui tourne 12 mois après et un pilote abandonné, c'est rarement la technologie. C'est le fait d'avoir commencé par le bon endroit, d'avoir bien défini ce que "ça marche" veut dire, et d'avoir quelqu'un qui surveille que ça continue à marcher. Les 88% d'échec sont évitables — pas parce que la technologie est simple, mais parce que les causes d'échec sont connues et anticipables.
+        </p>
+
+        <div class="article-cta-block">
+          <h3>Dans 30 minutes, on vous dit exactement quels outils vous avez, quoi y connecter en premier, et combien ça vous rapporte.</h3>
+          <p>Diagnostic complet de vos process et de vos outils. Les 3 automatisations MCP les plus rentables pour votre boîte spécifiquement. Une estimation ROI à 30, 60 et 90 jours. Vous repartez avec un plan d'action — que vous travailliez avec nous ou pas. Gratuit. Sans engagement.</p>
+          <button class="btn-primary" data-cal-link="oxyd.studio/diagnostic" data-cal-config='{"layout":"month_view"}'>
+            Réserver mon diagnostic gratuit →
+          </button>
+        </div>
+
+        <hr>
+
+        <p style="font-size:13px; color: var(--text-muted); line-height: 1.7;">
+          <em>Sources utilisées dans cet article : Anthropic Model Context Protocol documentation & adoption metrics (début 2026) ; Digital Applied "150+ Agentic AI Statistics 2026" (mars 2026) ; Gartner Worldwide AI Spending Forecast Q1 2026 ; IDC Agentic AI Market Forecast 2026-2034 ; Digital Applied Agentic AI Statistics compilation (mars 2026) — 150+ données vérifiées issues de Gartner, IDC, McKinsey, Deloitte, Morgan Stanley.</em>
+        </p>
+
+      </article>
+
+      <!-- Sidebar -->
+      <aside class="article-sidebar">
+        <!-- Proof elements -->
+        <div class="sidebar-proof">
+          <div class="sp-title">Pourquoi OXYD Studio</div>
+          <div class="sp-item">
+            <div class="sp-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div>
+            <div class="sp-text"><strong>Config MCP en 2 jours</strong> — pas 3 mois, parce qu'on l'a déjà fait</div>
+          </div>
+          <div class="sp-item">
+            <div class="sp-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div>
+            <div class="sp-text"><strong>Production garantie</strong> — pas un pilote, un système qui tourne</div>
+          </div>
+          <div class="sp-item">
+            <div class="sp-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div>
+            <div class="sp-text"><strong>3 semaines max</strong> — du diagnostic au déploiement complet</div>
+          </div>
+          <div class="sp-item">
+            <div class="sp-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div>
+            <div class="sp-text"><strong>Monitoring inclus</strong> — on surveille que ça tient dans la durée</div>
+          </div>
+          <div class="sp-item">
+            <div class="sp-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg></div>
+            <div class="sp-text"><strong>Vos outils</strong> — Gmail, Notion, Stripe, votre CRM, votre compta</div>
+          </div>
+        </div>
+
+        <div class="sidebar-toc">
+          <div class="toc-title">Dans cet article</div>
+          <a href="#avant-mcp" class="toc-link">Avant MCP : 3 mois par connexion</a>
+          <a href="#comment-ca-marche" class="toc-link">Comment ça marche (analogie)</a>
+          <a href="#97-millions" class="toc-link">97M téléchargements : signal d'alarme</a>
+          <a href="#ce-que-ca-permet" class="toc-link">4 scénarios concrets</a>
+          <a href="#le-piege" class="toc-link">Le piège : avoir la prise mais...</a>
+          <a href="#fenetre" class="toc-link">La fenêtre se ferme</a>
+          <a href="#par-ou-commencer" class="toc-link">Par où commencer</a>
+        </div>
+
+        <div class="sidebar-author">
+          <div class="sidebar-author-head">
+            <div class="sidebar-avatar">N</div>
+            <div>
+              <div class="sidebar-author-name">Nathan</div>
+              <div class="sidebar-author-role">Fondateur · OXYD Studio</div>
+            </div>
+          </div>
+          <p>Je configure des systèmes MCP pour des PME depuis le lancement du protocole. Chaque article est construit sur des données de première main et des déploiements réels — pas des résumés de résumés.</p>
+          <a href="#" style="font-size:12px; color:var(--blue); text-decoration:underline; text-underline-offset:3px;" data-cal-link="oxyd.studio/diagnostic" data-cal-config='{"layout":"month_view"}'>Prendre rendez-vous →</a>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <!-- RELATED -->
+  <section class="related-section">
+    <div class="container">
+      <div class="related-label">Aller plus loin</div>
+      <div class="related-grid">
+        <a href="marche-ia-agentique-2026.html" class="related-card fade-in">
+          <div class="related-tag">Marché · Données</div>
+          <div class="related-title">L'IA agentique en 2026 : les vrais chiffres qui changent tout</div>
+          <div class="related-desc">88% des agents IA n'arrivent jamais en production. 11% font +171% de ROI. Le marché complet — sources Gartner, IDC, McKinsey.</div>
+        </a>
+        <a href="88-percent-echec-agents-ia.html" class="related-card fade-in">
+          <div class="related-tag">Méthode · Exécution</div>
+          <div class="related-title">Pourquoi 88% des agents IA n'arrivent jamais en production</div>
+          <div class="related-desc">Les 4 attributs qui séparent les 12% qui réussissent. Un framework applicable à n'importe quelle PME qui veut éviter l'abandon.</div>
+        </a>
+        <a href="cas-client-cabinet-gestion-156h.html" class="related-card fade-in">
+          <div class="related-tag">Cas concret · ROI</div>
+          <div class="related-title">Cabinet de gestion : 156h/an récupérées. Étude de cas complète.</div>
+          <div class="related-desc">Outils, process, résultats mesurés après 6 semaines de production. Les vraies métriques, pas les projections.</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="padding: 40px 0 80px; border-top: 1px solid var(--border);">
+    <div class="container" style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;">
+      <a href="../" style="font-family:var(--font-display); font-size:15px; font-weight:700; color:var(--text-primary);">OXYD Studio</a>
+      <span style="font-size:12px; color:var(--text-muted); font-family:var(--font-mono);">© 2026 · Dijon, France</span>
+      <a href="../#contact" style="font-size:13px; color:var(--blue);">Diagnostic gratuit →</a>
+    </div>
+  </footer>
+
+  <!-- STICKY CTA -->
+  <div class="sticky-cta" id="stickyCta">
+    <div class="container">
+      <div class="sct-left">
+        <div class="sct-label">OXYD Studio · Diagnostic gratuit</div>
+        <div class="sct-text">Dans 30 minutes, on vous dit quoi brancher sur MCP pour gagner le plus vite. Gratuit.</div>
+      </div>
+      <div style="display:flex; align-items:center; gap:8px;">
+        <button class="btn-primary" data-cal-link="oxyd.studio/diagnostic" data-cal-config='{"layout":"month_view"}' style="font-size:13px; padding: 10px 20px;">
+          Réserver — c'est gratuit →
+        </button>
+        <button class="sct-close" id="sctClose" aria-label="Fermer">×</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cal.com -->
+  <script>
+    (function(C,A,L){let p=function(a,ar){a.q.push(ar)};let d=C.document;C.Cal=C.Cal||function(){let cal=C.Cal;let ar=arguments;if(!cal.loaded){cal.ns={};cal.q=cal.q||[];d.head.appendChild(d.createElement("script")).src=A;cal.loaded=true}if(ar[0]===L){const api=function(){p(api,arguments)};const ns=ar[1];api.q=api.q||[];if(typeof ns==="string"){cal.ns[ns]=cal.ns[ns]||api;p(cal.ns[ns],ar);p(cal,[L,ns,ar[2]])}else p(cal,ar);return}p(cal,ar)};})(window,"https://app.cal.com/embed/embed.js","init");
+    Cal("init", {origin:"https://cal.com"});
+    Cal("ui", {"styles":{"branding":{"brandColor":"#F4511E"}},"hideEventTypeDetails":false,"layout":"month_view"});
+  </script>
+
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <script src="../script.js"></script>
+
+  <script>
+    // Active TOC on scroll
+    const tocLinks = document.querySelectorAll('.toc-link');
+    const sections = document.querySelectorAll('h2[id]');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 140) current = s.id;
+      });
+      tocLinks.forEach(l => {
+        l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+      });
+    });
+
+    // Sticky CTA: show after 40% scroll, hide on dismiss
+    const stickyCta = document.getElementById('stickyCta');
+    const sctClose = document.getElementById('sctClose');
+    let sctDismissed = false;
+    window.addEventListener('scroll', () => {
+      if (sctDismissed) return;
+      const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+      stickyCta.classList.toggle('visible', pct > 0.4);
+    });
+    sctClose.addEventListener('click', () => {
+      sctDismissed = true;
+      stickyCta.classList.remove('visible');
+    });
+
+    // Inline hooks: trigger Cal on click
+    document.querySelectorAll('.inline-hook').forEach(el => {
+      const link = el.dataset.calLink;
+      const cfg = el.dataset.calConfig;
+      if (link) {
+        el.addEventListener('click', () => Cal('modal', link, JSON.parse(cfg || '{}')));
+        el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') Cal('modal', link, JSON.parse(cfg || '{}')); });
+      }
+    });
+
+    // Animate bar fills on scroll into view
+    const fills = document.querySelectorAll('.data-row-fill');
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.width = e.target.getAttribute('data-width') || e.target.style.width;
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.2 });
+    fills.forEach(f => {
+      f.setAttribute('data-width', f.style.width);
+      f.style.width = '0';
+      io.observe(f);
+    });
+  </script>
+
+</body>
+</html>

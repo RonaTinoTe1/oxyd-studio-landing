@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0a0a0a">
+  <title>À propos — OXYD Studio</title>
+  <meta name="description" content="Nathan, fondateur d'OXYD Studio. 15 ans, Dijon. Je construis des systèmes IA autonomes qui font le travail répétitif à la place de vos équipes.">
+  <link rel="canonical" href="https://oxyd.studio/a-propos">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://oxyd.studio/a-propos">
+  <meta property="og:title" content="Nathan — Fondateur OXYD Studio">
+  <meta property="og:description" content="Je construis des systèmes IA autonomes pour les PME françaises. Dijon, 15 ans, React/TS.">
+  <meta property="og:image" content="https://oxyd.studio/og-image.png">
+  <meta property="og:site_name" content="OXYD Studio">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nathan — Fondateur OXYD Studio">
+  <meta name="twitter:image" content="https://oxyd.studio/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="style.css?v=20">
+  <!-- Privacy-friendly analytics by Plausible -->
+  <script async src="https://plausible.io/js/pa-eQmapsJCn9blo_-8Uw8Go.js"></script>
+  <script>
+    window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+    plausible.init()
+  </script>
+  <!-- Cal.com embed -->
+  <script>
+    (function(C,A,L){let p=function(a,ar){a.q.push(ar)};let d=C.document;C.Cal=C.Cal||function(){let cal=C.Cal;let ar=arguments;if(!cal.loaded){cal.ns={};cal.q=cal.q||[];d.head.appendChild(d.createElement("script")).src=A;cal.loaded=true}if(ar[0]===L){const api=function(){p(api,arguments)};const ns=ar[1];api.q=api.q||[];if(typeof ns==="string"){cal.ns[ns]=cal.ns[ns]||api;p(cal.ns[ns],ar);p(cal,[L,ns,ar[2]])}else p(cal,ar);return}p(cal,ar)};})(window,"https://app.cal.com/embed/embed.js","init");
+    Cal("init", {origin:"https://cal.com"});
+    Cal("ui", {"styles":{"branding":{"brandColor":"#F4511E"}},"hideEventTypeDetails":false,"layout":"month_view"});
+  </script>
+  <style>
+    .about-hero {
+      padding: 140px 0 80px;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+    .about-hero::before {
+      content: '';
+      position: absolute;
+      top: -100px; right: -100px;
+      width: 600px; height: 600px;
+      background: radial-gradient(circle, rgba(244,81,30,0.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .about-hero .container {
+      max-width: 860px;
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 80px;
+      align-items: center;
+      position: relative; z-index: 1;
+    }
+    .about-kicker {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+      color: var(--blue); letter-spacing: 0.14em; text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+    .about-kicker::before {
+      content: ''; width: 28px; height: 1px; background: var(--blue);
+    }
+    .about-h1 {
+      font-family: var(--font-display);
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.08;
+      color: var(--text-primary);
+      margin-bottom: 24px;
+    }
+    .about-h1 em { font-style: normal; color: var(--blue); }
+    .about-lead {
+      font-size: 18px; line-height: 1.72;
+      color: var(--text-secondary);
+      margin-bottom: 36px;
+    }
+    .about-lead strong { color: var(--text-primary); }
+    .about-photo-wrap {
+      position: relative;
+    }
+    .about-photo {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 20px;
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .about-photo-placeholder {
+      font-family: var(--font-display);
+      font-size: 64px; font-weight: 800;
+      color: var(--blue);
+      opacity: 0.4;
+    }
+    .about-photo-badge {
+      position: absolute; bottom: -12px; right: -12px;
+      background: var(--bg-dark, #0A0A0A);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 10px 16px;
+      font-size: 12px; font-weight: 600;
+      color: var(--text-primary);
+      font-family: var(--font-mono);
+      white-space: nowrap;
+    }
+    .about-photo-badge span { color: var(--blue); }
+
+    .about-body {
+      padding: 80px 0 120px;
+    }
+    .about-body .container {
+      max-width: 860px;
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 80px;
+      align-items: start;
+    }
+    .about-content p {
+      font-size: 17px; line-height: 1.82;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+    }
+    .about-content strong { color: var(--text-primary); }
+    .about-content h2 {
+      font-family: var(--font-display);
+      font-size: 24px; font-weight: 700;
+      letter-spacing: -0.03em;
+      color: var(--text-primary);
+      margin-top: 52px; margin-bottom: 16px;
+    }
+
+    .about-sidebar { position: sticky; top: 100px; }
+
+    .sidebar-card {
+      background: var(--bg-subtle);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 28px;
+      margin-bottom: 20px;
+    }
+    .sidebar-card-title {
+      font-family: var(--font-mono);
+      font-size: 10px; font-weight: 600;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+    .stack-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px; color: var(--text-secondary);
+    }
+    .stack-item:last-child { border-bottom: none; }
+    .stack-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--blue); flex-shrink: 0;
+    }
+    .stack-label { color: var(--text-muted); font-size: 11px; margin-left: auto; font-family: var(--font-mono); }
+
+    .social-links { display: flex; flex-direction: column; gap: 10px; }
+    .social-link {
+      display: flex; align-items: center; gap: 12px;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: 13px; font-weight: 500;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .social-link:hover { border-color: var(--blue); color: var(--text-primary); }
+    .social-link svg { flex-shrink: 0; color: var(--text-muted); }
+
+    .about-cta {
+      background: linear-gradient(160deg, rgba(244,81,30,0.08) 0%, transparent 60%);
+      border: 1px solid rgba(244,81,30,0.2);
+      border-radius: var(--radius-xl);
+      padding: 32px;
+      text-align: center;
+    }
+    .about-cta h3 {
+      font-family: var(--font-display);
+      font-size: 18px; font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+    .about-cta p {
+      font-size: 13px; color: var(--text-muted);
+      margin-bottom: 20px; line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .about-hero .container,
+      .about-body .container { grid-template-columns: 1fr; gap: 48px; }
+      .about-photo-wrap { max-width: 200px; }
+      .about-sidebar { position: static; }
+    }
+  </style>
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="/" class="navbar-logo" aria-label="OXYD Studio">
+        <svg xmlns="http://www.w3.org/2000/svg" height="28" width="auto" aria-label="OXYD" viewBox="0 0 1254 1254"><path fill="#FC511F" d="M976.974 505.75L1118.84 505.689L1162.74 505.658C1192.26 505.645 1209.41 501.069 1223.88 531.388C1228.73 541.554 1236.6 554.595 1242.1 564.8L1192.9 643.4C1182.99 659.346 1167.3 687.609 1154.71 699.549C1137.25 712.846 1125.97 711.161 1105 711.148L1064.22 711.153L902.883 711.218C907.665 696.363 913.904 679.932 919.255 665.189L944.268 596.254C955.067 566.717 965.553 534.694 976.974 505.75Z"/><path fill="#0A0A0A" d="M1016.95 556.145C1063.76 557.091 1111.1 555.317 1157.93 556.686C1169.31 557.515 1172.99 564.923 1168.17 574.753C1155.86 599.832 1144.75 625.202 1132.06 650.04C1130.76 652.592 1128.33 655.001 1126.29 657.015C1122.77 659.849 1117.73 662.459 1113.22 662.821C1098.87 663.971 1083.89 663.527 1069.48 663.564L978.226 663.672C990.026 628.237 1004.52 591.653 1016.95 556.145Z"/><path fill="#FC511F" d="M147.317 505.977C151.315 505.387 163.813 505.643 168.474 505.648L211.195 505.711L283.103 505.676C295.792 505.664 308.495 505.572 321.18 505.8C336.208 506.071 351.156 515.422 358 528.811C362.861 538.454 363.643 549.647 360.17 559.873C358.048 566.3 354.498 574.448 351.95 580.901L336.084 621.141L323.919 652.221C320.383 661.312 317.166 671.199 311.808 679.305C304.807 690.056 295.101 698.776 283.665 704.59C266.812 713.08 251.525 711.158 233.294 711.175L180.669 711.189L111.219 711.152C98.8916 711.148 86.6268 711.374 74.2192 711.037C61.0887 710.681 47.7725 703.201 42.0867 691.031C35.022 675.91 40.0705 664.988 45.4921 650.579C66.1229 646.611 89.4243 640.545 110.067 635.712C111.017 635.512 111.384 635.541 112.355 635.496C113.219 639.232 105.33 653.187 104.402 659.751C105.01 662.032 106.077 663.682 108.678 663.703C115.716 663.761 122.759 663.747 129.799 663.746L173.722 663.711L215.681 663.736C235.131 663.841 261.178 667.583 267.749 642.549C271.556 628.049 299.594 569.221 298.397 558.252C298.082 558.019 297.799 557.737 297.454 557.552C293.13 555.238 170.567 555.766 158.84 556.4C156.755 556.513 154.81 556.787 152.868 557.59C148.333 559.466 144.252 562.358 141.238 566.244C134.586 574.821 124.467 606.133 119.643 618.263C97.2765 623.838 74.8128 629.014 52.2621 633.787C58.4953 615.14 66.5028 596.541 73.2815 578.025C76.1921 570.074 79.6532 560.679 83.3772 553.131C86.0087 547.883 89.1373 542.9 92.72 538.249C106.694 520.048 124.608 508.974 147.317 505.977Z"/><path fill="#FC511F" d="M378.764 505.645L459.532 505.672C478.239 527.795 497.092 549.794 516.09 571.668L564.341 531.205C574.059 523.048 585.15 513.308 595.107 505.718L673.021 505.702C659.71 517.318 645.044 528.937 631.347 540.23L547.321 609.18C555.382 618.95 634 710.043 633.918 711.218C608.761 711.095 583.604 711.104 558.448 711.245C553.318 704.852 546.206 697.138 540.718 690.813C527.821 676.05 515.103 661.132 502.566 646.061L424.798 711.153L346.019 711.215L470.486 608.832L411.972 543.194C402.323 532.46 387.358 516.762 378.764 505.645Z"/><path fill="#FC511F" d="M680.928 505.692L756.612 505.663C774.253 527.628 791.565 551.537 809.288 573.886C832.967 551.303 856.5 528.566 879.886 505.678L955.361 505.75L868.473 587.27C860.526 594.736 852.531 602.15 844.489 609.513C841.283 612.476 831.281 621.153 829.887 624.556C826.387 633.096 822.793 644.106 819.776 652.822C812.978 672.248 806.299 691.716 799.738 711.224C780.45 710.605 758.227 711.138 738.746 711.21C749.34 681.184 759.392 650.696 770.232 620.793C759.937 608.742 747.803 592.255 737.863 579.534C718.608 555.135 699.628 530.519 680.928 505.692Z"/></svg>
+        <span class="logo-wordmark">Studio</span>
+      </a>
+      <div class="navbar-links">
+        <a href="/#product">Méthode</a>
+        <a href="/#process">Process</a>
+        <a href="/#pricing">Tarifs</a>
+        <a href="/#faq">FAQ</a>
+        <a href="a-propos.html" style="color:var(--blue);">À propos</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="navbar-actions">
+        <button class="btn-primary" data-cal-link="oxyd.studio/diagnostic" data-cal-config='{"layout":"month_view"}'>Diagnostic gratuit →</button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main-content">
+    <!-- HERO -->
+    <section class="about-hero">
+      <div class="container">
+        <div>
+          <div class="about-kicker">Fondateur</div>
+          <h1 class="about-h1">Nathan.<br><em>Je construis des systèmes</em><br>qui bossent à votre place.</h1>
+          <p class="about-lead">
+            <strong>15 ans. Dijon.</strong> J'ai commencé à coder à 12 ans parce que j'avais besoin d'automatiser des trucs. Aujourd'hui je fais ça pour des boîtes — avec des agents IA qui remplacent les tâches répétitives pour de vrai.
+          </p>
+          <p class="about-lead" style="margin-bottom:0;">
+            OXYD Studio c'est moi + les outils les plus avancés du moment. Pas de bullshit, pas de promesses creuses. On diagnostic, on construit, on mesure.
+          </p>
+        </div>
+        <div class="about-photo-wrap">
+          <div class="about-photo">
+            <!-- Remplacer par une vraie photo : <img src="photo-nathan.jpg" alt="Nathan" style="width:100%;height:100%;object-fit:cover;"> -->
+            <div class="about-photo-placeholder">N</div>
+          </div>
+          <div class="about-photo-badge"><span>OXYD</span> · Dijon, FR</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BODY -->
+    <section class="about-body">
+      <div class="container">
+        <div class="about-content">
+          <h2>Pourquoi j'ai créé OXYD</h2>
+          <p>
+            J'ai vu des boîtes payer des milliers d'euros par mois pour des outils SaaS qui font des demi-automatisations. Des managers qui passent 3h par semaine à copier-coller des données entre des tableaux. Des équipes de 10 personnes dont 2 ne font que de la saisie.
+          </p>
+          <p>
+            Le problème c'est pas le manque d'outils — c'est que personne ne sait exactement quoi automatiser, comment mesurer le résultat, et comment maintenir ça sans que ça pète en prod.
+          </p>
+          <p>
+            <strong>C'est exactement pour ça qu'OXYD existe.</strong> On commence par un diagnostic honnête. On identifie vos 3 process les plus coûteux en temps. On construit des systèmes qui tournent sans que vous ayez à y penser. Et on mesure le ROI semaine par semaine.
+          </p>
+
+          <h2>Ce que je fais concrètement</h2>
+          <p>
+            Agents IA qui lisent vos emails et répondent aux demandes standards. Systèmes qui collectent des documents automatiquement et relancent les retardataires. Briefings automatiques générés chaque matin depuis vos données CRM. Workflows de facturation qui détectent les impayés et envoient les relances.
+          </p>
+          <p>
+            Tout ça en 2 à 3 semaines. Intégré à vos outils existants. Pas de migration, pas de refonte.
+          </p>
+
+          <h2>Stack technique</h2>
+          <p>
+            React, TypeScript, Node.js côté frontend. Claude API, OpenAI, n8n, Make pour les agents et workflows. Supabase ou PostgreSQL pour la persistance. Vercel pour le déploiement. Et MCP pour brancher les agents sur tous vos outils métier.
+          </p>
+          <p>
+            Je travaille avec les modèles les plus récents — pas les démos de conférence, la production réelle.
+          </p>
+
+          <h2>Ce que je ne fais pas</h2>
+          <p>
+            Je ne fais pas de chatbots inutiles. Je ne vends pas des "formations IA". Je ne propose pas des audits qui se terminent par un rapport PDF de 80 pages que personne ne lit. Je construis des systèmes qui tournent et dont les résultats se mesurent en heures récupérées et euros économisés.
+          </p>
+        </div>
+
+        <aside class="about-sidebar">
+          <!-- Stack -->
+          <div class="sidebar-card">
+            <div class="sidebar-card-title">Stack</div>
+            <div class="stack-item"><div class="stack-dot"></div>React / TypeScript <span class="stack-label">Frontend</span></div>
+            <div class="stack-item"><div class="stack-dot"></div>Claude API / OpenAI <span class="stack-label">IA</span></div>
+            <div class="stack-item"><div class="stack-dot"></div>n8n / Make <span class="stack-label">Workflows</span></div>
+            <div class="stack-item"><div class="stack-dot"></div>Supabase / PostgreSQL <span class="stack-label">Data</span></div>
+            <div class="stack-item"><div class="stack-dot"></div>Vercel <span class="stack-label">Deploy</span></div>
+            <div class="stack-item"><div class="stack-dot"></div>MCP Protocol <span class="stack-label">Agents</span></div>
+          </div>
+
+          <!-- Liens sociaux -->
+          <div class="sidebar-card">
+            <div class="sidebar-card-title">Liens</div>
+            <div class="social-links">
+              <a href="https://www.linkedin.com/in/nathan-oxyd" class="social-link" target="_blank" rel="noopener">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+              </a>
+              <a href="mailto:contact@oxyd.studio" class="social-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                contact@oxyd.studio
+              </a>
+            </div>
+          </div>
+
+          <!-- CTA -->
+          <div class="about-cta">
+            <h3>On se parle ?</h3>
+            <p>30 min. Gratuit. Je vous dis ce qui peut être automatisé dans votre business — et ce qui ne le peut pas.</p>
+            <button class="btn-primary" style="width:100%;" data-cal-link="oxyd.studio/diagnostic" data-cal-config='{"layout":"month_view"}'>Réserver →</button>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER simplifié -->
+  <footer style="padding:48px 0;border-top:1px solid var(--border);">
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;">
+      <a href="/" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--text-primary);font-family:var(--font-display);font-weight:700;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 1254 1254"><path fill="#FE481A" d="M995.418 750.942C995.809 750.906 996.573 750.825 997.124 750.822C1018.78 750.673 1040.39 751.296 1062.06 751.192L1104.86 750.821C1113.59 750.737 1128.61 750.252 1136.66 751.831C1144.18 753.35 1151.12 756.985 1156.65 762.31C1177.99 782.872 1165.28 810.6 1157.57 833.987L1142.99 878.301L1131.73 913.082C1126.7 928.581 1123.87 941.16 1112.08 953.062C1103.81 961.52 1093.39 967.557 1081.95 970.52C1068.3 974.113 1045.25 972.858 1030.35 972.829L969.738 972.785C953.912 972.828 937.916 973.133 922.123 972.513C911.064 972.079 901.019 965.44 895.911 955.681C885.285 935.384 896.455 909.505 902.853 889.18L921.568 830.259C936.224 822.399 950.674 814.16 964.904 805.551C976.873 798.425 987.633 792.493 998.469 783.673C974.446 792.871 950.918 803.4 927.138 812.498C931.002 799.148 934.3 787.038 943.671 776.286C958.136 759.689 974.119 752.813 995.418 750.942Z"/><path fill="#0A0A0A" d="M1000.84 805.961C1011.49 804.92 1094.04 804.82 1099.61 807.065C1101.44 807.799 1102.65 809.776 1103.24 811.59C1103.83 813.412 1103.64 815.274 1103.26 817.117C1100.69 829.758 1094.66 845.592 1090.75 858.193C1087.2 869.604 1079.24 899.606 1074.22 908.416C1070.82 914.399 1065.22 917.24 1058.83 918.91C1052.79 919.405 1046.11 919.211 1040.02 919.17C1015.93 919.007 991.826 919.283 967.739 919.071C965.652 919.053 960.046 918.403 958.515 917.429C955.751 915.669 955.065 910.734 956.05 907.838C957.632 901.715 959.488 895.932 961.332 890.007C964.854 878.743 968.444 867.5 972.103 856.28C976.133 843.829 980.153 829.833 985.082 817.79C987.864 810.991 994.274 808.145 1000.84 805.961Z"/></svg>
+        OXYD Studio
+      </a>
+      <div style="display:flex;gap:24px;flex-wrap:wrap;">
+        <a href="/" style="font-size:13px;color:var(--text-muted);text-decoration:none;">Accueil</a>
+        <a href="/#pricing" style="font-size:13px;color:var(--text-muted);text-decoration:none;">Tarifs</a>
+        <a href="contact.html" style="font-size:13px;color:var(--text-muted);text-decoration:none;">Contact</a>
+        <a href="mailto:contact@oxyd.studio" style="font-size:13px;color:var(--text-muted);text-decoration:none;">contact@oxyd.studio</a>
+      </div>
+      <span style="font-size:12px;color:var(--text-muted);font-family:var(--font-mono);">© OXYD Studio 2026</span>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
