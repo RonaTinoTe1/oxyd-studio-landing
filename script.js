@@ -81,8 +81,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---------- Scroll fade-in animations ----------
   const observerOptions = {
     root: null,
-    rootMargin: '0px 0px -60px 0px',
-    threshold: 0.1
+    rootMargin: '0px 0px 80px 0px',
+    threshold: 0.05
   };
 
   const observer = new IntersectionObserver((entries) => {
@@ -95,7 +95,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }, observerOptions);
 
   document.querySelectorAll('.fade-in').forEach(el => {
-    observer.observe(el);
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom > 0) {
+      el.classList.add('visible');
+    } else {
+      observer.observe(el);
+    }
   });
 
   // World map is now SVG-based (see index.html)

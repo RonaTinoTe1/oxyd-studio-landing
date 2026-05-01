@@ -1,0 +1,34 @@
+# OXYD Studio
+
+> OXYD Studio crée des automatismes sur mesure pour les entreprises françaises. Relances commerciales, veille concurrentielle, accueil de nouveaux clients, assistants intelligents. Basé à Dijon, France. Fondateur : Nathan.
+
+## Services
+
+- [Relances et prospection automatiques](https://oxyd.studio/): Vos devis sont relancés, vos prospects qualifiés et triés — sans intervention humaine
+- [Veille concurrentielle automatique](https://oxyd.studio/): Un rapport sur vos concurrents arrive chaque semaine dans votre boîte, sans que vous cherchiez
+- [Accueil nouveaux clients automatisé](https://oxyd.studio/): Un client signe → contrat envoyé, accès créés, dossier ouvert, email de bienvenue — en 30 secondes
+- [Assistant intelligent sur mesure](https://oxyd.studio/): Répond à vos clients 24/7 avec vos vrais tarifs et données, zéro réponse inventée
+- [Diagnostic gratuit](https://cal.com/nathan/diagnostic-oxyd): 30 minutes pour calculer le retour sur investissement réel d'une automatisation sur votre activité
+
+## Blog — Articles de référence
+
+- [5 tâches que les PME font encore à la main en 2026](https://oxyd.studio/blog/taches-manuelles-pme-2026/): Relances, rapports, synchronisation de données — coût réel pour une PME de 10 personnes (200h/an, ~12 000€)
+- [Assistant intelligent sur mesure vs assistant générique](https://oxyd.studio/blog/chatbot-ia-sur-mesure-vs-generique/): Comparatif concret : coûts, fiabilité des réponses, intégration aux outils existants, retour sur investissement
+- [Étude de cas : automatisation d'un cabinet de gestion](https://oxyd.studio/blog/etude-de-cas-automatisation-cabinet-gestion/): 5 collaborateurs, 80 dossiers, 156h/an automatisées, retour sur investissement +415% en 2,3 mois
+- [Comment automatiser son business en 2026](https://oxyd.studio/blog/automatiser-business-ia-2026/): Guide pratique — par où commencer, quelles tâches prioriser, combien ça coûte
+- [Ce que l'IA peut vraiment automatiser](https://oxyd.studio/blog/ce-que-ia-peut-automatiser-business/): Cartographie des tâches automatisables vs non-automatisables pour les PME
+- [Make vs n8n : comparatif 2026](https://oxyd.studio/blog/make-vs-n8n-comparatif/): Quel outil d'automatisation choisir selon votre profil et budget
+- [Simulateur et taux de conversion](https://oxyd.studio/blog/simulateur-ia-taux-de-conversion/): Comment un simulateur interactif peut transformer les conversions d'un site
+
+## À propos
+
+- [À propos de Nathan](https://oxyd.studio/a-propos/): Fondateur OXYD Studio, spécialisé dans la création d'automatismes sur mesure pour les entreprises, Dijon France
+
+## Faits clés
+
+- Zone géographique : France, Europe
+- Spécialité : automatismes sur mesure pour entreprises (5-50 personnes)
+- Tarif moyen : 2 000–8 000€ par projet (paiement unique, pas d'abonnement)
+- Délai typique : 1 à 3 semaines
+- Retour sur investissement moyen constaté : remboursé en moins de 3 mois
+- Propriété : l'outil livré appartient au client

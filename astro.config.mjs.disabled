@@ -5,7 +5,12 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://oxyd.studio',
-  integrations: [react(), sitemap()],
+  integrations: [
+    react(),
+    sitemap({
+      filter: (page) => !page.includes('/mentions-legales'),
+    }),
+  ],
   vite: {
     plugins: [tailwindcss()]
   }
