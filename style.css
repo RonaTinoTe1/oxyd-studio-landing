@@ -167,7 +167,7 @@ button {
 }
 
 .navbar-logo svg {
-  height: 64px;
+  height: 96px;
   width: auto;
   flex-shrink: 0;
   display: block;
@@ -3025,7 +3025,7 @@ body.menu-open { overflow: hidden; }
   }
 
   /* Logo plus compact en mobile pour faire de la place au CTA + hamburger */
-  .navbar-logo svg { height: 56px; }
+  .navbar-logo svg { height: 84px; }
   .logo-wordmark { font-size: 19px; }
 
   /* En mobile, on garde "Diagnostic gratuit" visible à côté du hamburger pour la conversion,
