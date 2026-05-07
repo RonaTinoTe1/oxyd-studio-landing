@@ -49,15 +49,16 @@ document.addEventListener('DOMContentLoaded', () => {
     dropdowns.forEach(dd => dd.classList.remove('open'));
   });
 
-  // ---------- Mobile hamburger / drawer ----------
+  // ---------- Mobile hamburger / drawer (sibling de body) ----------
   const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('navLinks');
+  const drawer = document.getElementById('mobileDrawer');
   const backdrop = document.getElementById('mobileBackdrop');
 
-  if (hamburger && navLinks) {
+  if (hamburger && drawer) {
     const openMenu = () => {
       hamburger.classList.add('active');
-      navLinks.classList.add('mobile-open');
+      drawer.classList.add('open');
+      drawer.setAttribute('aria-hidden', 'false');
       backdrop && backdrop.classList.add('active');
       document.body.classList.add('menu-open');
       hamburger.setAttribute('aria-expanded', 'true');
@@ -66,7 +67,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const closeMenu = () => {
       hamburger.classList.remove('active');
-      navLinks.classList.remove('mobile-open');
+      drawer.classList.remove('open');
+      drawer.setAttribute('aria-hidden', 'true');
       backdrop && backdrop.classList.remove('active');
       document.body.classList.remove('menu-open');
       hamburger.setAttribute('aria-expanded', 'false');
@@ -74,23 +76,22 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     hamburger.addEventListener('click', () => {
-      if (navLinks.classList.contains('mobile-open')) closeMenu();
+      if (drawer.classList.contains('open')) closeMenu();
       else openMenu();
     });
 
     backdrop && backdrop.addEventListener('click', closeMenu);
 
-    navLinks.querySelectorAll('a').forEach(link => {
+    drawer.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', closeMenu);
     });
 
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && navLinks.classList.contains('mobile-open')) closeMenu();
+      if (e.key === 'Escape' && drawer.classList.contains('open')) closeMenu();
     });
 
-    // Sécurité : si l'utilisateur passe en desktop alors que le menu est ouvert
     window.addEventListener('resize', () => {
-      if (window.innerWidth > 768 && navLinks.classList.contains('mobile-open')) closeMenu();
+      if (window.innerWidth > 768 && drawer.classList.contains('open')) closeMenu();
     });
   }
 

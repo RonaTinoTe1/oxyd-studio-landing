@@ -21,7 +21,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="style.css?v=25">
+  <link rel="stylesheet" href="style.css?v=26">
   <!-- Privacy-friendly analytics by Plausible -->
   <script async src="https://plausible.io/js/pa-eQmapsJCn9blo_-8Uw8Go.js"></script>
   <script>
@@ -197,8 +197,22 @@
       <div class="navbar-actions">
         <button class="btn-primary" data-cal-link="oxyd.studio/diagnostic" data-cal-config='{"layout":"month_view"}'>Diagnostic gratuit →</button>
       </div>
+      <button class="hamburger" id="hamburger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileDrawer">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
+
+  <div class="mobile-backdrop" id="mobileBackdrop" aria-hidden="true"></div>
+
+  <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true" aria-label="Menu mobile">
+    <a href="/#product">Méthode</a>
+    <a href="/#process">Process</a>
+    <a href="/#pricing">Tarifs</a>
+    <a href="/#faq">FAQ</a>
+    <a href="a-propos.html">À propos</a>
+    <a href="contact.html">Contact</a>
+  </aside>
 
   <main id="main-content">
     <section class="contact-hero">
@@ -348,6 +362,6 @@
       });
     }
   </script>
-  <script src="script.js?v=8" defer></script>
+  <script src="script.js?v=9" defer></script>
 </body>
 </html>

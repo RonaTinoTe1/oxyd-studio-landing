@@ -34,7 +34,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=25">
+  <link rel="stylesheet" href="style.css?v=26">
   <script defer src="/_vercel/insights/script.js"></script>
   <!-- Privacy-friendly analytics by Plausible -->
   <script async src="https://plausible.io/js/pa-eQmapsJCn9blo_-8Uw8Go.js"></script>
@@ -87,13 +87,22 @@
         <button class="btn-primary" data-cal-link="oxyd.studio/diagnostic" data-cal-config='{"layout":"month_view"}'>Diagnostic gratuit →</button>
       </div>
 
-      <button class="hamburger" id="hamburger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
+      <button class="hamburger" id="hamburger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileDrawer">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
   <div class="mobile-backdrop" id="mobileBackdrop" aria-hidden="true"></div>
+
+  <aside class="mobile-drawer" id="mobileDrawer" aria-hidden="true" aria-label="Menu mobile">
+    <a href="#product">Méthode</a>
+    <a href="#process">Process</a>
+    <a href="#pricing">Tarifs</a>
+    <a href="#faq">FAQ</a>
+    <a href="a-propos.html">À propos</a>
+    <a href="#contact">Contact</a>
+  </aside>
 
   <!-- ============ HERO ============ -->
   <section class="hero" id="main-content">
@@ -1551,7 +1560,7 @@
   </div>
 
   <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
-  <script src="script.js?v=8"></script>
+  <script src="script.js?v=9"></script>
   <script>
     let _modalOpener = null;
     function openModal(id) {
