@@ -49,12 +49,48 @@ document.addEventListener('DOMContentLoaded', () => {
     dropdowns.forEach(dd => dd.classList.remove('open'));
   });
 
-  // ---------- Mobile hamburger ----------
+  // ---------- Mobile hamburger / drawer ----------
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.getElementById('navLinks');
-  if (hamburger) {
+  const backdrop = document.getElementById('mobileBackdrop');
+
+  if (hamburger && navLinks) {
+    const openMenu = () => {
+      hamburger.classList.add('active');
+      navLinks.classList.add('mobile-open');
+      backdrop && backdrop.classList.add('active');
+      document.body.classList.add('menu-open');
+      hamburger.setAttribute('aria-expanded', 'true');
+      hamburger.setAttribute('aria-label', 'Fermer le menu');
+    };
+
+    const closeMenu = () => {
+      hamburger.classList.remove('active');
+      navLinks.classList.remove('mobile-open');
+      backdrop && backdrop.classList.remove('active');
+      document.body.classList.remove('menu-open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      hamburger.setAttribute('aria-label', 'Ouvrir le menu');
+    };
+
     hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('mobile-open');
+      if (navLinks.classList.contains('mobile-open')) closeMenu();
+      else openMenu();
+    });
+
+    backdrop && backdrop.addEventListener('click', closeMenu);
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && navLinks.classList.contains('mobile-open')) closeMenu();
+    });
+
+    // Sécurité : si l'utilisateur passe en desktop alors que le menu est ouvert
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768 && navLinks.classList.contains('mobile-open')) closeMenu();
     });
   }
 
