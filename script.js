@@ -607,3 +607,82 @@ function initConnectors() {
 // Draw after layout settles (chip enter animations + fade-in observer)
 window.addEventListener('load', () => setTimeout(initConnectors, 100));
 window.addEventListener('resize', initConnectors, { passive: true });
+
+
+/* ============================================
+   HERO PREMIUM INTERACTIONS
+   - Title: split mots + entrée animée stagger
+   - Buttons: glow follow cursor (desktop)
+   - Mockup hero: tilt 3D au mouvement souris (desktop only)
+   ============================================ */
+(function heroPremium() {
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // 1. Title — split en mots, animation stagger via CSS var --word-delay
+  const title = document.querySelector('.hero-title');
+  if (title && !title.dataset.split && !reduceMotion) {
+    title.dataset.split = '1';
+    let idx = 0;
+    const wrapTextNodes = (node) => {
+      [...node.childNodes].forEach(child => {
+        if (child.nodeType === Node.TEXT_NODE) {
+          const text = child.textContent;
+          if (!text.trim()) return;
+          const frag = document.createDocumentFragment();
+          text.split(/(\s+)/).forEach(w => {
+            if (!w) return;
+            if (/^\s+$/.test(w)) {
+              frag.appendChild(document.createTextNode(w));
+            } else {
+              const s = document.createElement('span');
+              s.className = 'word';
+              s.textContent = w;
+              s.style.setProperty('--word-delay', (idx * 0.06) + 's');
+              frag.appendChild(s);
+              idx++;
+            }
+          });
+          node.replaceChild(frag, child);
+        } else if (child.nodeType === Node.ELEMENT_NODE && !child.classList.contains('word')) {
+          wrapTextNodes(child);
+        }
+      });
+    };
+    wrapTextNodes(title);
+  }
+
+  // 2. Buttons — glow radial follow cursor (CSS vars --mx --my)
+  const trackBtn = (e) => {
+    const btn = e.currentTarget;
+    const r = btn.getBoundingClientRect();
+    btn.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+    btn.style.setProperty('--my', (e.clientY - r.top) + 'px');
+  };
+  document.querySelectorAll('.btn-primary, .btn-secondary').forEach(btn => {
+    btn.addEventListener('mousemove', trackBtn);
+  });
+
+  // 3. Hero mockup — tilt 3D au mouvement souris (desktop hover-capable only)
+  const mockup = document.querySelector('.hero-mockup');
+  const hero = document.querySelector('.hero');
+  if (mockup && hero && !reduceMotion &&
+      window.matchMedia('(hover: hover) and (min-width: 769px)').matches) {
+    let frame = 0;
+    const onMove = (e) => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const r = hero.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5;
+        const y = (e.clientY - r.top) / r.height - 0.5;
+        mockup.style.transform =
+          `perspective(1400px) rotateY(${x * 5}deg) rotateX(${-y * 3.5}deg) translateZ(0)`;
+      });
+    };
+    const onLeave = () => {
+      cancelAnimationFrame(frame);
+      mockup.style.transform = '';
+    };
+    hero.addEventListener('mousemove', onMove, { passive: true });
+    hero.addEventListener('mouseleave', onLeave);
+  }
+})();
